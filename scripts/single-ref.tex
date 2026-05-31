@@ -1,3 +1,32 @@
+%====================================================================================
+%  single-ref.tex  —  FORMAT HOLDER / SKELETON for single-* (one-page) resumes
+%  ----------------------------------------------------------------------------------
+%  NOT an application resume. Copy single-ComVis.tex (the GOLD exemplar) to build a
+%  real one; use THIS file as the rules-in-context cheat sheet. See CLAUDE.md sec 3.
+%
+%  HARD RULES (all measured in this exact layout; usable bullet width = 537.7pt):
+%   1. Exactly ONE page. Every \resumeItem must be ONE line, no wrap.
+%   2. Pack each bullet full: target 108-114 chars plain prose (wraps ~115-118).
+%      Bold costs ~15% width, ALL-CAPS ~42% — spend them deliberately.
+%   3. >= 30 content lines total. Per section: Education 3 achv + Skills line;
+%      Professional Exp >=3 entries x >=3 bullets; Research >=2 x >=3;
+%      Projects >=3 x >=3; Publications 3.
+%   4. One complete idea per bullet (a full sentence). Never split one sentence
+%      across multiple bullets to pad the count.
+%   5. ALWAYS include: Publications + Ericsson internship + ABB thesis.
+%   6. Publications block = LITERAL copy-paste from single-GenMod.tex (normal font).
+%   7. Order EVERY section reverse-chronologically by END date (latest first).
+%   8. Dates = month ranges ("Mon YYYY -- Mon YYYY"), never bare years.
+%   9. No em dashes / no dash-as-separator. Titles use ":"; GPA in "(...)";
+%      "--" only for date ranges.
+%  10. Favor concepts + results over obscure names. STRIP proprietary/research
+%      tool/model/dataset/benchmark names (COLMAP, OpenMVS, ROUGE, ARKitScenes,
+%      FairMOT, ...) and raw math. KEEP field-standard ATS keywords (SIFT, RANSAC,
+%      CLIP, Hough, ResNet, ViT) and a name only if central AND explained inline.
+%  11. To fit one page, tighten vertical \vspace only (never margins/font).
+%  12. Verify: pages==1, 0 overfull, >=30 "^•" markers, each publication one line.
+%====================================================================================
+
 \documentclass[letterpaper, 11pt]{article}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -88,14 +117,14 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-1em}}
 \newcommand{\resumeItemListStart}{\vspace{-0.3em}\begin{itemize}[leftmargin=0.25in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7.5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7.5pt}}  % <- tighten THIS (more negative) if a real resume spills to page 2
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%----------HEADING----------
+%----------HEADING---------- (FIXED boilerplate — reuse verbatim; links: Phone, Email, LinkedIn, GitHub, Portfolio, Location)
 \begin{center}
     {\Huge \scshape Gawtam Chithra Ramesh} \\
     \vspace{3pt}
@@ -110,7 +139,7 @@
     \vspace{-8pt}
 \end{center}
 
-%-----------EDUCATION-----------
+%-----------EDUCATION----------- (FIXED boilerplate; GPA in parentheses, NOT after a dash. Latest end date first.)
 \section{\color{Blue}Education}
     \resumeSubHeadingListStart
     \resumeSubheading{KTH Royal Institute of Technology}{Aug 2024 -- Jun 2026}{Master of Science in Systems, Controls, and Robotics \textnormal{(GPA 4.62/5.0)}}{Stockholm, Sweden}
@@ -125,20 +154,22 @@
     \end{itemize}
     }
     \vspace{-0.7em}
-    \textbf{Skills} : Python, C++, C\texttt{\#}, MATLAB, ROS2, Unity3D, MuJoCo, PyBullet, PyTorch, OpenCV, YOLO, Docker, Git
+    \textbf{Skills} : [Tailor to the role; ~12-13 keywords, comma-separated, ONE line. Lead with the job's must-haves.]
     \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
+%-----------EXPERIENCE----------- (>=3 entries, >=3 bullets each; reverse-chron by end date; ABB + Ericsson are MANDATORY)
 \section{\color{Blue}Professional Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{Master's Thesis: Generative Flow Matching for Robot Manipulation}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
+    % --- WORKED EXAMPLE (mandatory entry). Note: title uses ":" not a dash; bullets ~108-114 chars, concept+mechanism+result.
+    \resumeSubheading{Master's Thesis: [Short Thesis Title, no em dash]}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
     \resumeItemListStart
         \resumeItem{Designed a generative flow-matching planner guided at inference by Signal Temporal Logic robustness gradients.}
         \resumeItem{Steered the pretrained flow model toward new temporal-logic specifications at inference without retraining.}
         \resumeItem{Benchmarked on long-horizon reach-avoid navigation against state-of-the-art specification-guided motion planners.}
     \resumeItemListEnd
 
+    % --- WORKED EXAMPLE (mandatory entry). "Hydra" kept because it is central AND explained inline.
     \resumeSubheading{Device Research Intern: 3D Scene Graphs}{Jul 2025 -- Dec 2025}{Ericsson Research}{Lund, Sweden}
     \resumeItemListStart
         \resumeItem{Integrated instance segmentation and tracking into Hydra, a real-time 3D scene-graph construction framework.}
@@ -146,63 +177,66 @@
         \resumeItem{Benchmarked state-of-the-art inpainting models to balance reconstruction fidelity against real-time latency.}
     \resumeItemListEnd
 
-    \resumeSubheading{Multi-Object Detection \& Tracking Intern}{Jun 2021 -- Jul 2021}{Blurgs Research Labs}{Remote, India}
+    % --- HINT TEMPLATE (replace with the most role-relevant 3rd experience; delete brackets).
+    \resumeSubheading{[Role Title: concise, no em dash]}{[Mon YYYY -- Mon YYYY]}{[Company]}{[City, Country]}
     \resumeItemListStart
-        \resumeItem{Evaluated five state-of-the-art multi-object tracking architectures for an Indian Navy video-surveillance product.}
-        \resumeItem{Trained deep detection-and-tracking models on aerial drone and CCTV footage for real-time multi-target tracking.}
-        \resumeItem{Deployed the top model for online tracking and re-identification of multiple moving targets across video streams.}
+        \resumeItem{[Action verb + what you built/did + the mechanism + the outcome. One sentence, ~108-114 chars, no obscure names.]}
+        \resumeItem{[Second distinct accomplishment with a concrete result or metric if you have one (e.g. 86.2\% accuracy).]}
+        \resumeItem{[Third accomplishment. Keep it a full sentence; field-standard keywords OK, niche tool/dataset names out.]}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------RESEARCH-----------
+%-----------RESEARCH----------- (>=2 entries, >=3 bullets each; reverse-chron by end date)
 \section{\color{Blue}Research Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{Taxonomy-Guided VLMs for Deformable Object Manipulation}{Jan 2025 -- Nov 2025}{\href{https://www.kth.se/is/rpl}{Prof. Florian T. Pokorny}, Robotics, Perception \& Learning Lab, KTH}{Stockholm, Sweden}
+    % --- HINT TEMPLATE. Third field = advisor + lab/department (optionally \href-linked) + institution.
+    \resumeSubheading{[Project Title]}{[Mon YYYY -- Mon YYYY]}{\href{[url]}{[Prof. Name]}, [Lab / Department], [Institution]}{[City, Country]}
     \resumeItemListStart
-        \resumeItem{Coupled large vision-language models (GPT-4o, Gemini) with a taxonomy to interpret deformable-object scenes.}
-        \resumeItem{Built a prompt-taxonomy framework mapping natural language to robot-parsable structured motion primitives.}
-        \resumeItem{Quantified taxonomy-grounding and natural-language correctness with F1-score and text-similarity metrics.}
+        \resumeItem{[What problem you tackled and the approach — one full technical sentence packed to the line width.]}
+        \resumeItem{[The method/framework you built and what it produces.]}
+        \resumeItem{[Evaluation + result. Use generic metric names ("text-similarity metrics") not niche ones (ROUGE/BERTScore).]}
     \resumeItemListEnd
 
-    \resumeSubheading{Autonomous Ultrasound Scan via Structure-from-Motion}{Jan 2024 -- May 2024}{\href{https://niravatgit.github.io/patelnirav.com/index.html}{Prof. Nirav Patel}, Department of Engineering Design, IIT Madras}{Chennai, India}
+    \resumeSubheading{[Project Title]}{[Mon YYYY -- Mon YYYY]}{\href{[url]}{[Prof. Name]}, [Department], [Institution]}{[City, Country]}
     \resumeItemListStart
-        \resumeItem{Reconstructed a dense 3D torso point cloud from uncalibrated monocular RGB images via structure-from-motion.}
-        \resumeItem{Densified the reconstruction with multi-view stereo and published the surface as a ROS point-cloud message.}
-        \resumeItem{Segmented the abdominal region and estimated surface normals to plan the probe approach in a ROS/MoveIt pipeline.}
+        \resumeItem{[Concept-first sentence: what was reconstructed/built/estimated, via which standard technique.]}
+        \resumeItem{[Next step in the pipeline and its output/integration.]}
+        \resumeItem{[Final stage / downstream use. Full sentence, one line.]}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
+%-----------PROJECTS----------- (>=3 entries, >=3 bullets each; reverse-chron by end date)
 \section{\color{Blue}Technical Projects}
 \resumeSubHeadingListStart
 
-    \resumeProjectHeading{Deep Learning Advanced $|$ \textnormal{\small DD2610, KTH}}{Nov 2025 -- Jan 2026}
+    % Heading 2nd arg is the date range; 1st arg is "[Project Name] | [Course Code, Institution]".
+    \resumeProjectHeading{[Project Name] $|$ \textnormal{\small [Course Code, Institution]}}{[Mon YYYY -- Mon YYYY]}
     \resumeItemListStart
-        \resumeItem{Implemented SimCLR contrastive self-supervised pretraining from scratch with a ResNet18 encoder backbone.}
-        \resumeItem{Reached 86\% linear-evaluation accuracy on CIFAR-10 using only 1\% of labels with the frozen pretrained encoder.}
-        \resumeItem{Built a Masked Autoencoder ViT from scratch with an asymmetric encoder-decoder and 75\% random patch masking.}
+        \resumeItem{[What you implemented and how — full sentence, ~108-114 chars, field-standard keywords welcome.]}
+        \resumeItem{[Second component or design choice.]}
+        \resumeItem{[Result/metric (e.g. "reaching 86.2\% validation accuracy and 0.917 ROC-AUC").]}
     \resumeItemListEnd
 
-    \resumeProjectHeading{3D Open-Vocabulary Semantic Mapping $|$ \textnormal{\small DD2600 Robot Learning, KTH}}{Aug 2025 -- Oct 2025}
+    \resumeProjectHeading{[Project Name] $|$ \textnormal{\small [Course Code, Institution]}}{[Mon YYYY -- Mon YYYY]}
     \resumeItemListStart
-        \resumeItem{Built a CLIP-based semantic voxel-mapping pipeline from RGB-D scans for open-vocabulary object-presence detection.}
-        \resumeItem{Fused open-vocabulary detection with SAM promptable segmentation to ground object instances in a 3D voxel map.}
-        \resumeItem{Trained a ResNet18 presence classifier from scratch, reaching 86.2\% validation accuracy and 0.917 ROC-AUC.}
+        \resumeItem{[Bullet 1 — one idea, one line.]}
+        \resumeItem{[Bullet 2 — one idea, one line.]}
+        \resumeItem{[Bullet 3 — one idea, one line.]}
     \resumeItemListEnd
 
-    \resumeProjectHeading{Image Analysis \& Computer Vision $|$ \textnormal{\small DD2423, KTH}}{Oct 2024 -- Jan 2025}
+    \resumeProjectHeading{[Project Name] $|$ \textnormal{\small [Course Code, Institution]}}{[Mon YYYY -- Mon YYYY]}
     \resumeItemListStart
-        \resumeItem{Implemented Gaussian and FFT-based image filtering and analyzed denoising behavior across multiple noise models.}
-        \resumeItem{Built a multi-scale differential-geometry edge detector with zero-crossings and a Hough-transform line detector.}
-        \resumeItem{Used SIFT features with RANSAC to estimate homography and the fundamental matrix, then triangulated 3D structure.}
+        \resumeItem{[Bullet 1 — one idea, one line.]}
+        \resumeItem{[Bullet 2 — one idea, one line.]}
+        \resumeItem{[Bullet 3 — one idea, one line.]}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------PUBLICATIONS-----------
+%-----------PUBLICATIONS----------- (RULE 6: paste this block VERBATIM from single-GenMod.tex; normal font, NOT \small)
 \section{\color{Blue}Lead Author Publications}
 \begin{itemize}[leftmargin=0.15in]
     \setlength{\itemsep}{-5pt}

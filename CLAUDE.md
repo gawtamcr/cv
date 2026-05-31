@@ -22,8 +22,9 @@ cv/
 ├── build.sh           — build helper: ./build.sh scripts/<file>.tex
 ├── CLAUDE.md          — this file
 ├── scripts/           — all tailored CVs live here
-│   ├── single-ComVis.tex    (single-page blue, Computer Vision role)
-│   ├── single-GenMod.tex    (single-page blue, Generative Modelling role — partially empty)
+│   ├── single-ComVis.tex    (single-page blue, Computer Vision role) ← GOLD single-page exemplar: fully compliant with all section 3 rules; COPY THIS to start any new single-* resume
+│   ├── single-ref.tex       (single-page SKELETON / format holder: gold preamble + rules-as-comments + [bracketed hints] and worked-example bullets; read for structure, don't submit)
+│   ├── single-GenMod.tex    (single-page blue, Generative Modelling role — body is PLACEHOLDER/erroneous; canonical ONLY for the Publications block (rule 6) and tight spacing)
 │   ├── acad-bosch.tex       (academic 2-page, Bosch)
 │   └── acad-jana.tex        (academic 2-page, Jana)
 ├── pdfs/              — output PDFs
@@ -63,9 +64,41 @@ All tailored CVs are in `scripts/`.
 - **Ask Gawtam which template per application** — he decides every time. Default: single-* for industry, acad-* for research/PhD if he doesn't specify.
 - For `single-*`: if content doesn't fit on one page, **cut entries or shorten bullets** — never reduce margins or font size further.
 - All CVs must be ATS-parsable (`\pdfgentounicode=1` already set — keep machine-readable text, no images in body).
-- Tailor by selecting/reordering content to match the job description, not by dumping everything.
+- Tailor by **selecting** content and rewording to match the job description, not by dumping everything.
+- **Ordering (ALL sections, ALL templates): strictly reverse-chronological by END date — latest end first.** Applies to Education, Professional Experience, Research, and Technical Projects. This overrides relevance ordering: tailor by choosing WHICH entries to include, never by moving a newer entry below an older one. (An ongoing entry uses its end month, e.g. `Jun 2026`.)
 - Quantify with real numbers from section 5 where they strengthen relevance.
 - **Never invent experience**. If you suspect relevant unlisted experience, ask (see section 7).
+
+### Single-page density rules (STRICT — measured in this exact layout)
+
+Central formatting ideas for every `single-*` resume. Measured: usable bullet width = **537.7pt**, 11pt doc, `\small` bullet font.
+
+1. **Maximize characters per line — pack each bullet full.** Plain mixed-case prose wraps around **~115–118 chars; target 108–114** (do not leave bullets short at ~95). Bold costs ~15% extra width, ALL-CAPS ~42%, so a line ~25% bold caps near ~103, ~50% bold ~97, fully bold ~87, all-caps ~70. Spend bold/caps deliberately. **Write dense and technical**: name the method, the mechanism, and the result/metric — avoid generic filler (e.g. NOT "a single model steerable across task variants"; YES "steered the pretrained flow model toward new temporal-logic specs at inference without retraining"). Verify the build for silent wraps after pushing length.
+2. **Minimum content floor = 30 content lines** (single-GenMod's count is the floor — never go below). Per-section minimums:
+   - Education: 3 achievement bullets + 1 Skills line
+   - **Professional Experience: ≥3 entries, ≥3 bullets each**
+   - Research Experience: ≥2 entries, ≥3 bullets each
+   - Technical Projects: ≥3 entries, ≥3 bullets each
+   - Publications: 3 items
+3. **One idea per bullet** — each bullet is a complete standalone sentence (worst case a phrase). Reach 30 lines with REAL content (more entries/bullets), NEVER by splitting one sentence across multiple `\resumeItem` lines. GenMod's split-sentence padding is the anti-pattern — do not copy it.
+4. Prefer full sentences over phrases; no `+` joiners; cite concrete real metrics, not vague/abstract numbers or concepts.
+5. **ALWAYS include in every single-page resume: a Publications section, the Ericsson internship, and the ABB thesis** — regardless of role. Never drop any of these to save space; cut/shorten elsewhere instead.
+6. **Publications block = LITERAL copy-paste from `single-GenMod.tex`.** `single-GenMod.tex` is the canonical source for the Publications block. Copy its `\section{...Lead Author Publications}` through `\end{itemize}` verbatim — do NOT reword, re-abbreviate, restructure titles, change "Best Paper Award", re-expand "3DSG", or wrap it in `\small`. It already fits one line each at the document's normal font size. If publication details genuinely change, update them in `single-GenMod.tex` FIRST, then re-copy into every other single-* resume.
+7. **Publications stay at the document's normal (11pt) font** — never shrink them with `\small`. (At 11pt the one-line budget is ~100 chars; the GenMod text is already tuned to fit, which is why rule 6 exists.)
+8. `single-GenMod.tex` is the layout/spacing reference for all single-* resumes. To make the ≥30-line content fit exactly one page, the ONLY allowed lever is tightening vertical `\vspace` (e.g. `\resumeItemListEnd` was set to `\vspace{-7.5pt}` in `single-ComVis.tex` to pull Publications onto page 1) — never shrink margins or font.
+9. Use the IIT Madras degree phrasing "B.Tech Engineering Design **and** M.Tech Robotics" (the word "and", not a `+`).
+10. **Never use em dashes, and never use a dash as a separator/connector** anywhere (titles, bullets, headings). Use a colon, comma, or parentheses instead — e.g. entry title `Master's Thesis: Generative Flow Matching...` (not `Master's Thesis -- ...`), and GPA in parentheses `\textnormal{(GPA 4.62/5.0)}` (not `-- GPA ...`). The en-dash `--` is allowed ONLY for numeric/date ranges (`Jan 2026 -- Jun 2026`). Never `---`.
+11. **Every dated entry — including Technical Projects — uses a month range** (the period the work/course ran), never a bare year. KTH study periods: P1 ≈ Aug–Oct, P2 ≈ Nov–Jan, P3 ≈ Jan–Mar, P4 ≈ Mar–Jun. CAUTION: `references/Transcript_KTH.pdf` lists **grade-registration/exam dates, NOT course periods** (e.g. DD2423 shows 2025-04-22 but the course ran Oct 2024–Jan 2025) — use the course period for the CV, and ask Gawtam if a date is ambiguous. Confirmed CV project dates: DD2423 = Oct 2024 -- Jan 2025; DD2600 = Aug 2025 -- Oct 2025; DD2610 = Nov 2025 -- Jan 2026.
+12. **Favor abstract concepts and results over obscure names** (applies to every resume, single- and acad-). A generic recruiter skims bullets; niche names mean nothing to them and are better left for interview discussion. Lead with what was built/achieved and the outcome, not the tool.
+   - **STRIP** proprietary/research tool, model, dataset, and benchmark names, and raw math notation. Examples seen here: COLMAP, OpenMVS, ROUGE, BERTScore, DAG-STL, ZSTP, Maze2D, AntMaze, ARKitScenes, OwlV2, Siam-MOT, FairMOT, NTXent, `$L_{vv}$`/`$L_{vvv}$`. Replace with the concept ("structure-from-motion", "multi-view stereo", "deep multi-object tracking models", "text-similarity metrics", "differential-geometry zero-crossings").
+   - **KEEP** (a) field-standard terms a domain hiring engineer expects, which double as ATS keywords: SIFT, RANSAC, CLIP, Hough, FFT, ResNet, SimCLR, ViT/MAE, GPT-4o, Gemini, ROS, MoveIt; and (b) a name that is CENTRAL to the entry AND explained inline — e.g. "Hydra, a state-of-the-art 3D scene graph framework". Keep concrete result numbers (86.2% accuracy, 0.917 ROC-AUC).
+13. **Verify before reporting done** — Read the final `.tex` AND run these on the built PDF; all must pass:
+   ```bash
+   pdfinfo pdfs/<file>.pdf | awk '/Pages/{print $2}'     # must be 1
+   grep -c "Overfull \\hbox" build/<file>.log            # must be 0
+   pdftotext pdfs/<file>.pdf - | grep -c "^•"            # bullet+pub count must be >= 30
+   pdftotext pdfs/<file>.pdf - | sed '/^$/d' | grep -A3 "Lead Author"  # each publication on ONE line
+   ```
 
 ### Naming convention for new files
 - `scripts/single-<RoleKeyword>.tex` for single-page
@@ -81,7 +114,7 @@ All tailored CVs are in `scripts/`.
 4. **Proactively ask** when the role needs something you suspect he's done but hasn't stated explicitly.
    Classic example: a role needing CAD → ask about CAD done in Hyperloop battery pack (COMSOL),
    Human Powered Segway (Fusion360 + COMSOL stress), Fusion360 API project. See section 7 for open gaps.
-5. Copy the closest existing template from `scripts/`, rename per convention above.
+5. For single-* roles, **copy `scripts/single-ComVis.tex`** (the gold exemplar — already satisfies every section 3 rule) and retailor its content; for acad-* copy the closest `acad-*`. Rename per convention above. Copy the Publications block verbatim from `single-GenMod.tex` (rule 6); never seed from GenMod's placeholder body.
 6. Draft the .tex with selected/reordered content, enforcing rules from section 3.
 7. Build: `./build.sh scripts/<file>.tex` — confirm no page overflow before reporting done.
 8. Update this CLAUDE.md if you learn new facts about Gawtam's profile.
@@ -129,7 +162,7 @@ Mentors: Matthew Lock, Jonathan Styrud.
 Mentors: Püren Güler, Hector Caltenco.
 - Robust 3DSG pipeline: integrated instance segmentation + tracking into Hydra (SOTA framework); reduced parameter sensitivity for reliable scene interpretation across diverse environments.
 - Synchronized RGB-D inpainting pipeline to remove privacy-sensitive objects from 3DSGs in real time; benchmarked SOTA inpainting balancing reconstruction fidelity vs real-time performance.
-- **Lead author:** IMPROVE 2026 (accepted, Long Oral, Best Paper nominee); ICPR 2026 (under review).
+- **Lead author:** IMPROVE 2026 (accepted, Long Oral, Best Paper Award); ICPR 2026 (under review).
 
 **Graduate Robotics Intern, Modular Collaborative Robots — Systemantics India, Bangalore** (Dec 2022–Jul 2023)
 Mentor: Jagannath Raju (CTO, Systemantics India Pvt. Ltd).
@@ -190,7 +223,7 @@ Advisor: Prof. Satadal Ghosh.
 
 ### Course / Technical Projects
 
-**Robot Learning & Embodied AI — DD2600** (KTH, 2025, grade: A)
+**Robot Learning & Embodied AI — DD2600** (KTH, Aug–Oct 2025 [P1], grade: A; transcript grade date 2025-10-24)
 Team: Carl Clauson, Ilian Lamrani Auffray, Belfor Salazar, Gawtam. GitHub: github.com/gawtamcr/eai2025_project
 *Lab 2A extension — Object Presence/Absence in Semantically Queryable Maps:*
 - Problem: CLIP-based semantic voxel maps produce false "hot" regions for absent objects due to scene-wise similarity normalization.
@@ -202,7 +235,7 @@ Team: Carl Clauson, Ilian Lamrani Auffray, Belfor Salazar, Gawtam. GitHub: githu
 *Also in DD2600:*
 - Deployed pretrained Vision-Language-Action (VLA) model for manipulation; analyzed generalization and robustness limits on unseen tasks.
 
-**Deep Learning Advanced — DD2610** (KTH, 2026, grade: A)
+**Deep Learning Advanced — DD2610** (KTH, Nov 2025–Jan 2026 [P2], grade: A; transcript grade date 2026-01-27)
 Five practicals, all implemented from scratch in PyTorch/JAX:
 - *MeanFlow* (one-step generative modeling, team: Joar Paganus, Haoran Jin, Gawtam): reimplemented in PyTorch (except U-Net); ablations on time sampler (logit-normal μ), CFG parameters (ω, κ, p_c), r≠t ratio (75% optimal on MNIST, CAS=87.43%); showed CAS unreliable under guidance mixing; CIFAR-10 best FID ~160 @ epoch 600. Directly relevant to ABB thesis (flow matching).
 - *MAE (Masked Autoencoders)*: built ViT from scratch — PatchEmbed (Conv2d projection), multi-head self-attention (QKV, scaled dot-product), MLP (GELU), Block (residual + LayerNorm); full asymmetric MAE encoder-decoder with random masking (75%) and MSE loss on masked patches; CIFAR-10, 5 epochs: train loss 0.385→0.127. Ablations: masking ratios (0.5/0.75/0.85/0.95), fixed vs learned vs no positional encodings.
@@ -217,7 +250,7 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 **Artificial Intelligence — DD2380** (KTH, 2025)
 - Hybrid A* + waypoint tracking for car & drone in Unity; motion primitives from bicycle model (11 steering values over 50°, wheelbase=2); adaptive braking; car robust on all tracks; competitive total 422.3s (2nd of 5 groups).
 
-**Image Analysis & Computer Vision — DD2423** (KTH, Oct–Nov 2024, grade: A)
+**Image Analysis & Computer Vision — DD2423** (KTH, Oct 2024–Jan 2025 [P2]; labs Oct–Nov 2024; grade: A; transcript grade date 2025-04-22 is a delayed registration, NOT the course period)
 Three labs confirmed from course materials:
 - *Lab 1 (Filtering):* Fourier/FFT properties; Gaussian convolution via FFT (gaussfft); smoothing effects on noise (Gaussian, median, ideal low-pass); subsampling analysis.
 - *Lab 2 (Edge detection & Hough):* Differential geometry edge detector — L̃_vv zero-crossings + L̃_vvv sign condition; multi-scale analysis (t=0.0001–64); implemented `extractedge()` and `houghline()` (ρ-θ accumulator, gradient-magnitude weighted); applied to real images.
@@ -266,7 +299,7 @@ Tools: Solidworks (CAD), Ansys (CFD analysis).
 **Discord Bot** (Apr 2021) — C#; YouTube search + mp3 conversion via ffmpeg; text/reaction responses.
 
 ### Publications (lead author)
-1. "Robust Object-layer Construction of 3D Scene Graphs Using Instance Segmentation." **IMPROVE 2026** (Accepted, Long Oral, Best Paper nominee).
+1. "Robust Object-layer Construction of 3D Scene Graphs Using Instance Segmentation." **IMPROVE 2026** (Accepted, Long Oral, Best Paper Award).
 2. "Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction." **ICPR 2026** (Under Review).
 3. "Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided Vision-Language Models." **IROS 2025 Workshop ROMADO** (Accepted).
 
