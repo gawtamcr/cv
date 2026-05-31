@@ -3,6 +3,14 @@
 This file makes every Claude Code session in this directory self-contained.
 Read the full file before acting. No external memory is needed; everything is here.
 
+**Portability (clone-and-go):** This `CLAUDE.md` is the PRIMARY, auto-loaded source of truth — it travels
+with the repo and is loaded on any machine, so a fresh clone behaves identically with zero external setup.
+A full mirror of the project's persistent memory is ALSO vendored in-repo at `./memory/` (see section 2).
+The harness's own auto-memory store lives under `~/.claude/...` keyed by absolute path and does NOT travel
+with a clone — so do not rely on it. Treat `./memory/` as the canonical, version-controlled memory: read it
+and, when you learn something worth persisting, update `./memory/` (and this CLAUDE.md) IN-REPO, not only the
+home-dir store. If `./memory/` and CLAUDE.md ever disagree, CLAUDE.md wins.
+
 ---
 
 ## 1. What this repo is for
@@ -22,13 +30,23 @@ cv/
 ├── build.sh           — build helper: ./build.sh scripts/<file>.tex
 ├── CLAUDE.md          — this file
 ├── scripts/           — all tailored CVs live here
-│   ├── single-ComVis.tex    (single-page blue, Computer Vision role) ← GOLD single-page exemplar: fully compliant with all section 3 rules; COPY THIS to start any new single-* resume
-│   ├── single-ref.tex       (single-page SKELETON / format holder: gold preamble + rules-as-comments + [bracketed hints] and worked-example bullets; read for structure, don't submit)
-│   ├── single-GenMod.tex    (single-page blue, Generative Modelling role — body is PLACEHOLDER/erroneous; canonical ONLY for the Publications block (rule 6) and tight spacing)
+│   ├── single-ref.tex       ← CANONICAL SEED: gold preamble + rules-as-comments + [bracketed hints], worked-example ABB/Ericsson bullets, and the canonical Publications block. COPY THIS to start any new single-* resume. (A single-ref2.tex alternate may be added.)
+│   ├── single-ComVis.tex    (single-page blue, Computer Vision role — a compliant EXAMPLE OUTPUT only; may be deleted in future, do NOT seed from it)
+│   ├── single-GenMod.tex    (single-page blue, Generative/Foundation-Model role — a compliant EXAMPLE OUTPUT only; may be deleted in future, do NOT seed from it)
 │   ├── acad-bosch.tex       (academic 2-page, Bosch)
 │   └── acad-jana.tex        (academic 2-page, Jana)
 ├── pdfs/              — output PDFs
 ├── build/             — latexmk artifacts (auto-generated)
+├── memory/            — VENDORED persistent memory (travels with the repo; canonical store, update here)
+│   ├── MEMORY.md                    — memory index (one line per file)
+│   ├── master-profile.md            — canonical end-to-end profile (mirrors section 5)
+│   ├── project-deep-reference.md    — deep metrics/methods mined from references/*.pdf
+│   ├── user-gawtam.md               — who the user is
+│   ├── cv-formatting-rules.md       — strict formatting rules (mirrors section 3)
+│   ├── single-page-density-rules.md — measured density rules for single-* resumes
+│   ├── cv-tailoring-workflow.md     — step-by-step tailoring process (mirrors section 4)
+│   ├── cv-repo-structure.md         — repo layout + master.tex errors
+│   └── cv-open-gaps.md              — resolved/open profile questions (mirrors section 7)
 └── references/        — project reports, transcripts, course materials (details in section 5)
     ├── Transcript_IITMadras.pdf   — official IITM grade card (CGPA 7.9, 546 credits)
     ├── Transcript_KTH.pdf         — official KTH transcript (grades per course, print date 2026-05-22)
@@ -74,18 +92,18 @@ All tailored CVs are in `scripts/`.
 Central formatting ideas for every `single-*` resume. Measured: usable bullet width = **537.7pt**, 11pt doc, `\small` bullet font.
 
 1. **Maximize characters per line — pack each bullet full.** Plain mixed-case prose wraps around **~115–118 chars; target 108–114** (do not leave bullets short at ~95). Bold costs ~15% extra width, ALL-CAPS ~42%, so a line ~25% bold caps near ~103, ~50% bold ~97, fully bold ~87, all-caps ~70. Spend bold/caps deliberately. **Write dense and technical**: name the method, the mechanism, and the result/metric — avoid generic filler (e.g. NOT "a single model steerable across task variants"; YES "steered the pretrained flow model toward new temporal-logic specs at inference without retraining"). Verify the build for silent wraps after pushing length.
-2. **Minimum content floor = 30 content lines** (single-GenMod's count is the floor — never go below). Per-section minimums:
+2. **Minimum content floor = 30 content lines** (HARD — never go below; more is fine if it still fits one page, e.g. a 31st bullet). **Entry counts per section are FLEXIBLE — distribute by relevance:** you may drop a Technical Project to add a 4th Professional Experience, run Research with 3 entries, etc. The non-negotiables regardless of distribution:
    - Education: 3 achievement bullets + 1 Skills line
-   - **Professional Experience: ≥3 entries, ≥3 bullets each**
-   - Research Experience: ≥2 entries, ≥3 bullets each
-   - Technical Projects: ≥3 entries, ≥3 bullets each
-   - Publications: 3 items
+   - **Every INCLUDED entry (any section): ≥3 bullets each**
+   - Publications: 3 items (and rule 5 mandates Ericsson + ABB always present)
+   - Suggested default starting shape (from `single-ref.tex`): Professional Experience 3, Research 2, Technical Projects 3 — adjust freely as long as the 30-line floor and all other rules hold.
 3. **One idea per bullet** — each bullet is a complete standalone sentence (worst case a phrase). Reach 30 lines with REAL content (more entries/bullets), NEVER by splitting one sentence across multiple `\resumeItem` lines. GenMod's split-sentence padding is the anti-pattern — do not copy it.
 4. Prefer full sentences over phrases; no `+` joiners; cite concrete real metrics, not vague/abstract numbers or concepts.
 5. **ALWAYS include in every single-page resume: a Publications section, the Ericsson internship, and the ABB thesis** — regardless of role. Never drop any of these to save space; cut/shorten elsewhere instead.
-6. **Publications block = LITERAL copy-paste from `single-GenMod.tex`.** `single-GenMod.tex` is the canonical source for the Publications block. Copy its `\section{...Lead Author Publications}` through `\end{itemize}` verbatim — do NOT reword, re-abbreviate, restructure titles, change "Best Paper Award", re-expand "3DSG", or wrap it in `\small`. It already fits one line each at the document's normal font size. If publication details genuinely change, update them in `single-GenMod.tex` FIRST, then re-copy into every other single-* resume.
-7. **Publications stay at the document's normal (11pt) font** — never shrink them with `\small`. (At 11pt the one-line budget is ~100 chars; the GenMod text is already tuned to fit, which is why rule 6 exists.)
-8. `single-GenMod.tex` is the layout/spacing reference for all single-* resumes. To make the ≥30-line content fit exactly one page, the ONLY allowed lever is tightening vertical `\vspace` (e.g. `\resumeItemListEnd` was set to `\vspace{-7.5pt}` in `single-ComVis.tex` to pull Publications onto page 1) — never shrink margins or font.
+6. **Publications block = LITERAL copy-paste from `single-ref.tex`.** `single-ref.tex` is the canonical source for the Publications block. Copy its `\section{...Lead Author Publications}` through `\end{itemize}` verbatim — do NOT reword, re-abbreviate, restructure titles, change "Best Paper Award", re-expand "3DSG", or wrap it in `\small`. It already fits one line each at the document's normal font size. If publication details genuinely change, update them in `single-ref.tex` FIRST, then re-copy into every other single-* resume.
+7. **Publications stay at the document's normal (11pt) font** — never shrink them with `\small`. (At 11pt the one-line budget is ~100 chars; the canonical text is already tuned to fit, which is why rule 6 exists.)
+8. `single-ref.tex` is the layout/spacing reference for all single-* resumes (its preamble already sets `\resumeItemListEnd` to `\vspace{-7.5pt}`). To make the ≥30-line content fit exactly one page, the ONLY allowed lever is tightening vertical `\vspace` (make that value more negative to pull Publications onto page 1) — never shrink margins or font. **DANGER: `\resumeItemListEnd` is shared by every entry, so over-tightening it (roughly past `-11pt`) makes the NEXT section header overlap the last bullet above it — `pdfinfo` still reports 1 page and `grep` reports 0 overfull, so these checks DO NOT catch the collision. If one page needs a value past ~-10pt, you have too much content: instead CUT it back to the 30-line floor (drop a 4th bullet, unwrap any 2-line bullet, shorten the Skills line to ONE line) and keep `\vspace` in the comfortable -7.5 to -10pt range. ALWAYS confirm by rendering, not by trusting the numeric checks — see rule 13.**
+8b. **Uneven gaps ABOVE section headers — equalize them (learned 2026-05-31).** Some `\section` headers can float with a large gap above them while others sit tight (measured here: 36px above Professional Experience, 45px above Research, vs ~15px elsewhere). Cause: the section before-skip is inflated by the preceding block's trailing list glue, and it is largest after a section that ends WITHOUT a bullet list — Education ends on a plain `\textbf{Skills}` text line, so the following header gets the biggest gap. **FIX:** add a corrective `\vspace{-Npt}` on its own line IMMEDIATELY before the offending `\section{...}`, calibrated by measuring pixel gaps until every header gap matches (values used here: `-9pt` before Professional Experience, `-12pt` before Research). The two `\vspace` values may differ — that is fine; the goal is symmetric *visual* gaps, not identical code. **ANTI-PATTERN: do NOT add a global `\titlespacing*{\section}{...}` override** — it did not fix the before-gaps and it broke the BELOW-header spacing (the blue `\titlerule` cut through the first entry's title). Tune per-header `\vspace` and re-measure. To measure objectively: `pdftoppm -png -r 200 -gray pdfs/<f>.pdf full && convert full-1.png full.pgm`, then with numpy count blank-row runs (a row is ink if `(row<128).sum()>3`; report runs ≥12px); crop a band at a gap's y (`pdftoppm ... -x 0 -y <Y> -W 1700 -H 60`) and Read the PNG to label the header.
 9. Use the IIT Madras degree phrasing "B.Tech Engineering Design **and** M.Tech Robotics" (the word "and", not a `+`).
 10. **Never use em dashes, and never use a dash as a separator/connector** anywhere (titles, bullets, headings). Use a colon, comma, or parentheses instead — e.g. entry title `Master's Thesis: Generative Flow Matching...` (not `Master's Thesis -- ...`), and GPA in parentheses `\textnormal{(GPA 4.62/5.0)}` (not `-- GPA ...`). The en-dash `--` is allowed ONLY for numeric/date ranges (`Jan 2026 -- Jun 2026`). Never `---`.
 11. **Every dated entry — including Technical Projects — uses a month range** (the period the work/course ran), never a bare year. KTH study periods: P1 ≈ Aug–Oct, P2 ≈ Nov–Jan, P3 ≈ Jan–Mar, P4 ≈ Mar–Jun. CAUTION: `references/Transcript_KTH.pdf` lists **grade-registration/exam dates, NOT course periods** (e.g. DD2423 shows 2025-04-22 but the course ran Oct 2024–Jan 2025) — use the course period for the CV, and ask Gawtam if a date is ambiguous. Confirmed CV project dates: DD2423 = Oct 2024 -- Jan 2025; DD2600 = Aug 2025 -- Oct 2025; DD2610 = Nov 2025 -- Jan 2026.
@@ -99,6 +117,11 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
    pdftotext pdfs/<file>.pdf - | grep -c "^•"            # bullet+pub count must be >= 30
    pdftotext pdfs/<file>.pdf - | sed '/^$/d' | grep -A3 "Lead Author"  # each publication on ONE line
    ```
+   **MANDATORY visual render — the four checks above are NOT sufficient.** They miss text overlap caused by over-tightened `\vspace` (rule 8) and bullets that wrap to a 2nd visual line. Always render the page to an image and actually LOOK at it before saying done:
+   ```bash
+   pdftoppm -png -r 150 pdfs/<file>.pdf /tmp/cv_check     # then Read /tmp/cv_check-1.png
+   ```
+   Confirm by eye: (a) NO section header or bullet overlaps the line above it; (b) every bullet is exactly ONE line (no wraps); (c) spacing is even/readable, not crushed; (d) Publications sit on page 1. If anything overlaps, you over-compressed — fix per rule 8 (cut content, don't crank `\vspace`), never ship a PDF you have not looked at.
 
 ### Naming convention for new files
 - `scripts/single-<RoleKeyword>.tex` for single-page
@@ -114,7 +137,7 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
 4. **Proactively ask** when the role needs something you suspect he's done but hasn't stated explicitly.
    Classic example: a role needing CAD → ask about CAD done in Hyperloop battery pack (COMSOL),
    Human Powered Segway (Fusion360 + COMSOL stress), Fusion360 API project. See section 7 for open gaps.
-5. For single-* roles, **copy `scripts/single-ComVis.tex`** (the gold exemplar — already satisfies every section 3 rule) and retailor its content; for acad-* copy the closest `acad-*`. Rename per convention above. Copy the Publications block verbatim from `single-GenMod.tex` (rule 6); never seed from GenMod's placeholder body.
+5. For single-* roles, **copy `scripts/single-ref.tex`** (the canonical seed — gold preamble, rules-in-comments, worked ABB/Ericsson examples, and the canonical Publications block already in place) and fill its bracketed hints with tailored content; for acad-* copy the closest `acad-*`. Rename per convention above. Do NOT seed from `single-ComVis.tex` / `single-GenMod.tex` (example outputs, may be deleted).
 6. Draft the .tex with selected/reordered content, enforcing rules from section 3.
 7. Build: `./build.sh scripts/<file>.tex` — confirm no page overflow before reporting done.
 8. Update this CLAUDE.md if you learn new facts about Gawtam's profile.

@@ -1,3 +1,8 @@
+%====================================================================================
+%  single-FieldRobotics.tex  —  KTH Research Engineer, Robotic Systems for Aerial &
+%  Underwater Domains (I-SEE project). Seeded from single-ref.tex. See CLAUDE.md sec 3.
+%====================================================================================
+
 \documentclass[letterpaper, 11pt]{article}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -88,11 +93,9 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-1em}}
 \newcommand{\resumeItemListStart}{\vspace{-0.3em}\begin{itemize}[leftmargin=0.25in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7.5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8.5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 
 %----------HEADING----------
@@ -125,52 +128,55 @@
     \end{itemize}
     }
     \vspace{-0.7em}
-    \textbf{Skills} : Python, C++, C\texttt{\#}, PyTorch, JAX, CUDA, Slurm, ROS2, MuJoCo, PyBullet, OpenCV, wandb, Docker, Git
+    \textbf{Skills} : Python, C++, C, ROS2, MoveIt, Gazebo, Embedded Systems, PREEMPT-RT, SocketCAN, PyTorch, Unity3D, Fusion360, Docker, Git
     \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
+%-----------EXPERIENCE----------- (\vspace pulls this header up to match the other section gaps;
+% Education ends with a Skills text line, not a bullet list, so it leaves a larger natural gap.)
+\vspace{-9pt}
 \section{\color{Blue}Professional Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{Master's Thesis: Generative Flow Matching for Robot Manipulation}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
+    \resumeSubheading{Master's Thesis: Generative Flow Matching for Motion Planning}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
     \resumeItemListStart
-        \resumeItem{Designed a generative flow-matching trajectory planner guided at inference by Signal Temporal Logic gradients.}
-        \resumeItem{Steered a single pretrained flow model toward unseen temporal-logic specifications at inference without retraining.}
-        \resumeItem{Benchmarked on long-horizon reach-avoid navigation against state-of-the-art specification-guided generative planners.}
+        \resumeItem{Designed a generative flow-matching planner guided at inference by Signal Temporal Logic robustness gradients.}
+        \resumeItem{Steered the pretrained flow model toward new temporal-logic specifications at inference without retraining.}
+        \resumeItem{Benchmarked on long-horizon reach-avoid navigation against state-of-the-art specification-guided motion planners.}
     \resumeItemListEnd
 
     \resumeSubheading{Device Research Intern: 3D Scene Graphs}{Jul 2025 -- Dec 2025}{Ericsson Research}{Lund, Sweden}
     \resumeItemListStart
         \resumeItem{Integrated instance segmentation and tracking into Hydra, a real-time 3D scene-graph construction framework.}
         \resumeItem{Built a synchronized RGB-D inpainting pipeline that removes privacy-sensitive objects from scene graphs online.}
-        \resumeItem{Benchmarked state-of-the-art generative inpainting models to balance reconstruction fidelity against real-time latency.}
+        \resumeItem{Benchmarked state-of-the-art inpainting models to balance reconstruction fidelity against real-time edge latency.}
     \resumeItemListEnd
 
-    \resumeSubheading{Multi-Object Detection \& Tracking Intern}{Jun 2021 -- Jul 2021}{Blurgs Research Labs}{Remote, India}
+    \resumeSubheading{Graduate Robotics Intern: Collaborative Robots}{Dec 2022 -- Jul 2023}{Systemantics India}{Bangalore, India}
     \resumeItemListStart
-        \resumeItem{Evaluated five state-of-the-art multi-object tracking architectures for an Indian Navy video-surveillance product.}
-        \resumeItem{Trained deep detection-and-tracking models on aerial drone and CCTV footage for real-time multi-target tracking.}
-        \resumeItem{Deployed the top model for online tracking and re-identification of multiple moving targets across video streams.}
+        \resumeItem{Built a complete real-time system controller from scratch for a 6-DoF cobot portfolio on a Linux PREEMPT-RT kernel.}
+        \resumeItem{Handled inter-process communication over SocketCAN and FDCAN buses using semaphores and signal interrupts.}
+        \resumeItem{Integrated a ROS2 stack with MoveIt2 motion planning and Gazebo simulation, authoring URDF and SRDF descriptions.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------RESEARCH-----------
+%-----------RESEARCH----------- (\vspace matches this header's gap to the others.)
+\vspace{-12pt}
 \section{\color{Blue}Research Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{Taxonomy-Guided Vision-Language Models for Manipulation}{Jan 2025 -- Nov 2025}{\href{https://www.kth.se/is/rpl}{Prof. Florian T. Pokorny}, Robotics, Perception \& Learning Lab, KTH}{Stockholm, Sweden}
+    \resumeSubheading{Autonomous Ultrasound via Single-Camera 3D Reconstruction}{Jan 2024 -- May 2024}{Nirav Patel, Engineering Design, IIT Madras}{Chennai, India}
     \resumeItemListStart
-        \resumeItem{Coupled vision-language foundation models with a taxonomy to interpret deformable-object manipulation scenes.}
-        \resumeItem{Built a prompt-taxonomy framework mapping natural language to robot-parsable structured motion primitives.}
-        \resumeItem{Quantified taxonomy-grounding and natural-language correctness with F1-score and text-similarity metrics.}
+        \resumeItem{Reconstructed a dense 3D torso point cloud from 20 RGB poses via structure-from-motion and multi-view stereo.}
+        \resumeItem{Segmented the reconstructed point cloud to estimate probe approach angles from local surface tangent vectors.}
+        \resumeItem{Closed the perception-to-planning loop with ROS and MoveIt motion planning validated in Gazebo physics simulation.}
     \resumeItemListEnd
 
-    \resumeSubheading{Autonomous Ultrasound Scan via Structure-from-Motion}{Jan 2024 -- May 2024}{\href{https://niravatgit.github.io/patelnirav.com/index.html}{Prof. Nirav Patel}, Department of Engineering Design, IIT Madras}{Chennai, India}
+    \resumeSubheading{Target-Driven UAV Motion Planning and Obstacle Avoidance}{Sep 2021 -- Apr 2022}{Prof. Satadal Ghosh, Aerospace Engineering, IIT Madras}{Chennai, India}
     \resumeItemListStart
-        \resumeItem{Reconstructed a dense 3D torso point cloud from uncalibrated monocular RGB images via structure-from-motion.}
-        \resumeItem{Densified the reconstruction with multi-view stereo and published the surface as a ROS point-cloud message.}
-        \resumeItem{Segmented the abdominal region and estimated surface normals to plan the probe approach in a ROS/MoveIt pipeline.}
+        \resumeItem{Developed target-driven motion planning with real-time obstacle avoidance for autonomous unmanned aerial vehicles.}
+        \resumeItem{Combined Proportional Navigation with Acceleration-Velocity Obstacles for reactive 2D guidance toward moving targets.}
+        \resumeItem{Achieved roughly 20\% faster and more compute-efficient trajectories than classical aerospace guidance algorithms.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -179,26 +185,25 @@
 \section{\color{Blue}Technical Projects}
 \resumeSubHeadingListStart
 
-    \resumeProjectHeading{Deep Learning Advanced $|$ \textnormal{\small DD2610, KTH}}{Nov 2025 -- Jan 2026}
+    \resumeProjectHeading{Multi-Agent Path Finding and Coordination $|$ \textnormal{\small DD2438, KTH}}{Feb 2025 -- May 2025}
     \resumeItemListStart
-        \resumeItem{Reimplemented a one-step generative flow-matching model in PyTorch, ablating its time-sampling schedule and ratios.}
-        \resumeItem{Showed accuracy-based generative quality metrics break down under classifier-free guidance mixing at sampling time.}
-        \resumeItem{Built a Masked Autoencoder ViT from scratch with an asymmetric encoder-decoder and 75\% random patch masking.}
-        \resumeItem{Pretrained a contrastive self-supervised encoder, reaching 86\% linear accuracy on CIFAR-10 using only 1\% labels.}
+        \resumeItem{Coordinated 20+ holonomic drones and non-holonomic cars with Conflict-Based Search over a Hybrid A* planner.}
+        \resumeItem{Designed a greedy goal-assignment heuristic minimizing combined travel and assignment cost across the fleet.}
+        \resumeItem{Added goal-padding and node-pruning heuristics with a fail-safe expansion bound for robust large-team planning.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{3D Open-Vocabulary Semantic Mapping $|$ \textnormal{\small DD2600 Robot Learning, KTH}}{Aug 2025 -- Oct 2025}
+    \resumeProjectHeading{Autonomous Mobile Manipulation Stack $|$ \textnormal{\small DD2410, KTH}}{Sep 2024 -- Oct 2024}
     \resumeItemListStart
-        \resumeItem{Built a CLIP-based semantic voxel-mapping pipeline from RGB-D scans for open-vocabulary object-presence detection.}
-        \resumeItem{Fused open-vocabulary detection with promptable segmentation to ground object instances in a 3D voxel map.}
-        \resumeItem{Trained a ResNet18 presence classifier from scratch, reaching 86.2\% validation accuracy and 0.917 ROC-AUC.}
+        \resumeItem{Built a Behavior Tree mission planner for a mobile manipulator handling navigation, grasping, and recovery in ROS.}
+        \resumeItem{Implemented Hybrid A* and RRT planners for a Dubins car with collision checking against line and circle obstacles.}
+        \resumeItem{Generated 2D occupancy grids from laser scans with raytraced free space and configuration-space inflation.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{Artificial Intelligence \& Multi-Agent Systems $|$ \textnormal{\small DD2438, KTH}}{Feb 2025 -- May 2025}
+    \resumeProjectHeading{Hyperloop Pod Battery Pack and BMS $|$ \textnormal{\small Avishkar Hyperloop, IIT Madras}}{Oct 2020 -- Jun 2021}
     \resumeItemListStart
-        \resumeItem{Coordinated 20+ holonomic and non-holonomic agents collision-free using conflict-based multi-agent path-finding.}
-        \resumeItem{Trained three role-specific PPO policies for attack, defend, and escape in a multi-agent capture-the-flag game.}
-        \resumeItem{Fused a behavior tree with reinforcement learning via self-play and curriculum training across staged episodes.}
+        \resumeItem{Designed a high-discharge battery pack, extending pack life 10\% by cutting peak temperature 10C with aluminium sinks.}
+        \resumeItem{Built a custom Battery Management System for real-time voltage and temperature monitoring with safety cutoffs.}
+        \resumeItem{Won the Most Scalable Design award and reached the top 24 teams for European Hyperloop Week in Valencia, Spain.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd

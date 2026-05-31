@@ -1,20 +1,25 @@
 %====================================================================================
 %  single-ref.tex  —  FORMAT HOLDER / SKELETON for single-* (one-page) resumes
 %  ----------------------------------------------------------------------------------
-%  NOT an application resume. Copy single-ComVis.tex (the GOLD exemplar) to build a
-%  real one; use THIS file as the rules-in-context cheat sheet. See CLAUDE.md sec 3.
+%  NOT an application resume. COPY THIS FILE to start every new single-* resume, then
+%  fill the bracketed hints with tailored content. This file is the canonical seed and
+%  Publications source — do NOT seed from single-ComVis.tex / single-GenMod.tex (they
+%  are example outputs and may be deleted). See CLAUDE.md sec 3.
 %
 %  HARD RULES (all measured in this exact layout; usable bullet width = 537.7pt):
 %   1. Exactly ONE page. Every \resumeItem must be ONE line, no wrap.
 %   2. Pack each bullet full: target 108-114 chars plain prose (wraps ~115-118).
 %      Bold costs ~15% width, ALL-CAPS ~42% — spend them deliberately.
-%   3. >= 30 content lines total. Per section: Education 3 achv + Skills line;
-%      Professional Exp >=3 entries x >=3 bullets; Research >=2 x >=3;
-%      Projects >=3 x >=3; Publications 3.
+%   3. >= 30 content lines total (HARD floor). Education = 3 achv + Skills line;
+%      Publications = 3; every INCLUDED entry (any section) = >=3 bullets.
+%      Entry COUNTS per section are FLEXIBLE: you may drop a Technical Project to
+%      add a 4th Professional Experience, etc. — distribute entries by relevance,
+%      but never break the 30-line floor or any other rule, and keep rule 5.
 %   4. One complete idea per bullet (a full sentence). Never split one sentence
 %      across multiple bullets to pad the count.
 %   5. ALWAYS include: Publications + Ericsson internship + ABB thesis.
-%   6. Publications block = LITERAL copy-paste from single-GenMod.tex (normal font).
+%   6. Publications block below is CANONICAL — reuse it verbatim (normal font, not
+%      \small). If publication details change, edit them HERE first, then re-copy.
 %   7. Order EVERY section reverse-chronologically by END date (latest first).
 %   8. Dates = month ranges ("Mon YYYY -- Mon YYYY"), never bare years.
 %   9. No em dashes / no dash-as-separator. Titles use ":"; GPA in "(...)";
@@ -157,7 +162,7 @@
     \textbf{Skills} : [Tailor to the role; ~12-13 keywords, comma-separated, ONE line. Lead with the job's must-haves.]
     \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE----------- (>=3 entries, >=3 bullets each; reverse-chron by end date; ABB + Ericsson are MANDATORY)
+%-----------EXPERIENCE----------- (>=3 bullets per entry; count flexible per rule 3; reverse-chron by end date; ABB + Ericsson MANDATORY)
 \section{\color{Blue}Professional Experience}
 \resumeSubHeadingListStart
 
@@ -187,7 +192,7 @@
 
 \resumeSubHeadingListEnd
 
-%-----------RESEARCH----------- (>=2 entries, >=3 bullets each; reverse-chron by end date)
+%-----------RESEARCH----------- (>=3 bullets per entry; count flexible per rule 3; reverse-chron by end date)
 \section{\color{Blue}Research Experience}
 \resumeSubHeadingListStart
 
@@ -208,7 +213,7 @@
 
 \resumeSubHeadingListEnd
 
-%-----------PROJECTS----------- (>=3 entries, >=3 bullets each; reverse-chron by end date)
+%-----------PROJECTS----------- (>=3 bullets per entry; count flexible per rule 3 — droppable for a 4th experience; reverse-chron by end date)
 \section{\color{Blue}Technical Projects}
 \resumeSubHeadingListStart
 
@@ -236,7 +241,7 @@
 
 \resumeSubHeadingListEnd
 
-%-----------PUBLICATIONS----------- (RULE 6: paste this block VERBATIM from single-GenMod.tex; normal font, NOT \small)
+%-----------PUBLICATIONS----------- (RULE 6: this block is CANONICAL — copy it verbatim into new resumes; normal font, NOT \small)
 \section{\color{Blue}Lead Author Publications}
 \begin{itemize}[leftmargin=0.15in]
     \setlength{\itemsep}{-5pt}
