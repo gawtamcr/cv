@@ -1,0 +1,334 @@
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{vwcol}
+\usepackage{comment}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	citecolor=black,
+	urlcolor=RoyalBlue,
+}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large\bfseries }{}{0em}{}[
+\color{black}
+\titlerule
+\vspace{-5pt}
+]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{ \item\small{ {#1 \vspace{-2pt}} } }
+%\newcommand{\classesList}[4]{ \item\small{ {#1 #2 #3 #4 \vspace{-2pt}} } }
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{-1pt}
+\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}       & {\small #2} \\
+	{\small#3} & \textit{\small #4} \\
+\end{tabular*}
+\vspace{-10pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+\vspace{-1pt}
+\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}  & {\small #2} \\
+\end{tabular*}
+\vspace{-20pt}
+}
+
+% \newcommand{\resumeSubSubheading}[2]{ \item
+% \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+% 	\textit{\small#1} & \textit{\small #2} \\
+% \end{tabular*}
+% \vspace{-7pt}
+% }
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}
+\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.25in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}
+\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Gawtam Chithra Ramesh} \\
+    \vspace{3pt}
+    % \href{https://www.kth.se/}{KTH Royal Institute of Technology} \\
+    \vspace{1pt}
+    \small 
+    {
+    \raisebox{-0.1\height}{\faPhone} +46-76541 8589 ~
+    \href{gawtamcr3@gmail.com}{\raisebox{-0.2\height}{\faEnvelope}} {gawtamcr3@gmail.com} ~
+    \href{https://linkedin.com/in/gawtamcr/}{\raisebox{-0.2\height}{\faLinkedin} \textcolor{black}{gawtamcr} } ~
+    \href{https://gawtamcr.github.io/}{\raisebox{-0.2\height}{\faGithub} \textcolor{black}{gawtamcr}}
+    }
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+    \resumeSubHeadingListStart 
+    \resumeSubheading {KTH Royal Institute of Technology}{Aug. 2024 -- Jul. 2026}{Master of Science in \href{https://www.kth.se/en/studies/master/systems-control-robotics/msc-systems-control-and-robotics-1.8733}{Systems, Controls, and Robotics} - 4.62 / 5}{Stockholm, Sweden}
+    
+    \resumeSubheading {Indian Institute of Technology Madras}{Aug. 2019 -- Jul. 2024}{Dual Degree (B.Tech in \href{https://ed.iitm.ac.in/about.html}{Engineering Design} and M.Tech in \href{https://ed.iitm.ac.in/~robotics_lab/}{Robotics}) - 7.9 / 10}{Chennai, India}
+
+    \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+\begin{itemize}[leftmargin=0.15in]
+    \setlength{\itemsep}{2pt}
+    \item \textbf{G.~Chithra~Ramesh}, et al. ``Robust Object-layer Construction of 3D Scene Graphs Using Instance Segmentation.'' \textit{International Conference on Image Processing and Vision Engineering (IMPROVE 2026)}. (Accepted, Long Oral, Nominated for Best Paper Award)
+    \item \textbf{G.~Chithra~Ramesh}, et al. ``Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction.'' \textit{International Conference on Pattern Recognition (ICPR 2026)}. (Under Review)
+    \item \textbf{G.~Chithra~Ramesh}, D.~Blanco-Mulero, Y.~Dong, J.~Borr\`as Sol, C.~Torras, F.~T.~Pokorny. ``Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided Vision-Language Models.'' \textit{IROS 2025 Workshop on Robotic Manipulation of Deformable Objects (ROMADO)}. (Accepted)
+\end{itemize}
+
+%-----------Scholastic and other related Achievements---------------
+\section{Scholastic Achievements}
+\begin{itemize}[leftmargin=0.15in]
+    \setlength{\itemsep}{-0.3em}
+    \item Awarded (among 30 of 800+) the IIT Madras Young Research Fellowship based on remarkable research potential.
+    \item Secured 97.64 Percentile in JEE Advanced \& 99.10 Percentile in JEE Mains out of 1.5 Million across India.
+    \item Secured an All India Rank of 52 out of 50k in Undergraduate Common Entrance Examination for Design.
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading{Master's Thesis on Generative Planning for Long-Horizon Manipulation}{(Ongoing) Jan 2026 - Jun 2026}{\textbf{ABB Robotics}, Mentors - 
+    \href{https://www.linkedin.com/in/matthewwilliamlock/}{Matthew Lock} and \href{https://www.linkedin.com/in/jonathan-styrud-99385864/?locale=en_US}{Jonathan Styrud}}{Västerås, Sweden} 
+    \resumeItemListStart 
+        \resumeItem{Designing an inference-time guidance method for a pretrained flow-matching trajectory planner, allowing a single learned motion prior to satisfy arbitrary task specifications without retraining or per-task expert demonstrations.}
+        \resumeItem{Using Signal Temporal Logic with STLCG++ as the specification language, enabling differentiable robustness gradients to steer generation toward compositional, temporally-extended objectives.}
+        \resumeItem{Validating on Maze2D and OGBench long-horizon benchmarks; benchmarking head-to-head against state-of-the-art STL planners (DAG-STL, TeLoGraF).}
+        \resumeItem{Collaborating with ABB Robotics R\&D on transfer of the approach to long-horizon 6-DoF manipulation use cases.}
+    \resumeItemListEnd
+    
+    \resumeSubheading{Device Research Intern on 3D Scene Graph}{Jul 2025 - Dec 2025}{\textbf{Ericsson} Research, Mentor - 
+    \href{https://se.linkedin.com/in/p\%C3\%BCren-g\%C3\%BCler-76457317}{{Puren Guler}} and 
+    \href{https://se.linkedin.com/in/hcaltenco}{Hector Caltenco}}{Lund, Sweden} 
+    \resumeItemListStart 
+    \resumeItem{First-author paper accepted as Long Oral and nominated for Best Paper Award at \textbf{IMPROVE 2026}; second first-author paper under review at \textbf{ICPR 2026}.}
+    \resumeItem{Developed a robust 3DSG pipeline by integrating instance segmentation and tracking into a SOTA framework (Hydra), reducing sensitivity to parameter tuning across diverse environments.}
+    \resumeItem{Designed a synchronized RGB-D inpainting module for privacy-aware 3DSG construction, maintaining consistency across RGB and depth channels.}
+    \resumeItem{Analyzed 3DSG frameworks to identify research gaps in object merging, parameter sensitivity, and privacy protection.}
+    \resumeItem{Benchmarked SOTA inpainting algorithms to balance reconstruction fidelity with real-time performance.}
+\resumeItemListEnd
+
+    \resumeSubheading{Graduate Robotics Intern on Modular Collaborative Robots}{Dec 2022 - Jul 2023}{\textbf{Systemantics} India Pvt. Ltd., Mentor - \href{https://www.linkedin.com/in/jagannathraju/}{{Jagannath Raju}}}{Bangalore, India}
+    \resumeItemListStart 
+        % \resumeItem{Implemented backward-chained Behavior Trees for long-horizon 6DOF manipulator planning using ROS2 and Moveit2.}
+        % \resumeItem{Implemented a control synthesis pipeline for a 6DOF manipulator using Behavior Trees to enable robust, long-horizon trajectory planning.}
+        % \resumeItem{Designed and implemented a long-horizon trajectory planning system for a 6DOF manipulator using Behavior Trees,}
+        \resumeItem{Developed backward-chained Behavior Trees for 6DOF manipulator to enable robust, long-horizon trajectory planning}
+        \resumeItem{Designed and implemented a 6-DOF trajectory generation and control pipeline in C++, achieving real-time joint actuation via low-latency communication with motor controllers using D-Bus and SocketCAN.}
+        % \resumeItem{Developed a S-Curve trajectory generator for the arm, streaming real-time joint commands directly to motor controllers via DBUS and SocketCAN.}
+        % \resumeItem{Developing an disturbance observer and admittance control model for all the 6 joints of the robotic arm}
+    \resumeItemListEnd
+    \newpage
+    \resumeSubheading{Tested Multi Object Detection and Tracking Models}{June 2021 -- July 2021}{Blurgs Research Labs Pvt. Ltd.}{Remote, India} 
+    \resumeItemListStart 
+        \resumeItem{Analyzed 5 State of the art Multi object tracking networks for startup's first product for The Indian Navy}
+        \resumeItem{Trained and tested various MOT networks like \textbf{Siam-MOT} and \textbf{FairMOT} for Surveillance with Drones and CCTV.}
+        \resumeItem{Used \textbf{FairMOT} to track and get the trail of multiple moving objects and Re-identify objects in real-time.}
+    \resumeItemListEnd
+
+    
+    % \resumeProjectHeading{Graduate Teaching Assistant $|$ \textnormal{\small Field and Service Robotics (ID4060 - IITM)} } {Jan 2025 -- Feb 2025}
+    \resumeSubheading {Graduate Teaching Assistant}{Aug 2023 -- Nov 2023}{Field and Service Robotics (ID4060), {Mentor - \href{https://bijosebastian.wordpress.com/}{Bijo Sebastian}}}{IIT Madras, India}
+    \resumeItemListStart 
+        \resumeItem{Involved in design and evaluation of assignments based on ROS and CoppeliaSim for 40 students.}
+        \resumeItem{Held meetings with small groups of students with diverse backgrounds to review their assignments and projects.}
+    \resumeItemListEnd
+    
+\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{Research Experience}
+\resumeSubHeadingListStart
+ 
+    \resumeSubheading{Graduate Robotics Research on Deformable Object Manipulation}{Jan 2025 - Nov 2025}{\href{https://www.kth.se/is/rpl}{Robotics Perception and Learning}, Advisor - 
+    % \href{https://www.kth.se/is/rpl}{David Blanco-Mulero} 
+    %\href{https://yifeidong0.github.io/}{\emph{Yifei Dong}} and 
+    \href{https://www.kth.se/is/rpl}{Florian T. Pokorny}}{KTH, Sweden} 
+    \resumeItemListStart 
+        % \resumeItem{Deformable object manipulation planning through taxonomy-based abstractions and foundation models}
+        % \resumeItem{Developed a framework integrating pretrained-VLMs with a structured taxonomy to enhance DOM.}
+        % \resumeItem{Conducted in-depth analysis of VLM performance, identifying challenges in DOM scene understanding and proposing solutions like refined taxonomy and multi-modal inputs; }
+        % \resumeItem{Submitted and presented the result at ROMADO, a \textbf{IROS2025 Workshop}.}
+        % \resumeItem{Designed and implemented a simulation pipeline for task execution using PyBullet, with plans for real-world validation 
+        % %to assess sim-to-real transferability.
+        % }
+
+        % \resumeItem{Integrated taxonomy-guided vision-language models (Gemini, Qwen) to interpret DOM scenes and map 
+        % structured outputs to 
+        % motion primitives}
+        % \resumeItem{Built prompt–taxonomy framework to generate structured codes and textual justifications for robot-parsable perception}
+        \resumeItem{Built prompt–taxonomy framework to generate structured, robot-parsable specifications from high-level prompts, demonstrating a pipeline for translating natural-language instructions into structured outputs for downstream manipulation.}
+        \resumeItem{Performed quantitative analysis to identify failure modes and guide iterative improvements to the taxonomy and prompts}
+        % \resumeItem{Integrated multi-modal data and temporal cues to enhance the perception pipeline's robustness.}
+        \resumeItem{Authored and submitted the results at ROMADO, an \textbf{IROS2025} workshop.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Dual Degree Project on Structure from Motion}{Jan 2024 - May 2024}{\href{https://niravatgit.github.io/INSPIRELab/}{INSPIRE Lab}, Advisor - \href{https://niravatgit.github.io/patelnirav.com/index.html}{{Nirav Patel}}}{IIT Madras, India}
+    \resumeItemListStart 
+        \resumeItem{Developed a 3D perception system using COLMAP (Structure from Motion) from monocular RGB images to build cost-efficient human torso reconstruction for more accessible ultrasound.}
+        \resumeItem{Developed an autonomous ultrasound scanning system using ROS, integrating a 5-DoF robotic arm with a single RGB camera to achieve cost-effective 3D perception for medical imaging.}
+        \resumeItem{Implemented motion planning and control using ROS and MoveIt, and simulated the 5DOF manipulation in Gazebo.}
+        \resumeItem{Integrated perception algorithms within ROS, processing 3D point clouds from RGB images to enable accurate trajectory planning for the ultrasound probe.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Offline And Online Motion Planning \& Control of Unmanned Aerial Vehicles}{Sep 2021 -  Apr 2022}{\href{https://yrf.iitm.ac.in/}{Young Research Fellowship}, Advisor - \href{http://www.ae.iitm.ac.in/~satadal/index.html}{\emph{Prof. Satadal Ghosh}}}{IIT Madras, India}
+    \resumeItemListStart
+        \resumeItem{Developed a Target Driven Motion Planning and Obstacle Avoidance algorithm for UAVs.}
+        \resumeItem{Used Proportional Navigation and Acceleration Velocity obstacles in 2D field to achieve 20\% faster and more computer efficient algorithm compared classical aerospace algorithms.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+\section{Course Projects}
+\resumeSubHeadingListStart
+
+   \resumeProjectHeading{Robot Learning and Embodied AI $|$ \textnormal{\small DD2601 - KTH}}{Sep 2025 - Oct 2025}
+    \resumeItemListStart 
+        \resumeItem{Implemented a 3D semantic object mapping pipeline using RGB-D data from ARKitScenes, integrating OwlV2 for open-vocabulary object detection, SAM for segmentation, and CLIP for semantic grounding.}
+        \resumeItem{Deployed a pre-trained Vision-Language-Action (VLA) model for robot manipulation, executing policy inference from visual inputs and natural-language commands.}
+        \resumeItem{Characterised generalisation and robustness failures of the VLA on unseen tasks, contributing concrete observations on where current VLA architectures break down.}
+    \resumeItemListEnd
+
+    
+    \resumeProjectHeading{Multi Agent Path Finding in Unity3D $|$ \textnormal{\small DD2348 - KTH}}{Feb 2025 - May 2025}
+    \resumeItemListStart 
+        \resumeItem{Developed Hybrid A* path planner and waypoint tracking system in Unity3D for kinematically constrained single-agent (car/drone) navigation, achieving competitive performance.}
+        \resumeItem{Engineered Conflict-Based Search (CBS) to solve MAPF for over 20 holonomic (drones) and non-holonomic (cars) agents, minimizing makespan in shared environments. }
+        \resumeItem{Implemented a greedy dynamic goal assignment strategy for multi-agent teams ("bakery problem") integrated with CBS, optimizing task allocation and minimizing overall travel time. }
+        % \resumeItem{battle snake }
+    \resumeItemListEnd
+
+    \newpage 
+    \resumeProjectHeading{Reinforcement Learning for Pacman Capture The Flag $|$ \textnormal{\small DD2348 - KTH}}{Mar 2021 - Jun 2021}
+    \resumeItemListStart 
+        \resumeItem{Designed a hybrid AI for Pacman CTF (Unity3D), merging a custom Behavior Tree for high level strategy with RL models for specialized actions (attack, defend, escape).}
+        \resumeItem{Trained RL (PPO) policies via Unity ML-Agents with role-specific designs (observations, rewards) and advanced methods (phased training, self-play, curriculum learning) for adaptive agent behavior.}
+        \resumeItem{Evaluated strategic agent decision-making and adaptive behavior switching in a competitive, partially observable, dynamic multi-agent Pacman environment.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Image analysis and Computer vision $|$ \textnormal{\small DD2348 - KTH}}{Oct 2024 - Nov 2024}
+    \resumeItemListStart 
+        \resumeItem{Applied Fourier Transforms for image filtering and frequency analysis; designed Gaussian smoothing filters via FFT to reduce noise and study effects on varying image resolutions.}
+        \resumeItem{Implemented a multi-scale differential geometry edge detector (computing $L_{vv}, L_{vvv}$ for zero\-crossings)
+        and used Hough Transform for line detection from edges.}
+        \resumeItem{Implemented image matching (SIFT, RANSAC) to estimate homographies (planar scenes) and fundamental matrices, enabling 3D scene reconstruction via triangulation}  
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Introduction to robotics $|$ \textnormal{\small DD2348 - KTH}}{Sep 2024 - Oct 2024}
+    \resumeItemListStart 
+        \resumeItem{Implemented an iterative inverse kinematics solver from scratch for a 7-DOF KUKA robot arm in ROS}
+        \resumeItem{Applied RRT* to find collision-free paths for a Dubins car, showcasing path planning for non-holonomic vehicles.}
+        \resumeItem{Engineered 2D occupancy grid mapping solutions in ROS, processing laser scans to build maps, identify free space, and generate C-spaces for navigation}  
+        \resumeItem{Integrated a Behavior Tree mission planner for a TIAGo mobile manipulator (using ROS and Gazebo), enabling autonomous navigation, vision-based grasping, and robust task execution (e.g., kidnapped robot recovery).}
+    \resumeItemListEnd
+    
+    % \resumeSubheading{Control of Automotive Systems}{Jun 2022 - Nov 2022}{\emph{Mentored by \href{https://home.iitm.ac.in/srikanthan/}{ Prof.Srikanthan Sridharan}}}{IIT Madras, India}
+    \resumeProjectHeading{Control of Automotive Systems $|$ \textnormal{\small ED4060 - IIT Madras}}{Jun 2022 - Nov 2022}
+    \resumeItemListStart
+        \resumeItem{Designed a heading angle controller for autonomous ground vehicle considering its vehicle dynamics \& reduced error between the desired heading angle and the actual heading angle while working within given performance specifications}
+        \resumeItem{Improved performance of pneumatic brake system by designing P and PI controllers to meet given specifications.}
+        \resumeItem{Designed a nonlinear controller (Sliding Mode Control) to attenuate the effect of external forces on a tractor’s hydraulic hitch, to reduce excessive vibrations and to prevent front-wheel lift-off.}
+    \resumeItemListEnd
+    
+
+\resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+
+\begin{multicols}{2}
+    \begin{itemize}[itemsep=- 1pt, parsep=3pt]
+    \small{ 
+              \item \textbf{Languages} : Python, C, C++, C\texttt{\#}\\ 
+              \item \textbf{Robotics} : ROS2, Unity3D, MATLAB, MuJoCo\\ 
+              \item \textbf{DL} : Pytorch, OpenCV, wandb, JAX \\ 
+              \item \textbf{Tools} : VS Code, Docker, Git, \LaTeX, CUDA, Slurm
+              \item \textbf{CAD} : Fusion360, Solidworks, Ansys, COMSOL
+        } 
+    \end{itemize}
+\end{multicols}
+
+%------RELEVANT COURSEWORK-------
+\section{Relevant Coursework}
+
+\textbf{Robotics} - Introduction to Field and Service Robotics, Mechanics of Serial Robots, \\
+\textbf{Controls} - Modelling of Dynamical Systems, Control Theory Advanced \& Practice, Controls of Automotive Systems\\ 
+\textbf{Programming} - Image Analysis and Computer Vision, Fundamentals of Deep Learning, Data Structures and Algorithms\\
+
+\end{document}

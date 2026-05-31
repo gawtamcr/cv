@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780216823.2824 "single-ComVis.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.pdf" "single-ComVis" 1780216823.78533 0
+["pdflatex"] 1780216945.46828 "acad-jana.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.pdf" "acad-jana" 1780216945.94803 0
   "/etc/texmf/web2c/texmf.cnf" 1778492940.37091 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.aux" 1780216823.72398 890 cb1351ba54b9bb0ef666f8ddfb6cd2b2 "pdflatex"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.out" 1780216823.72798 795 f05fd150853230805df2eb7738ef7c67 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.aux" 1780216945.88117 1154 b9bf088eff34fe367133637f0deceb52 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.out" 1780216945.88117 1042 12a859fc86eb3504d80766f5cefe6007 "pdflatex"
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -33,7 +33,10 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
@@ -114,10 +117,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1778492960.3798 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778492981 8214764 5bdb6629a5c8e6779678a942d9e3d5df ""
-  "single-ComVis.tex" 1780215537.87178 11953 9ff5f09216b0b1200627ce7e2e15ab38 ""
+  "acad-jana.tex" 1780216941.16084 20509 45386f0ba210976db5dd2c5c5ef9f037 ""
   (generated)
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.aux"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.log"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.out"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ComVis.pdf"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.aux"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.log"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.out"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-jana.pdf"
   (rewritten before read)

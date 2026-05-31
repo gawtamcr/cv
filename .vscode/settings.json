@@ -4,7 +4,7 @@
     {
       "name": "build-cv",
       "command": "bash",
-      "args": ["-lc", "./cv/build.sh %DOCFILE%"]
+      "args": ["-lc", "build.sh %DOCFILE%"]
     }
   ],
   "latex-workshop.latex.recipes": [
@@ -12,5 +12,6 @@
       "name": "Build CV with separate PDF",
       "tools": ["build-cv"]
     }
-  ]
+  ],
+  "latex-workshop.latex.recipe.default": "Build CV with separate PDF"
 }
