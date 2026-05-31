@@ -24,12 +24,13 @@ base_no_ext="${base_name%.tex}"
 tex_dir="$(cd "$(dirname "$texfile")" && pwd)"
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 build_dir="$script_dir/build"
+pdf_dir="$script_dir/pdfs"
 
-mkdir -p "$build_dir"
+mkdir -p "$build_dir" "$pdf_dir"
 
 pushd "$tex_dir" >/dev/null
 latexmk -pdf -interaction=nonstopmode -file-line-error -outdir="$build_dir" "$base_name" "$@"
 
-mv -f "$build_dir/$base_no_ext.pdf" "$tex_dir/$base_no_ext.pdf"
-echo "PDF written to: $tex_dir/$base_no_ext.pdf"
+mv -f "$build_dir/$base_no_ext.pdf" "$pdf_dir/$base_no_ext.pdf"
+echo "PDF written to: $pdf_dir/$base_no_ext.pdf"
 popd >/dev/null

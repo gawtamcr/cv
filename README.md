@@ -11,6 +11,9 @@ From `Overleaf/cv`:
 ./build.sh single-page/single-ComVis.tex
 ```
 
+To download : 
+- https://raw.githubusercontent.com/gawtamcr/cv/main/multi-page/acad-jana.pdf
+
 ## Output layout
 
 - `cv/build/` stores LaTeX build artifacts:

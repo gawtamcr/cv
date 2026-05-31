@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780216915.07733 "acad-bosch.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.pdf" "acad-bosch" 1780216915.53603 0
+["pdflatex"] 1780230087.18045 "acad-bosch.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.pdf" "acad-bosch" 1780230087.67145 0
   "/etc/texmf/web2c/texmf.cnf" 1778492940.37091 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.aux" 1780216915.47562 1031 695ec0cfd240014f2485304ec71ceef9 "pdflatex"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.out" 1780216915.47562 864 88d1edfd4da5849c46b6b4bf8650f9e1 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.aux" 1780230087.60907 1031 695ec0cfd240014f2485304ec71ceef9 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.out" 1780230087.60907 864 88d1edfd4da5849c46b6b4bf8650f9e1 "pdflatex"
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -119,7 +119,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1778492960.3798 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778492981 8214764 5bdb6629a5c8e6779678a942d9e3d5df ""
-  "acad-bosch.tex" 1780216726.70929 14378 a61b7b0b07113e17ba17ce73efd3bc74 ""
+  "acad-bosch.tex" 1780228580.93142 14378 7c7bdaf832aa9768cd2bcba5fb5b3b4f ""
   (generated)
   "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.aux"
   "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-bosch.log"
