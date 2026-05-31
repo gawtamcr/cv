@@ -1,28 +1,49 @@
-# CV Build Workflow
+# CV — Gawtam Chithra Ramesh
 
-This folder contains the CV LaTeX build helper.
+LaTeX-based CV system. Maintains a master profile and generates tailored CVs for job applications.
 
-## Usage
+## Repo layout
 
-From `Overleaf/cv`:
-
-```bash
-./build.sh multi-page/acad-bosch.tex
-./build.sh single-page/single-ComVis.tex
+```
+cv/
+├── master.tex          — MasterCV (reference only — has known errors, see CLAUDE.md §6)
+├── build.sh            — build helper
+├── CLAUDE.md           — full profile, formatting rules, tailoring workflow (read this first)
+├── scripts/            — all tailored CVs
+│   ├── single-ComVis.tex     (single-page, Computer Vision)
+│   ├── single-GenMod.tex     (single-page, Generative Modelling)
+│   ├── acad-bosch.tex        (academic 2-page, Bosch)
+│   └── acad-jana.tex         (academic 2-page, Jana)
+├── pdfs/               — output PDFs
+├── build/              — latexmk artifacts (auto-generated, do not commit)
+└── references/         — project reports, transcripts, course materials
 ```
 
-To download : 
-- https://raw.githubusercontent.com/gawtamcr/cv/main/multi-page/acad-jana.pdf
+## Build
 
-## Output layout
+```bash
+# From repo root
+./build.sh scripts/<file>.tex
 
-- `cv/build/` stores LaTeX build artifacts:
-  - `.aux`, `.log`, `.fls`, `.out`, `.fdb_latexmk`, etc.
-- The generated PDF is moved beside the source `.tex` file:
-  - `cv/multi-page/acad-bosch.pdf`
-  - `cv/single-page/single-ComVis.pdf`
+# Examples
+./build.sh scripts/acad-bosch.tex
+./build.sh scripts/single-ComVis.tex
+```
 
-## Notes
+The PDF is written next to the `.tex` source. Build artifacts go to `build/`.
 
-- The helper uses `latexmk` and the `-outdir` option.
-- The PDF is intentionally kept next to the `.tex` source, while all intermediate files are centralized in `cv/build/`.
+## Two CV families
+
+| Family | Use for | Length | Accent colour |
+|--------|---------|--------|---------------|
+| `single-*` | Industry / focused tech roles | Exactly 1 page | Blue |
+| `acad-*` | Research / PhD / academic roles | Up to 2 pages | Black |
+
+## Tailoring workflow
+
+1. Drop a job description into a Claude Code session opened in this directory.
+2. Claude loads `CLAUDE.md` automatically — full profile and rules are pre-loaded.
+3. Confirm template family (`single-*` vs `acad-*`).
+4. Claude drafts the `.tex`, builds it, confirms no overflow.
+
+See `CLAUDE.md` for the complete profile, all formatting rules, and the step-by-step tailoring process.

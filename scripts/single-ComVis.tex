@@ -26,24 +26,12 @@
 	urlcolor=Blue,
 }
 
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.19in}
@@ -51,55 +39,35 @@
 \addtolength{\textheight}{1.2in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large\bfseries }{}{0em}{}[
-\color{Blue}{}
-\titlerule
-\vspace{-5pt}
-]
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large\bfseries}{}{0em}{}[
+\color{Blue}{}\titlerule\vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{ \item\small{ {#1 \vspace{-2pt}} } }
-%\newcommand{\classesList}[4]{ \item\small{ {#1 #2 #3 #4 \vspace{-2pt}} } }
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
 
 \newcommand{\resumeSubheading}[4]{
-\vspace{-2pt}
-\item
+\vspace{-2pt}\item
 \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-	\textbf{#1}       & {\small #2} \\
-     [-2pt]
+	\textbf{#1} & {\small #2} \\[-2pt]
 	\textit{{\small#3}} & \textit{\small #4} \\
 \end{tabular*}
 \vspace{-10pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-\vspace{-2pt}
-\item
+\vspace{-2pt}\item
 \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-	\textbf{#1}  & {\small #2} \\
+	\textbf{#1} & {\small #2} \\
 \end{tabular*}
 \vspace{-18pt}
 }
 
-% \newcommand{\resumeSubSubheading}[2]{ \item
-% \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-% 	\textit{\small#1} & \textit{\small #2} \\
-% \end{tabular*}
-% \vspace{-7pt}
-% }
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}
-\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -110,158 +78,109 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5.0pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
-	
+
 %----------HEADING----------
 \begin{center}
     {\Huge \scshape Gawtam Chithra Ramesh} \\
     \vspace{3pt}
-    \small 
-    { % \raisebox{-0.2\height}
+    \small
     \href{tel:+46764518589}{{\faMobile*} \textcolor{black}{(+46) 76541-8589}} ~
     \href{mailto:gawtamcr3@gmail.com}{{\faPaperPlane} \textcolor{black}{gawtamcr3@gmail.com}} ~
-    \href{https://linkedin.com/in/gawtamcr/}{{\faLinkedinIn} \textcolor{black}{Gawtam C R}} ~
+    \href{https://linkedin.com/in/gawtamcr/}{{\faLinkedinIn} \textcolor{black}{gawtamcr}} ~
     \href{https://github.com/gawtamcr}{{\faGithub} \textcolor{black}{gawtamcr}} ~
     \href{https://gawtamcr.github.io/}{{\faGlobe} \textcolor{black}{Portfolio}} ~
     \href{https://maps.google.com/?q=Stockholm,Sweden}{{\faMapMarker*} \textcolor{black}{Stockholm, Sweden}}
-    }
     \vspace{-8pt}
 \end{center}
 
 %-----------EDUCATION-----------
 \section{\color{Blue}Education}
-    \resumeSubHeadingListStart 
-    \resumeSubheading {KTH Royal Institute of Technology}{Aug 2024 -- Jun 2026}{Master of Science in Systems, Controls, and Robotics - 4.62/5.0}{Stockholm, Sweden}
-    \resumeSubheading {Indian Institute of Technology Madras}{Aug 2019 -- Jun 2024}{Dual Degree (B.Tech in \href{https://ed.iitm.ac.in/about.html}{Engineering Design} and M.Tech in \href{https://ed.iitm.ac.in/~robotics_lab/}{Robotics})}{Chennai, India}
-    %{Coursework:}
+\resumeSubHeadingListStart
+    \resumeSubheading{KTH Royal Institute of Technology}{Aug 2024 -- Jun 2026}{MSc Systems, Controls \& Robotics \textnormal{-- GPA 4.62/5.0}}{Stockholm, Sweden}
+    \resumeSubheading{Indian Institute of Technology Madras}{Aug 2019 -- Jun 2024}{Dual Degree B.Tech Engineering Design + M.Tech Robotics \textnormal{-- GPA 7.9/10}}{Chennai, India}
     \vspace{-0.3em}
     \small{
     \begin{itemize}[leftmargin=0.15in]
         \setlength{\itemsep}{-0.3em}
-        \item Awarded (among 30 of 800+) the IIT Madras \textbf{Young Research Fellowship} based on remarkable research potential.
-        \item Secured \textbf{97.64} Percentile in JEE Advanced and \textbf{99.10} Percentile in JEE Mains among \textbf{1.5M} candidates.
-        \item Secured an All India Rank of 52 out of 50k in Undergraduate Common Entrance Examination for Design.
+        \item Awarded (among 30 of 800+) the IIT Madras \textbf{Young Research Fellowship} based on research potential.
+        \item Secured \textbf{97.64} percentile JEE Advanced; \textbf{All India Rank 52} in UCEED among 50,000+ candidates.
     \end{itemize}
     }
     \vspace{-0.7em}
-    \textbf{Skills} : Python, C++, C\texttt{\#}, MATLAB, ROS2, Unity3D, Fusion360, MuJoCo, Pytorch, OpenCV, YOLO, Docker, Git
-    \resumeSubHeadingListEnd
+    \textbf{Skills}: Python, C++, PyTorch, JAX, OpenCV, YOLO, ROS/ROS2, MuJoCo, PyBullet, MATLAB, Docker, Git
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{\color{Blue}Professional Experience}
 \resumeSubHeadingListStart
 
-    \resumeSubheading{Guiding Generative Flow with Formal Specifications}{(Ongoing) Jan 2026 - Jun 2026}{ABB Robotics
-    %, Mentor - Matthew Lock and Jonathan Styrud
-    }{Västerås, Sweden} 
-    \resumeItemListStart 
-        \resumeItem{Using generative flow matching for safe, compositional translation from natural language to}
-        \resumeItem{control policies under Signal Temporal Logic constraints for long horizon industrial manipulation.}
-        \resumeItem{Exploring reinforcement learning and geometric generative modeling for .}
+    \resumeSubheading{Device Research Intern -- 3D Scene Graphs}{Jul 2025 -- Dec 2025}{Ericsson Research}{Lund, Sweden}
+    \resumeItemListStart
+        \resumeItem{Integrated instance segmentation + tracking into Hydra (SOTA 3DSG framework) for robust scene interpretation.}
+        \resumeItem{Built RGB-D inpainting pipeline to remove privacy-sensitive objects from 3D scene graphs in real time.}
+        \resumeItem{Benchmarked SOTA inpainting methods on reconstruction fidelity vs.\ real-time performance trade-off.}
+        \resumeItem{\textbf{Lead author:} IMPROVE 2026 (Long Oral, Best Paper nominee); ICPR 2026 (under review).}
     \resumeItemListEnd
-    
-    \resumeSubheading{Device Research Intern on 3D Scene Graph}{Jul 2025 - Dec 2025}{Ericsson Research
-    %, Mentor - Puren Guler and Hector Caltenco
-    }{Lund, Sweden} 
-    \resumeItemListStart 
-        \resumeItem{Developed a robust 3DSG pipeline by integrating instance segmentation and tracking into a SOTA framework (HYDRA)}
-        \resumeItem{Designed a synchronized RGB-D inpainting pipeline to remove privacy-sensitive objects from 3DSG in realtime.}
-        % \resumeItem{Analyzed 3DSG frameworks identifying key research gaps in object merging, parameter sensitivity, and privacy protection}
-        \resumeItem{Benchmarked SOTA inpainting algorithms to balance reconstruction fidelity with real-time performance. }
-        % \resumeItem{\textbf{Lead author} on research papers submitted to peer-reviewed venues, \textbf{ICPR26}(under-review) \textbf{IMPROVE26}(accepted)} 
-    \resumeItemListEnd
-    
-    \resumeSubheading{Graduate Robotics Intern on Modular Collaborative Robots}{Dec 2022 - Jul 2023}{Systemantics India Pvt. Ltd.
-    %, Mentor - Jagannath Raju
-    }{Bangalore, India}
-    \resumeItemListStart 
-        \resumeItem{Developed backward-chained Behavior Trees for 6DOF manipulator to enable robust, long-horizon trajectory planning}
-        \resumeItem{ROS2}
-        % \resumeItem{Designed and implemented a 6-DOF trajectory generation and control pipeline in C++, achieving real-time joint }
-        \resumeItem{actuation via low-latency communication with motor controllers using D-Bus and SocketCAN.}
-    \resumeItemListEnd
-    
-    % \resumeSubheading{Tested Multi Object Detection and Tracking Models}{June 2021 -- July 2021}{Blurgs Research Labs Pvt. Ltd.}{Remote, India} 
-    % \resumeItemListStart 
-    %     \resumeItem{Analyzed 5 State of the art Multi object tracking networks for startup's first product for The Indian Navy}
-    %     \resumeItem{Trained and tested various MOT networks like \textbf{Siam-MOT} and \textbf{FairMOT} for Surveillance with Drones and CCTV.}
-    %     \resumeItem{Used \textbf{FairMOT} to track and get the trail of multiple moving objects and Re-identify objects in real-time.}
-    % \resumeItemListEnd
 
-    % \resumeSubheading{Robotics Intern on Pallet Handling}{June 2021 -- July 2021}{\textbf{Yaskawa} Pvt. Ltd, Mentor - Manju Tiwari}{Gurgaon, India} 
-    % \resumeItemListStart 
-    %     \resumeItem{Modeled and analyzed 3D palletizing algorithm and mechanics for mixed carton sizes using MotoSim and teach pendant.}
-    %     \resumeItem{Developed a C++ algorithm to effectively use robot’s memory when sending data to the robot from computer.}
-    % \resumeItemListEnd
-        
+    \resumeSubheading{Multi-Object Detection \& Tracking Intern}{Jun 2021 -- Jul 2021}{Blurgs Research Labs}{Remote, India}
+    \resumeItemListStart
+        \resumeItem{Analyzed 5 SOTA MOT networks for an Indian Navy drone/CCTV surveillance product.}
+        \resumeItem{Trained Siam-MOT and FairMOT; deployed FairMOT for real-time multi-object tracking and re-ID.}
+    \resumeItemListEnd
+
 \resumeSubHeadingListEnd
-%-----------EXPERIENCE-----------
+
+%-----------RESEARCH-----------
 \section{\color{Blue}Research Experience}
 \resumeSubHeadingListStart
- 
-    \resumeSubheading{Taxonomy-guided VLMs for Deformable Object Manipulation}{Jan 2025 - Nov 2025}{\href{https://www.kth.se/is/rpl}{Prof. Florian T. Pokorny}, Deptartment of Computer Science, KTH}{Stockholm, Sweden} 
-    \resumeItemListStart 
-        %%%%%%%%%%%% NEED TO CHANGE THIS ASAP
-        \resumeItem{Integrated taxonomy-guided vision-language models (Gemini, Qwen) to interpret DOM scenes and map 
-        % structured outputs to 
-        motion primitives}
-        % \resumeItem{Built prompt–taxonomy framework to generate structured codes and textual justifications for robot-parsable perception}
-        \resumeItem{Performed quantitative analysis to identify failure modes and guide iterative improvements to the taxonomy and prompts}
-        \resumeItem{Currently integrating multi-modal data and temporal cues to enhance the perception pipeline's robustness.}
-        % \resumeItem{Authored and submitted the results at ROMADO, an \textbf{IROS2025} workshop.}
+
+    \resumeSubheading{Taxonomy-Guided VLMs for Deformable Object Manipulation}{Jan 2025 -- Nov 2025}{KTH Robotics, Perception \& Learning Lab -- Advisor: Prof.\ Florian T.\ Pokorny}{Stockholm, Sweden}
+    \resumeItemListStart
+        \resumeItem{Integrated VLMs (GPT-4o, Gemini, Qwen) with T-DOM taxonomy to map scenes to robot motion primitives.}
+        \resumeItem{Built prompt-taxonomy framework; evaluated with F1-Score, BERT, BLEU/ROUGE on taxonomy correctness.}
+        \resumeItem{\textbf{Lead author:} ROMADO @ IROS 2025 (accepted); targeting IROS 2026 + IJRR full paper.}
     \resumeItemListEnd
 
-    \resumeSubheading{Low cost autonomous ultrasound using SfM}{Jan 2024 - May 2024}{\href{https://niravatgit.github.io/patelnirav.com/index.html}{Prof. Nirav Partel}, Department of Engineering Design, IIT Madras}{Chennai, India}
-    \resumeItemListStart 
-        % \resumeItem{Developed a 3D perception system using COLMAP (SfM) from monocular RGB images to build cost-efficient human torso reconstruction for more accessible ultrasound.}
-        \resumeItem{Developed an autonomous ultrasound scanning system using ROS, integrating a 5-DoF robotic arm with a single RGB }
-        \resumeItem{Single RGB Camera to achieve cost-effective 3D perception for medical imaging.}
-        % \resumeItem{Implemented motion planning and control using ROS and MoveIt, and simulated the 5DOF manipulation in Gazebo.}
-        \resumeItem{Integrated perception algorithms within ROS, processing 3D point clouds from RGB images t}
+    \resumeSubheading{Autonomous Ultrasound Scan via Structure-from-Motion}{Jan 2024 -- May 2024}{IIT Madras INSPIRE Lab -- Advisor: Prof.\ Nirav Patel}{Chennai, India}
+    \resumeItemListStart
+        \resumeItem{COLMAP SfM (monocular RGB, 20 poses) + OpenMVS dense reconstruction of human torso; no calibration needed.}
+        \resumeItem{Point cloud segmentation (abdominal ROI) + surface normal estimation; ROS + MoveIt motion planning.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-% %-----------PROJECTS-----------
+%-----------PROJECTS-----------
 \section{\color{Blue}Technical Projects}
 \resumeSubHeadingListStart
-    
-    \resumeProjectHeading{Robot Learning and Embodied AI $|$ \textnormal{\small DD2601 - KTH}}{Sep 2025 - Oct 2025}
-    \resumeItemListStart 
-        \resumeItem{Implemented a 3D semantic object mapping pipeline using RGB-D data from ARKitScenes, integrating OwlV2}
-        \resumeItem{for open-vocabulary object detection, SAM for segmentation, and CLIP for semantic grounding.}
-        \resumeItem{Built a 3D semantic mapping pipeline using RGB-D data and foundation models }
+
+    \resumeProjectHeading{3D Open-Vocabulary Semantic Mapping $|$ \textnormal{\small DD2600 Robot Learning, KTH}}{2025}
+    \resumeItemListStart
+        \resumeItem{Object presence/absence detection in CLIP voxel maps (ARKitScenes; OwlV2 + SAM + CLIP pipeline).}
+        \resumeItem{ResNet18 classifier: 86.2\% val accuracy, ROC-AUC 0.917; voxel-threshold baseline: 85\%, AUC 0.921.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{Deep Learning Advanced $|$ \textnormal{\small DD2601 - KTH}}{Sep 2025 - Oct 2025}
-    \resumeItemListStart 
-        \resumeItem{Mean Flow }
-        \resumeItem{SimCLR}
-        \resumeItem{VAE}
+    \resumeProjectHeading{Image Analysis \& Computer Vision $|$ \textnormal{\small DD2423, KTH}}{2024}
+    \resumeItemListStart
+        \resumeItem{Gaussian FFT filtering; differential-geometry edge detection ($L_{vv}$/$L_{vvv}$ zero-crossings); Hough transform.}
+        \resumeItem{SIFT + RANSAC for homography + fundamental matrix estimation; 3D reconstruction via triangulation.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{ RL and MAS $|$ \textnormal{\small DD2601 - KTH}}{Sep 2025 - Oct 2025}
-    \resumeItemListStart 
-        \resumeItem{MAPF}
-        \resumeItem{Pacman RL - BT}
-        \resumeItem{Minimax}
+    \resumeProjectHeading{Deep Learning Advanced $|$ \textnormal{\small DD2610, KTH}}{2025}
+    \resumeItemListStart
+        \resumeItem{SimCLR: NTXent loss, ResNet18 + projection head, 86\% linear-eval accuracy on 1\% CIFAR-10 labels.}
+        \resumeItem{MAE: ViT from scratch (PatchEmbed, multi-head attention, asymmetric encoder-decoder, 75\% masking).}
     \resumeItemListEnd
-
-    
 
 \resumeSubHeadingListEnd
 
+%-----------PUBLICATIONS-----------
 \section{\color{Blue}Lead Author Publications}
 \begin{itemize}[leftmargin=0.15in]
-    \setlength{\itemsep}{-5pt}
-    \item Robust Object-layer Construction of 3DSG Using Instance Segmentation (IMPROVE26)(\textbf{Best Paper Award})
-    \item Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction.(\textbf{ICPR26}).(Under Review)
-    \item Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided VLMs.(\textbf{IROS25} Workshop)
+    \setlength{\itemsep}{-4pt}
+    \item Robust Object-layer Construction of 3D Scene Graphs Using Instance Segmentation. \textbf{IMPROVE 2026} (\textbf{Best Paper nominee}).
+    \item Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction. \textbf{ICPR 2026} (Under Review).
+    \item Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided VLMs. \textbf{IROS 2025}.
 \end{itemize}
-
-
-
 
 \end{document}

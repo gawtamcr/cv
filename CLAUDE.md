@@ -28,10 +28,16 @@ cv/
 │   └── acad-jana.tex        (academic 2-page, Jana)
 ├── pdfs/              — output PDFs
 ├── build/             — latexmk artifacts (auto-generated)
-└── references/        — project report PDFs + transcripts (details in section 5)
+└── references/        — project reports, transcripts, course materials (details in section 5)
     ├── Transcript_IITMadras.pdf   — official IITM grade card (CGPA 7.9, 546 credits)
     ├── Transcript_KTH.pdf         — official KTH transcript (grades per course, print date 2026-05-22)
-    └── VLA_Project_Slides.pdf     — DD2600 Robot Learning & Embodied AI course project slides
+    ├── VLA_Project_Slides.pdf     — DD2600 Robot Learning & Embodied AI course project slides
+    ├── Systemantics_Poster.pdf    — IIT Madras project poster for Systemantics internship
+    ├── ddp/                       — DDP report + presentation (autonomous ultrasound)
+    ├── ComVis/                    — DD2423 lab PDFs (Labs 1–3)
+    ├── intro to robo/             — DD2410 assignment PDFs (IK, Planning, Mapping)
+    ├── iitm_resumes/              — old IITM intern + placement CVs (reference only)
+    └── sop/                       — motivation letters (not used for CV tailoring)
 ```
 
 Build command (from repo root):
@@ -126,9 +132,12 @@ Mentors: Püren Güler, Hector Caltenco.
 - **Lead author:** IMPROVE 2026 (accepted, Long Oral, Best Paper nominee); ICPR 2026 (under review).
 
 **Graduate Robotics Intern, Modular Collaborative Robots — Systemantics India, Bangalore** (Dec 2022–Jul 2023)
-Mentor: Jagannath Raju.
-- Backward-chained Behavior Trees for 6-DoF industrial manipulator; robust long-horizon trajectory planning.
-- 6-DoF trajectory generation + control pipeline in C++; real-time joint actuation via low-latency D-Bus and SocketCAN to motor controllers.
+Mentor: Jagannath Raju (CTO, Systemantics India Pvt. Ltd).
+- Built complete system controller from scratch for company's cobot portfolio; real-time processes via Linux PREEMPT RT patch; inter-process communication via SocketCAN, FDCAN, semaphores, and signal interrupts.
+- S-Curve trajectory generation (7-zone profile) for 6-DoF manipulator; reduces mechanical shock by smooth accel/decel.
+- Backward-chained Behavior Trees for task planning (lab pipetting, fast-food kiosk, inspection); robust long-horizon execution.
+- Integrated ROS2 (MoveIt2 Hybrid Motion Planning, Gazebo physics sim); created URDFs and SRDFs for cobot.
+- Started impedance/admittance control work for collision detection and kinesthetic teaching (disturbance observer).
 
 **Multi-Object Detection & Tracking — Blurgs Research Labs** (Jun–Jul 2021, Remote)
 - Analyzed 5 SOTA MOT networks for Indian Navy product; trained/tested Siam-MOT and FairMOT for drone/CCTV surveillance; real-time multi-object tracking + re-identification with FairMOT.
@@ -142,9 +151,11 @@ Mentor: Manju Tiwari.
 - Unity3D toolkit in C# to upload 3D models (60+ formats) into VR via Autodesk Forge APIs in real time.
 - Heroku web app for 3D content viewing; removed engineer dependency for content upload.
 
-**Battery Pack Design for Hyperloop Pods — IIT Madras** (Oct 2020–Jun 2021)
-Mentors: Prof. Satya Chakravarthy, Prof. TM Muruganandam.
-- Designed high-discharge battery pack; extended life 10% by reducing peak temperature 10°C with Al heat sink.
+**Battery Pack Design for Hyperloop Pods — Avishkar Hyperloop, IIT Madras** (Oct 2020–Jun 2021)
+Mentors: Prof. Satya Chakravarthy, Prof. TM Muruganandam. Role: Power Systems Engineer.
+- Designed high-discharge battery pack; extended life **10%** by reducing peak temperature 10°C with Al heat sink.
+- Custom Battery Management System (BMS) for voltage/temperature monitoring and safety.
+- Won "Most Scalable Design" award by Zeleros (Spanish Hyperloop company); top 5 for mechanical/propulsion.
 - Selected in top 24 teams for European Hyperloop Week, Valencia, Spain.
 
 **Graduate Teaching Assistant — Field and Service Robotics (ID4060), IIT Madras** (Aug–Nov 2023)
@@ -162,9 +173,14 @@ Advisor: Florian T. Pokorny. Collaborators: David Blanco-Mulero (UPC), Yifei Don
 - Simulation in PyBullet; real-world validation planned.
 
 **Dual Degree Project, SfM for Autonomous Ultrasound — IIT Madras INSPIRE Lab** (Jan–May 2024)
-Advisor: Nirav Patel (CORRECT spelling — master.tex wrongly says "Partel").
-- COLMAP Structure-from-Motion on monocular RGB → 3D human torso reconstruction for low-cost ultrasound.
-- Autonomous scanning: 5-DoF arm + single RGB camera; ROS, MoveIt, Gazebo; end-to-end perception→planning loop.
+Advisor: Nirav Patel (CORRECT spelling — master.tex wrongly says "Partel"). Dept. of Engineering Design, IIT Madras.
+Title: "Cost Efficient Autonomous Ultrasound Scan Using a Single RGB-Camera."
+Hardware: igus RL-DP-5 (5-DoF), Intel i7-9750H, 16GB RAM, NVIDIA GTX 1660ti, single RGB camera on end-effector.
+- COLMAP SfM (pycolmap, Bundle Adjustment) on 20 predefined RGB poses → sparse point cloud; no camera calibration needed.
+- OpenMVS Multi-View Stereo → dense 3D torso reconstruction; .ply point cloud published as ROS PointCloud2.
+- Point cloud segmentation (abdomen ROI) → tangent vector estimation for probe approach angle.
+- ROS/MoveIt motion planning + Gazebo physics simulation; end-to-end perception→planning loop.
+- Future work: force-sensor end-effector control and image recognition for automated ROI selection.
 
 **UAV Motion Planning & Control — IIT Madras Young Research Fellowship** (Sep 2021–Apr 2022)
 Advisor: Prof. Satadal Ghosh.
@@ -201,21 +217,25 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 **Artificial Intelligence — DD2380** (KTH, 2025)
 - Hybrid A* + waypoint tracking for car & drone in Unity; motion primitives from bicycle model (11 steering values over 50°, wheelbase=2); adaptive braking; car robust on all tracks; competitive total 422.3s (2nd of 5 groups).
 
-**Image Analysis & Computer Vision** (KTH, Oct–Nov 2024)
-- Fourier transforms for image filtering; Gaussian smoothing via FFT; multi-scale differential-geometry edge detection (L_vv, L_vvv zero-crossings); Hough Transform for line detection.
-- Image matching: SIFT + RANSAC for homographies (planar) and fundamental matrices; 3D reconstruction via triangulation.
+**Image Analysis & Computer Vision — DD2423** (KTH, Oct–Nov 2024, grade: A)
+Three labs confirmed from course materials:
+- *Lab 1 (Filtering):* Fourier/FFT properties; Gaussian convolution via FFT (gaussfft); smoothing effects on noise (Gaussian, median, ideal low-pass); subsampling analysis.
+- *Lab 2 (Edge detection & Hough):* Differential geometry edge detector — L̃_vv zero-crossings + L̃_vvv sign condition; multi-scale analysis (t=0.0001–64); implemented `extractedge()` and `houghline()` (ρ-θ accumulator, gradient-magnitude weighted); applied to real images.
+- *Lab 3 (Image matching & 3D):* SIFT feature extraction + RANSAC for homography estimation (planar scenes); fundamental matrix estimation via SVD + RANSAC (epipolar constraint); 3D triangulation from projection matrices (constrained least squares → smallest eigenvector of G^T G).
 
 **Applied Estimation — EL2320** (KTH, 2025, solo)
 - 2D EKF-SLAM in MATLAB; known + unknown data association via Mahalanobis gating; dynamic state-vector/covariance expansion for new landmarks (resolved matrix-consistency bug). Filter consistency analysis: known-assoc x-error peak ~0.01m within 3σ; unknown-assoc on symmetric maps → divergence/NaN (EKF overconfidence).
 
-**Advanced Control — EL2520** (KTH, 2025, team: Cezary Banaszek, Joachim Jobard, Aassik Pazhani)
+**Advanced Control — EL2520** (KTH, 2025, grade: C, team: Cezary Banaszek, Joachim Jobard, Aassik Pazhani)
+Tools: MATLAB only.
 - Four-tank process: modeled from first principles; RGA analysis; min/non-min phase analysis (γ1+γ2 condition). Decentralized dynamic-decoupling controller + robust Glover-McFarlane (H∞ loop-shaping). Robust controller: min-phase rise ~4s, 20% overshoot, 2% ss error.
 
-**Introduction to Robotics — DD2410** (KTH, Sep–Oct 2024)
-- Iterative inverse-kinematics solver from scratch for 7-DoF KUKA arm in ROS.
-- RRT* for non-holonomic Dubins-car path planning.
-- 2D occupancy-grid mapping in ROS from laser scans.
-- Behavior Tree mission planner for TIAGo mobile manipulator (ROS/Gazebo): autonomous navigation, vision-based grasping, kidnapped-robot recovery.
+**Introduction to Robotics — DD2410** (KTH, Sep–Oct 2024, grade: A)
+Four assignments confirmed from course materials:
+- *IK:* Analytic IK for 3-DoF SCARA; iterative Jacobian-based IK for 7-DoF KUKA (DH table: L=0.4, M=0.39; Kattis score 22/22).
+- *Planning:* Hybrid A* / RRT for Dubins car (state: x,y,θ; control: φ∈[-π/4,π/4]); collision-free path with circular + line obstacles; Kattis: 6/6 Grade C cases.
+- *Mapping:* 2D occupancy grid from ROS laser scans (LaserScan → map frame → grid indices); E-part: occupied cells; C-part: raytrace free space + C-space inflation + OccupancyGridUpdate (rectangle-only updates).
+- *Mobile Manipulation:* Behavior Tree mission planner for TIAGo (ROS/Gazebo) — autonomous navigation, vision-based grasping, kidnapped-robot recovery.
 
 **Control of Automotive Systems** (IIT Madras, Jun–Nov 2022, Mentor: Prof. Srikanthan Sridharan)
 - Heading-angle controller for autonomous ground vehicle (vehicle dynamics model).
@@ -234,6 +254,15 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 **Python API for Fusion360** (IIT Madras, Jan–Feb 2020, Mentor: Prof. Ramanathan)
 - Fusion360 API script to auto-generate 3D model variants from CSV dimension files; eliminated manual rework.
 
+**CFD Aerofoil for Formula Student Car** — ED4040, IIT Madras (Mar–Apr 2021)
+Tools: Solidworks (CAD), Ansys (CFD analysis).
+- Designed front-wing aerofoil for maximum downforce/drag ratio; improved F/D ratio by 33% via position/angle optimization.
+- CFD analysis in Ansys to determine optimal aerofoil setup.
+
+**Gesture Robot** — ED5080 Mechatronics, IIT Madras (Jul–Nov 2021)
+- 2-DoF robotic arm for identifying and lifting objects using electromagnets; programmed on Arduino Mega.
+- Proximity sensors for detection; LED light reflection for color sensing; manual and automatic calibration.
+
 **Discord Bot** (Apr 2021) — C#; YouTube search + mp3 conversion via ffmpeg; text/reaction responses.
 
 ### Publications (lead author)
@@ -251,7 +280,8 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 | Tools | Docker, Git, LaTeX, CUDA, Slurm, VS Code |
 | CAD / CAE | Fusion360, Solidworks, Ansys, COMSOL |
 
-(Note: Fusion360 confirmed in Hyperloop+Segway+API projects. Solidworks/Ansys: confirm which project before citing. COMSOL confirmed in Segway + Four-Tank lab.)
+(Note: Fusion360 confirmed in Hyperloop+Segway+API projects. Solidworks+Ansys confirmed in CFD Aerofoil project (ED4040). COMSOL confirmed in Segway stress analysis and Hyperloop. Four-Tank (EL2520) used MATLAB only — not COMSOL.
+CAD/CAE skills are real but Gawtam is not currently pursuing mechanical/design roles. Include only for roles explicitly requiring multi-disciplinary or mechatronics background — not as a headline skill for robotics/ML roles.)
 
 ### Achievements
 
@@ -268,9 +298,10 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 - **Graduate Teaching Assistant**, Field and Service Robotics ID4060, IIT Madras (Aug–Nov 2023): ROS + CoppeliaSim assignments for 40 students.
 
 ### Extra-Curricular
-- IIT Madras Volleyball (Agrata festival)
-- Won national drawing competition (Times of India, Mar 2015)
-- Game development enthusiast; Valorant Silver 2
+- IIT Madras Volleyball (Agrata festival; selected among 20/100 students for freshman NSO training)
+- **Drawing:** Won 3 state-level + 5+ district-level competitions (Oil Pastels and Pencils). National competition win was Times of India (Mar 2015) — 1 of the state wins.
+- Game development enthusiast; Valorant Silver 2; built complete 3D game solo in Unity3D (obstacles, enemies, points, UI, VFX)
+- **ShARE Junior Consultant** (IIT Madras, May 2021): selected from 200 applicants after global interview; 'Mobility' module; global team of 700 across 15 nations
 
 ---
 
@@ -296,7 +327,7 @@ Five practicals, all implemented from scratch in PyTorch/JAX:
 1. ~~**Deep Generative Modelling project**~~ — **RESOLVED: does not exist as a separate course.** Gawtam only did DD2610 (Deep Learning Advanced). The "Deep Generative Modelling" entry in master.tex and single-GenMod.tex is erroneous — remove from all CVs. DD2610 details fully documented in section 5.
 2. ~~**Robot Learning & Embodied AI course code**~~ — **RESOLVED: DD2600** (confirmed from KTH transcript).
 3. ~~**Exact KTH GPA**~~ — **RESOLVED: 4.62/5.0** (credit-weighted: A=5, B=4.5, C=4, D=3.5, E=3; 57 graded hp, P/F excluded). IIT Madras CGPA confirmed **7.9/10** (546 credits, Jul 2024).
-4. **Solidworks / Ansys** — listed as skills; confirm which project(s) actually used each.
+4. ~~**Solidworks / Ansys**~~ — **RESOLVED: both used in CFD Aerofoil project (ED4040, Solidworks CAD + Ansys CFD).** Only cite for multi-disciplinary/mechatronics roles — Gawtam is not pursuing purely mechanical roles.
 5. ~~**SimCLR / VAE details in DD2610**~~ — **RESOLVED: full details now documented** in section 5. No VAE project; the practicals were MAE, SimCLR, FixMatch, MeanFlow, Uncertainty Estimation.
 
 ---
