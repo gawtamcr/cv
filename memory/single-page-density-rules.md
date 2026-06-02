@@ -45,8 +45,12 @@ alternate may be added. The Publications block + tight spacing (`\resumeItemList
   restructure titles, change "Best Paper Award", or wrap in `\small`. It already fits one line each at normal 11pt.
   If pub details change, edit `single-ref.tex` first, then re-copy everywhere.
 - **Publications stay at normal 11pt** — never `\small` them.
-- To fit ≥30 lines on one page, the ONLY lever is tightening vertical `\vspace` (e.g. `\resumeItemListEnd`
-  set to `-7.5pt` in single-ComVis) — never shrink margins or font. **DANGER: past ~-11pt the next section
+- **Spacing is controlled via NAMED VSPACE VARIABLES, not inline numbers (PRIMARY mechanism — see [[vspace-variables]]).**
+  Every single-* resume (seeded from `single-ref.tex`) defines 18 canonical `\newcommand{\v...}` spacing vars in a
+  categorized block at the top of the preamble; edit the variable's value there, never the raw `\vspace`/`\setlength`
+  where it is consumed. Keep the 18 names identical across resumes; only values differ.
+- To fit ≥30 lines on one page, the ONLY lever is tightening vertical `\vspace` (now via the `\vListEnd` variable;
+  seed default `-7.5pt`) — never shrink margins or font. **DANGER: past ~-11pt the next section
   header OVERLAPS the bullet above it, and pdfinfo/grep still report 1 page + 0 overfull (they miss it).
   Keep `\vspace` in -7.5 to -10pt; if it needs more you have too much content — cut to the 30-line floor
   (drop a 4th bullet, unwrap any 2-line bullet, shorten Skills to ONE line) instead of cranking `\vspace`.**

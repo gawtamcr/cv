@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.11)  2 JUN 2026 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.11)  2 JUN 2026 10:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**single-ref.tex
-(./single-ref.tex
+**single-FactoryAutomation.tex
+(./single-FactoryAutomation.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -431,31 +431,31 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CommentStream=\write3
 
 Excluding comment 'comment')
-Package hyperref Info: Option `colorlinks' set `true' on input line 61.
+Package hyperref Info: Option `colorlinks' set `true' on input line 32.
 
-(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.aux)
-\openout1 = `single-ref.aux'.
+(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-FactoryAutomation.aux
+)
+\openout1 = `single-FactoryAutomation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 167.
-LaTeX Font Info:    ... okay on input line 167.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count296
 \scratchdimen=\dimen170
@@ -469,67 +469,69 @@ LaTeX Font Info:    ... okay on input line 167.
 \makeMPintoPDFobject=\count301
 \everyMPtoPDFconversion=\toks27
 )
-Package hyperref Info: Link coloring ON on input line 167.
- (/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.out)
-(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.out)
+Package hyperref Info: Link coloring ON on input line 135.
+
+(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-FactoryAutomation.out
+)
+(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-FactoryAutomation.out
+)
 \@outlinefile=\write4
-\openout4 = `single-ref.out'.
+\openout4 = `single-FactoryAutomation.out'.
 
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree2 on i
-nput line 174.
-
-(/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree2.fd)
+nput line 142.
+ (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree2.fd)
 LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
- input line 176.
+ input line 144.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomebrands0.fd)
 LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10> not 
 available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
-n input line 176.
+n input line 144.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree1 on i
-nput line 178.
+nput line 146.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fontawesome5/ufontawesomefree1.fd)
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 185.
+(Font)              using `OT1/cmr/bx/n' instead on input line 153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 185.
+(hyperref)                removing `\@ifnextchar' on input line 153.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 159.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 187.
+(Font)              <7> on input line 161.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 187.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 187.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 18
-7.
+(Font)              <5> on input line 161.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
+1.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 194.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 194.
+(Font)              <6> on input line 168.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 204.
+(hyperref)                removing `\@ifnextchar' on input line 178.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 234.
+(hyperref)                removing `\@ifnextchar' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 255.
+(hyperref)                removing `\@ifnextchar' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 283.
+(hyperref)                removing `\@ifnextchar' on input line 250.
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
@@ -542,7 +544,8 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 st/fonts/enc/dvips/fontawesome5/fa5free2.enc}{/usr/share/texlive/texmf-dist/fon
 ts/enc/dvips/fontawesome5/fa5brands0.enc}{/usr/share/texlive/texmf-dist/fonts/e
 nc/dvips/fontawesome5/fa5free1.enc}]
-(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.aux)
+(/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-FactoryAutomation.aux
+)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -551,17 +554,18 @@ L3 programming layer <2024-01-22>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `single-ref.out' has not changed.
-(rerunfilecheck)             Checksum: F05FD150853230805DF2EB7738EF7C67;795.
+Package rerunfilecheck Info: File `single-FactoryAutomation.out' has not change
+d.
+(rerunfilecheck)             Checksum: 5DC2923F1E39C663402CEFE3EB016A3E;893.
  ) 
 Here is how much of TeX's memory you used:
- 14320 strings out of 474222
- 247076 string characters out of 5748733
- 1966975 words of memory out of 5000000
- 36391 multiletter control sequences out of 15000+600000
- 565198 words of font info for 63 fonts, out of 8000000 for 9000
+ 14308 strings out of 474222
+ 247185 string characters out of 5748733
+ 1968975 words of memory out of 5000000
+ 36382 multiletter control sequences out of 15000+600000
+ 563105 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,334b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,441b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Br
 ands-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome5
 /FontAwesome5Free-Solid.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
@@ -571,11 +575,11 @@ mcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.
-pdf (1 page, 151489 bytes).
+Output written on /home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-Fact
+oryAutomation.pdf (1 page, 153323 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

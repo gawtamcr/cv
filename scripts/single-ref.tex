@@ -79,11 +79,48 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+%-------------------------
+% VSPACE VARIABLES (PRIMARY spacing control) — tune ALL layout spacing here, never edit
+% the raw \vspace values inline. 18 canonical names, categorized by document section, with
+% cross-section macro vars in Global/Shared first. To fit one page, make values MORE
+% negative here (start with \vListEnd) — never touch margins or font. Copies of this seed
+% inherit these names; keep the names identical across all single-* resumes.
+
+% --- Global / Shared (drive macros used across every section) ---
+\newcommand{\vSectionBefore}{-4pt} % space before each \section title
+\newcommand{\vSectionRule}{-5pt}   % space after the blue section titlerule
+\newcommand{\vTableRowSep}{-2pt}   % row strut between title/subtitle rows in resumeSubheading
+\newcommand{\vItemTop}{-2pt}       % tightening atop resumeItem / subheading / project heading
+\newcommand{\vSubheadingEnd}{-10pt}% space after a resumeSubheading block
+\newcommand{\vSubItem}{-4pt}       % space after a resumeSubItem
+\newcommand{\vListStart}{-0.3em}   % space before an item list start (resumeItemListStart / education list)
+\newcommand{\vListEnd}{-7.5pt}     % space after resumeItemListEnd <- tighten THIS first if a real resume spills to page 2
+\newcommand{\vListGroupEnd}{-1em}  % space after resumeSubHeadingListEnd
+
+% --- Header ---
+\newcommand{\vHeadingName}{3pt}    % space under the name in the header
+\newcommand{\vHeadingEnd}{-8pt}    % space after the header block
+
+% --- Summary (only used if an optional Summary section is added — rule 15; neutral defaults) ---
+\newcommand{\vSummaryTop}{2pt}     % space atop the summary text
+\newcommand{\vSummaryEnd}{-6pt}    % space after the summary text
+
+% --- Education ---
+\newcommand{\vEduSep}{0pt}         % space between education entries (0pt = adjacent, the seed default)
+\newcommand{\vEduItemSep}{-0.3em}  % itemsep between Education achievement bullets
+\newcommand{\vEduSkills}{-0.7em}   % space before the education Skills line
+
+% --- Technical Projects ---
+\newcommand{\vProjectEnd}{-18pt}   % space after a resumeProjectHeading block
+
+% --- Publications ---
+\newcommand{\vPubSep}{-5pt}        % itemsep between Publications entries
+
 % Sections formatting
-\titleformat{\section}{ \vspace{-4pt}\scshape\raggedright\large\bfseries }{}{0em}{}[
+\titleformat{\section}{ \vspace{\vSectionBefore}\scshape\raggedright\large\bfseries }{}{0em}{}[
 \color{Blue}{}
 \titlerule
-\vspace{-5pt}
+\vspace{\vSectionRule}
 ]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -91,38 +128,38 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{ \item\small{ {#1 \vspace{-2pt}} } }
+\newcommand{\resumeItem}[1]{ \item\small{ {#1 \vspace{\vItemTop}} } }
 
 \newcommand{\resumeSubheading}[4]{
-\vspace{-2pt}
+\vspace{\vItemTop}
 \item
 \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
 	\textbf{#1}       & {\small #2} \\
-     [-2pt]
+     [\vTableRowSep]
 	\textit{{\small#3}} & \textit{\small #4} \\
 \end{tabular*}
-\vspace{-10pt}
+\vspace{\vSubheadingEnd}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-\vspace{-2pt}
+\vspace{\vItemTop}
 \item
 \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
 	\textbf{#1}  & {\small #2} \\
 \end{tabular*}
-\vspace{-18pt}
+\vspace{\vProjectEnd}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}
-\vspace{-4pt}}
+\vspace{\vSubItem}}
 
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-1em}}
-\newcommand{\resumeItemListStart}{\vspace{-0.3em}\begin{itemize}[leftmargin=0.25in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7.5pt}}  % <- tighten THIS (more negative) if a real resume spills to page 2
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{\vListGroupEnd}}
+\newcommand{\resumeItemListStart}{\vspace{\vListStart}\begin{itemize}[leftmargin=0.25in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{\vListEnd}}  % <- tighten \vListEnd (more negative) if a real resume spills to page 2
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,7 +169,7 @@
 %----------HEADING---------- (FIXED boilerplate — reuse verbatim; links: Phone, Email, LinkedIn, GitHub, Portfolio, Location)
 \begin{center}
     {\Huge \scshape Gawtam Chithra Ramesh} \\
-    \vspace{3pt}
+    \vspace{\vHeadingName}
     \small
     { \href{tel:+46764518589}{{\faMobile*} \textcolor{black}{(+46) 76541-8589}} ~
     \href{mailto:gawtamcr3@gmail.com}{{\faPaperPlane} \textcolor{black}{gawtamcr3@gmail.com}} ~
@@ -141,24 +178,25 @@
     \href{https://gawtamcr.github.io/}{{\faGlobe} \textcolor{black}{Portfolio}} ~
     \href{https://maps.google.com/?q=Stockholm,Sweden}{{\faMapMarker*} \textcolor{black}{Stockholm, Sweden}}
     }
-    \vspace{-8pt}
+    \vspace{\vHeadingEnd}
 \end{center}
 
 %-----------EDUCATION----------- (FIXED boilerplate; GPA in parentheses, NOT after a dash. Latest end date first.)
 \section{\color{Blue}Education}
     \resumeSubHeadingListStart
     \resumeSubheading{KTH Royal Institute of Technology}{Aug 2024 -- Jun 2026}{Master of Science in Systems, Controls, and Robotics \textnormal{(GPA 4.62/5.0)}}{Stockholm, Sweden}
+    \vspace{\vEduSep}
     \resumeSubheading{Indian Institute of Technology Madras}{Aug 2019 -- Jul 2024}{Dual Degree (B.Tech Engineering Design and M.Tech Robotics) \textnormal{(GPA 7.9/10)}}{Chennai, India}
-    \vspace{-0.3em}
+    \vspace{\vListStart}
     \small{
     \begin{itemize}[leftmargin=0.15in]
-        \setlength{\itemsep}{-0.3em}
+        \setlength{\itemsep}{\vEduItemSep}
         \item Awarded (among 30 of 800+) the IIT Madras \textbf{Young Research Fellowship} based on remarkable research potential.
         \item Secured \textbf{97.64} Percentile in JEE Advanced and \textbf{99.10} Percentile in JEE Mains among \textbf{1.5M} candidates.
         \item Secured an All India Rank of \textbf{52} out of 50k in Undergraduate Common Entrance Examination for Design.
     \end{itemize}
     }
-    \vspace{-0.7em}
+    \vspace{\vEduSkills}
     \textbf{Skills} : [Tailor to the role; ~12-13 keywords, comma-separated, ONE line. Lead with the job's must-haves.]
     \resumeSubHeadingListEnd
 
@@ -244,7 +282,7 @@
 %-----------PUBLICATIONS----------- (RULE 6: this block is CANONICAL — copy it verbatim into new resumes; normal font, NOT \small)
 \section{\color{Blue}Lead Author Publications}
 \begin{itemize}[leftmargin=0.15in]
-    \setlength{\itemsep}{-5pt}
+    \setlength{\itemsep}{\vPubSep}
     \item Robust Object-layer Construction of 3DSG Using Instance Segmentation (IMPROVE26)(\textbf{Best Paper Award})
     \item Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction.(\textbf{ICPR26}).(Under Review)
     \item Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided VLMs.(\textbf{IROS25} Workshop)
