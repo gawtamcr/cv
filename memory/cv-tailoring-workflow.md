@@ -18,12 +18,13 @@ output consistent, relevant, and within his rules across sessions.
 3. Select & reorder content to match the role; map job keywords to his real experience.
 4. **Proactively ASK** when the role needs a skill you suspect he has from a project but isn't explicit
    (his explicit example: a CAD role → ask about CAD done in projects like Hyperloop battery pack /
-   Human Powered Segway / Fusion360 API). Also ask if a relevant project lacks detail (see [[cv-open-gaps]]).
-5. Draft the .tex: for single-* COPY `scripts/single-ref.tex` (the canonical seed — NOT ComVis/GenMod, which
-   may be deleted) and fill its bracketed hints; for acad-* copy the closest `acad-*` (see [[cv-repo-structure]]).
+   Human Powered Segway / Fusion360 API). Also ask if a relevant project lacks detail.
+5. Draft the .tex: for single-* COPY `src/single-ref.tex` (the PRIMARY canonical seed — never seed from
+   `src/scripts/archive/` ComVis/GenMod or from master.tex) and fill its bracketed hints; for acad-* copy the
+   closest `src/scripts/acad-*` (see [[cv-repo-structure]]). Save the new file in `src/scripts/`.
    Rename to a role-specific name (pattern: `single-<Role>.tex` or `acad-<Company>.tex`).
    Entry counts per section are flexible (e.g. trade a Technical Project for a 4th Professional Experience) as
    long as the 30-line floor and all other rules hold — see [[single-page-density-rules]].
 6. Enforce [[cv-formatting-rules]] — STRICT one page + 1-line bullets for single-*; 2 pages OK for acad-*.
-7. Build with `./build.sh scripts/<file>.tex` and verify length/overflow before handing back.
-8. Save any newly learned facts to memory (update [[master-profile]] / resolve [[cv-open-gaps]]).
+7. Build with `./build.sh src/scripts/<file>.tex` and verify length/overflow before handing back.
+8. Save any newly learned facts to memory (update [[master-profile]]).

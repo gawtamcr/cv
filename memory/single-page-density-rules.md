@@ -11,11 +11,12 @@ Ground rules Gawtam set for ALL single-page (`single-*`) resumes. **Why:** he wa
 resume to maximize information density — fill the page to its limits without wrapping or going to page 2.
 Maximizing characters-per-line is the central formatting idea. See [[cv-formatting-rules]].
 
-**Template files (UPDATED 2026-05-31):** COPY `scripts/single-ref.tex` to start every new single-* resume —
-it is the CANONICAL SEED (gold preamble, rules-as-comments + [bracketed hints], worked-example ABB/Ericsson
-bullets, and the canonical Publications block already in place). Do NOT seed from `single-ComVis.tex` or
-`single-GenMod.tex` — those are compliant EXAMPLE OUTPUTS and Gawtam may delete them. A `single-ref2.tex`
-alternate may be added. The Publications block + tight spacing (`\resumeItemListEnd` at `-7.5pt`) now live in `single-ref.tex`.
+**Template files (UPDATED 2026-06-02; scripts/ moved under src/):** COPY `src/single-ref.tex` to start every
+new single-* resume — it is the PRIMARY CANONICAL SEED (gold preamble, the 18 named vspace variables
+[[vspace-variables]], rules-as-comments + [bracketed hints], worked-example ABB/Ericsson bullets, and the
+canonical Publications block already in place). Do NOT read or seed from `src/scripts/archive/single-ComVis.tex`
+or `single-GenMod.tex` (deprecated old outputs) or from master.tex. New resumes are saved in `src/scripts/`.
+The Publications block + tight spacing (`\vListEnd` at `-7.5pt`) live in `src/single-ref.tex`.
 
 **Measured layout numbers** (11pt article, `\small` bullet font, this repo's margins; usable bullet width = **537.7pt**):
 - Plain mixed-case prose wraps **~115–118 chars; target 108–114** (pack bullets full, don't leave them at ~95).

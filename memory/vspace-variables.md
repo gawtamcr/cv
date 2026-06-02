@@ -15,9 +15,9 @@ is consumed. Keep the 18 names IDENTICAL across every single-* resume; only the 
 See [[single-page-density-rules]] and [[cv-formatting-rules]].
 
 **Where:** a categorized block near the top of the preamble, right after `\setlength{\tabcolsep}{0in}` and
-before `% Sections formatting`. `single-ref.tex` is the canonical home (its values are the seed defaults);
-a new resume inherits the block on copy. `single-FactoryAutomation.tex` was the first resume to use it.
-(`single-ComVis.tex` / `single-GenMod.tex` predate this and may lack the block — do not seed from them anyway.)
+before `% Sections formatting`. `src/single-ref.tex` is the canonical home (its values are the seed defaults);
+a new resume inherits the block on copy. `src/scripts/single-FactoryAutomation.tex` was the first resume to use it.
+(The archived `src/scripts/archive/single-ComVis.tex` / `single-GenMod.tex` predate this — do not seed from them anyway.)
 
 **The 18 canonical variable names, grouped by section (Global/Shared first, then document order):**
 - *Global/Shared (macro-wide):* `\vSectionBefore` (before `\section` title), `\vSectionRule` (after blue

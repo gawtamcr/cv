@@ -26,15 +26,19 @@ targeted gap questions when a role demands unlisted experience.
 
 ```
 cv/
-├── master.tex         — working MasterCV LaTeX (messy; contains errors — see section 6)
-├── build.sh           — build helper: ./build.sh scripts/<file>.tex
+├── master.tex         — working MasterCV LaTeX (messy; contains errors — see section 6). REFERENCE/scratch only; NEVER read or seed an output from it.
+├── build.sh           — build helper: ./build.sh src/<path>.tex  (resolves any path)
 ├── CLAUDE.md          — this file
-├── scripts/           — all tailored CVs live here
-│   ├── single-ref.tex       ← CANONICAL SEED: gold preamble + rules-as-comments + [bracketed hints], worked-example ABB/Ericsson bullets, and the canonical Publications block. COPY THIS to start any new single-* resume. (A single-ref2.tex alternate may be added.)
-│   ├── single-ComVis.tex    (single-page blue, Computer Vision role — a compliant EXAMPLE OUTPUT only; may be deleted in future, do NOT seed from it)
-│   ├── single-GenMod.tex    (single-page blue, Generative/Foundation-Model role — a compliant EXAMPLE OUTPUT only; may be deleted in future, do NOT seed from it)
-│   ├── acad-bosch.tex       (academic 2-page, Bosch)
-│   └── acad-jana.tex        (academic 2-page, Jana)
+├── src/               — ALL active LaTeX lives here
+│   ├── single-ref.tex       ← CANONICAL SEED (PRIMARY FILE): gold preamble + 18 named vspace variables + rules-as-comments + [bracketed hints], worked-example ABB/Ericsson bullets, and the canonical Publications block. COPY THIS to start any new single-* resume. This is the ONLY file to seed single-* resumes from.
+│   └── scripts/             — tailored / generated resumes
+│       ├── single-FactoryAutomation.tex   (single-page blue, Robotics & Factory Automation)
+│       ├── single-FieldRobotics.tex       (single-page blue, Field Robotics)
+│       ├── acad-bosch.tex                 (academic 2-page, Bosch)
+│       ├── acad-jana.tex                  (academic 2-page, Jana)
+│       └── archive/                       — DEPRECATED old outputs; do NOT read or seed from these
+│           ├── single-ComVis.tex          (old example output; predates current conventions)
+│           └── single-GenMod.tex          (old example output; predates current conventions)
 ├── pdfs/              — output PDFs
 ├── build/             — latexmk artifacts (auto-generated)
 ├── memory/            — VENDORED persistent memory (travels with the repo; canonical store, update here)
@@ -44,9 +48,9 @@ cv/
 │   ├── user-gawtam.md               — who the user is
 │   ├── cv-formatting-rules.md       — strict formatting rules (mirrors section 3)
 │   ├── single-page-density-rules.md — measured density rules for single-* resumes
+│   ├── vspace-variables.md          — the 18 named spacing vars (primary spacing mechanism)
 │   ├── cv-tailoring-workflow.md     — step-by-step tailoring process (mirrors section 4)
-│   ├── cv-repo-structure.md         — repo layout + master.tex errors
-│   └── cv-open-gaps.md              — resolved/open profile questions (mirrors section 7)
+│   └── cv-repo-structure.md         — repo layout + master.tex errors
 └── references/        — project reports, transcripts, course materials (details in section 5)
     ├── Transcript_IITMadras.pdf   — official IITM grade card (CGPA 7.9, 546 credits)
     ├── Transcript_KTH.pdf         — official KTH transcript (grades per course, print date 2026-05-22)
@@ -59,14 +63,17 @@ cv/
     └── sop/                       — motivation letters (not used for CV tailoring)
 ```
 
+**Which .tex to touch (avoid confusion with old files):**
+- **Seed every single-* resume from `src/single-ref.tex` — the single PRIMARY file. Never read or copy from anything under `src/scripts/archive/` or from `master.tex`.**
+- Active tailored resumes live in `src/scripts/`. For acad-* roles, copy the closest `src/scripts/acad-*.tex`.
+- `master.tex` is a messy reference for profile facts only (section 5/6 already capture what matters) — do not read it during tailoring and never produce output from it.
+
 Build command (from repo root):
 ```bash
-./build.sh scripts/<file>.tex
-# → PDF written next to the .tex; build artifacts go to build/
+./build.sh src/single-ref.tex          # or any path, e.g.:
+./build.sh src/scripts/single-FactoryAutomation.tex
+# → PDF written to pdfs/<name>.pdf; build artifacts go to build/
 ```
-
-NOTE: `README.md` mentions `multi-page/` and `single-page/` dirs — those do NOT exist.
-All tailored CVs are in `scripts/`.
 
 ---
 
@@ -85,7 +92,7 @@ All tailored CVs are in `scripts/`.
 - Tailor by **selecting** content and rewording to match the job description, not by dumping everything.
 - **Ordering (ALL sections, ALL templates): strictly reverse-chronological by END date — latest end first.** Applies to Education, Professional Experience, Research, and Technical Projects. This overrides relevance ordering: tailor by choosing WHICH entries to include, never by moving a newer entry below an older one. (An ongoing entry uses its end month, e.g. `Jun 2026`.)
 - Quantify with real numbers from section 5 where they strengthen relevance.
-- **Never invent experience**. If you suspect relevant unlisted experience, ask (see section 7).
+- **Never invent experience**. If you suspect relevant unlisted experience, ask (see section 4, step 4).
 
 ### Single-page density rules (STRICT — measured in this exact layout)
 
@@ -137,8 +144,8 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
    - `single-ref.tex` is the canonical home of this block; its values are the seed defaults. A new resume inherits the block on copy; only edit the values, never rename. (Older example outputs `single-ComVis.tex` / `single-GenMod.tex` predate this and may not have the block — do not seed from them anyway.)
 
 ### Naming convention for new files
-- `scripts/single-<RoleKeyword>.tex` for single-page
-- `scripts/acad-<CompanyOrRole>.tex` for academic
+- `src/scripts/single-<RoleKeyword>.tex` for single-page
+- `src/scripts/acad-<CompanyOrRole>.tex` for academic
 
 ---
 
@@ -149,10 +156,10 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
 3. Map job keywords to Gawtam's real experience (section 4–5).
 4. **Proactively ask** when the role needs something you suspect he's done but hasn't stated explicitly.
    Classic example: a role needing CAD → ask about CAD done in Hyperloop battery pack (COMSOL),
-   Human Powered Segway (Fusion360 + COMSOL stress), Fusion360 API project. See section 7 for open gaps.
-5. For single-* roles, **copy `scripts/single-ref.tex`** (the canonical seed — gold preamble, rules-in-comments, worked ABB/Ericsson examples, and the canonical Publications block already in place) and fill its bracketed hints with tailored content; for acad-* copy the closest `acad-*`. Rename per convention above. Do NOT seed from `single-ComVis.tex` / `single-GenMod.tex` (example outputs, may be deleted).
+   Human Powered Segway (Fusion360 + COMSOL stress), Fusion360 API project. (All previously open profile gaps are now resolved — see the section 5 profile.)
+5. For single-* roles, **copy `src/single-ref.tex`** (the canonical seed — gold preamble, 18 named vspace variables, rules-in-comments, worked ABB/Ericsson examples, and the canonical Publications block already in place) and fill its bracketed hints with tailored content; for acad-* copy the closest `src/scripts/acad-*`. Rename per convention above. Do NOT read or seed from anything in `src/scripts/archive/` (the old `single-ComVis.tex` / `single-GenMod.tex` outputs) or from `master.tex`.
 6. Draft the .tex with selected/reordered content, enforcing rules from section 3.
-7. Build: `./build.sh scripts/<file>.tex` — confirm no page overflow before reporting done.
+7. Build: `./build.sh src/scripts/<file>.tex` — confirm no page overflow before reporting done.
 8. Update this CLAUDE.md if you learn new facts about Gawtam's profile.
 
 ---
@@ -387,24 +394,14 @@ CAD/CAE skills are real but Gawtam is not currently pursuing mechanical/design r
 | IIT Madras GPA | Any value other than 7.9 | **7.9/10** (confirmed from official transcript) |
 | Robot Learning code | "TBD" or "DD2601" | **DD2600** |
 | `\newpage` in master.tex | Hard page break mid-experience | Remove for single-page variants |
-| README dirs | References `multi-page/`, `single-page/` | Files actually live in `scripts/` |
+| Layout drift | Older docs reference `multi-page/`, `single-page/`, or `scripts/` at root | Active LaTeX lives under `src/` (seed `src/single-ref.tex`, resumes in `src/scripts/`) |
 
 ---
 
-## 7. Open gaps — ask Gawtam before using these on a CV
-
-1. ~~**Deep Generative Modelling project**~~ — **RESOLVED: does not exist as a separate course.** Gawtam only did DD2610 (Deep Learning Advanced). The "Deep Generative Modelling" entry in master.tex and single-GenMod.tex is erroneous — remove from all CVs. DD2610 details fully documented in section 5.
-2. ~~**Robot Learning & Embodied AI course code**~~ — **RESOLVED: DD2600** (confirmed from KTH transcript).
-3. ~~**Exact KTH GPA**~~ — **RESOLVED: 4.62/5.0** (credit-weighted: A=5, B=4.5, C=4, D=3.5, E=3; 57 graded hp, P/F excluded). IIT Madras CGPA confirmed **7.9/10** (546 credits, Jul 2024).
-4. ~~**Solidworks / Ansys**~~ — **RESOLVED: both used in CFD Aerofoil project (ED4040, Solidworks CAD + Ansys CFD).** Only cite for multi-disciplinary/mechatronics roles — Gawtam is not pursuing purely mechanical roles.
-5. ~~**SimCLR / VAE details in DD2610**~~ — **RESOLVED: full details now documented** in section 5. No VAE project; the practicals were MAE, SimCLR, FixMatch, MeanFlow, Uncertainty Estimation.
-
----
-
-## 8. Session behavior summary
+## 7. Session behavior summary
 
 - Load this file first; no external memory needed.
 - When tailoring: follow section 4 workflow; enforce section 3 rules.
 - When in doubt about a fact: check section 5 first; if still unsure, ask Gawtam.
-- When you learn new confirmed facts: update this CLAUDE.md (the section 5 profile or section 7 gaps).
+- When you learn new confirmed facts: update this CLAUDE.md (primarily the section 5 profile).
 - Never summarize what you just did at the end of a response — Gawtam can read the diff.

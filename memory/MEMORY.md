@@ -13,4 +13,3 @@
 - [Vspace Variables](vspace-variables.md) — 18 named spacing vars are the PRIMARY way to edit single-* spacing
 - [CV Tailoring Workflow](cv-tailoring-workflow.md) — step-by-step process when a job description arrives
 - [CV Repo Structure](cv-repo-structure.md) — repo layout, build.sh usage, known errors in master.tex
-- [CV Open Gaps](cv-open-gaps.md) — unresolved profile questions to ask Gawtam

@@ -12,7 +12,7 @@ ATS-parsable, recruiter-skimmable, visually tight documents; violating these mea
 
 **How to apply:**
 - **Two template families** (pick per role — Gawtam decides each time, see [[cv-tailoring-workflow]]):
-  - `single-*` (e.g. single-ComVis, single-GenMod): **STRICT one page, each bullet ≤ 1 line.**
+  - `single-*` (e.g. single-FactoryAutomation, single-FieldRobotics): **STRICT one page, each bullet ≤ 1 line.**
     Blue accents (`\color{Blue}` sections, blue links), Portfolio link in header, condensed
     "Lead Author Publications" list. For industry / focused technical roles.
   - `acad-*` (e.g. acad-bosch, acad-jana): **may run 2 pages**, longer bullets allowed for full detail.
@@ -25,14 +25,14 @@ ATS-parsable, recruiter-skimmable, visually tight documents; violating these mea
   - **One idea per bullet** — each bullet is a complete standalone sentence (or worst-case phrase). Reach the 30-line floor with real content (more entries/bullets), NEVER by chopping one sentence across multiple bullet lines (GenMod's split-sentence style is the anti-pattern, do not copy it).
   - Use full sentences > phrases; avoid `+` joiners and avoid vague/abstract numbers or concepts — cite concrete real metrics.
   - **ALWAYS include: Publications section, the Ericsson internship, and the ABB thesis** — in every single-page resume, regardless of role.
-  - **Seed new single-* resumes by copying `scripts/single-ref.tex`** (canonical seed, tight spacing + canonical Publications block built in) — NOT ComVis/GenMod (example outputs, may be deleted). Always Read the .tex and verify the built PDF (page count, no wraps) when done.
+  - **Seed new single-* resumes by copying `src/single-ref.tex`** (the PRIMARY canonical seed: tight spacing, 18 named vspace variables [[vspace-variables]], canonical Publications block built in) — never from `src/scripts/archive/` ComVis/GenMod or master.tex. Always Read the .tex and verify the built PDF (page count, no wraps) when done.
 - All CVs must stay ATS-parsable (`\pdfgentounicode=1` is already set; keep machine-readable text).
 - Tailor: reorder/select experience, projects, and skills to match the job; drop irrelevant items
   to hold the length limit rather than shrinking margins/fonts further.
 - Quantify with real numbers from [[project-deep-reference]] where they strengthen relevance.
-- Be truthful — never invent experience; if unsure whether Gawtam has a skill, ASK (see [[cv-open-gaps]]).
+- Be truthful — never invent experience; if unsure whether Gawtam has a skill, ASK.
 - **NEVER mention Kattis** or any assignment auto-grader / evaluation platform (confirmed 2026-06-02) — it is just a grading tool, meaningless to recruiters. Drop the score, or state the outcome plainly ("passed all test cases") without naming the grader. No "22/22 on Kattis", "6/6 Grade C cases", etc.
 - **Skills line = concrete technologies ONLY** (confirmed 2026-06-02): languages/frameworks/libraries/named tools a reader can verify (Python, C++, ROS/ROS2, MoveIt, PyTorch, JAX, OpenCV, Docker, Gazebo, MuJoCo, CUDA). **Do NOT list generic domain/role labels** ("Robotics", "Cobots", "Factory Automation", "Computer Vision", "Machine Learning", "Real-Time Control") — they are job categories, not skills, and too generic. Those domain words are fine in the Summary and in bullet prose / as ATS keywords, just not as Skills entries. Lead Skills with the role's must-have tools.
 - **Summary / overview section (2–3 lines about Gawtam): ASK FIRST every time** (added 2026-06-02). Applies to BOTH single-* and acad-*, but always ask before drafting one — never add unprompted. Tailor it per role (no fixed blurb). On single-* it COUNTS toward the 30-line floor (does not raise it), so adding a summary means cutting equivalent bullet lines to stay one page. Place as the first `\section` directly under the header, above Education.
-- **Build**: `./build.sh scripts/<file>.tex` from repo root → PDF written next to the .tex, build
-  artifacts go to `build/`. See [[cv-repo-structure]].
+- **Build**: `./build.sh src/scripts/<file>.tex` (or `src/single-ref.tex`) from repo root → PDF written to
+  `pdfs/<name>.pdf`, build artifacts go to `build/`. See [[cv-repo-structure]].

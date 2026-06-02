@@ -75,7 +75,7 @@ Deep per-project facts (metrics, methods) mined from the report PDFs live in [[p
 - **Multi-Agent Systems (DD2438)** — MAPF: Hybrid A* + Conflict-Based Search (CBS) for 20+ holonomic
   (drone) / non-holonomic (car) agents; greedy "bakery" goal assignment. Plus Pacman CTF (RL+BT).
 - **Artificial Intelligence (DD2380)** — Path planning: Hybrid A* + waypoint tracking for car & drone.
-- **Image Analysis & Computer Vision (single-ComVis target)** — Fourier/FFT filtering, multi-scale
+- **Image Analysis & Computer Vision (DD2423)** — Fourier/FFT filtering, multi-scale
   differential-geometry edge detection (L_vv, L_vvv), Hough; SIFT+RANSAC homography/fundamental matrix, triangulation.
 - **Applied Estimation (EL2320)** — 2D EKF-SLAM in MATLAB, known + unknown data association, filter
   consistency/overconfidence analysis (solo project).
@@ -84,8 +84,8 @@ Deep per-project facts (metrics, methods) mined from the report PDFs live in [[p
 - **Introduction to Robotics (DD2410)** — IK solver from scratch (7-DoF KUKA), RRT* Dubins car, 2D
   occupancy grid mapping, Behavior Tree mission planner for TIAGo (ROS/Gazebo).
 - **NOTE:** there is NO "Deep Generative Modelling" course — that entry in old files was erroneous.
-  The generative-modeling content is the MeanFlow practical inside DD2610 (above). single-GenMod.tex now
-  targets a Generative/Foundation-Model role using DD2610 + ABB thesis content.
+  The generative-modeling content is the MeanFlow practical inside DD2610 (above); for a
+  Generative/Foundation-Model role draw on DD2610 + the ABB thesis content.
 - IIT/other: Control of Automotive Systems (heading-angle controller, P/PI brake, Sliding Mode tractor
   hitch); Human Powered Segway (Fusion360 CAD + COMSOL stress); Path Finder PyQt5 (A*, Dijkstra);
   VR + RL shooter (PPO, Unity, superhuman, VR); Python API for Fusion360 (CSV-driven model duplication);

@@ -6,7 +6,8 @@ if [[ $# -lt 1 ]]; then
 Usage: $0 <tex-file> [latexmk-args...]
 
 Example:
-  $0 cv/multi-page/acad-bosch.tex
+  $0 src/single-ref.tex
+  $0 src/scripts/acad-bosch.tex
 EOF
   exit 1
 fi

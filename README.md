@@ -6,31 +6,33 @@ LaTeX-based CV system. Maintains a master profile and generates tailored CVs for
 
 ```
 cv/
-├── master.tex          — MasterCV (reference only — has known errors, see CLAUDE.md §6)
-├── build.sh            — build helper
+├── master.tex          — MasterCV (reference/scratch only — has known errors, see CLAUDE.md §6; never seed output from it)
+├── build.sh            — build helper (resolves any path)
 ├── CLAUDE.md           — full profile, formatting rules, tailoring workflow (read this first)
-├── scripts/            — all tailored CVs
-│   ├── single-ComVis.tex     (single-page, Computer Vision)
-│   ├── single-GenMod.tex     (single-page, Generative Modelling)
-│   ├── acad-bosch.tex        (academic 2-page, Bosch)
-│   └── acad-jana.tex         (academic 2-page, Jana)
+├── src/                — ALL active LaTeX
+│   ├── single-ref.tex          ← canonical SEED — copy this to start any single-* resume
+│   └── scripts/                — tailored / generated resumes
+│       ├── single-FactoryAutomation.tex  (single-page, Robotics & Factory Automation)
+│       ├── single-FieldRobotics.tex      (single-page, Field Robotics)
+│       ├── acad-bosch.tex                (academic 2-page, Bosch)
+│       ├── acad-jana.tex                 (academic 2-page, Jana)
+│       └── archive/                      — deprecated old outputs (do not use)
 ├── pdfs/               — output PDFs
 ├── build/              — latexmk artifacts (auto-generated, do not commit)
+├── memory/             — vendored persistent memory (travels with the repo)
 └── references/         — project reports, transcripts, course materials
 ```
 
 ## Build
 
 ```bash
-# From repo root
-./build.sh scripts/<file>.tex
-
-# Examples
-./build.sh scripts/acad-bosch.tex
-./build.sh scripts/single-ComVis.tex
+# From repo root (any path works)
+./build.sh src/single-ref.tex
+./build.sh src/scripts/single-FactoryAutomation.tex
+./build.sh src/scripts/acad-bosch.tex
 ```
 
-The PDF is written next to the `.tex` source. Build artifacts go to `build/`.
+The PDF is written to `pdfs/<name>.pdf`. Build artifacts go to `build/`.
 
 ## Two CV families
 

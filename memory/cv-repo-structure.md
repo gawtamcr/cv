@@ -9,15 +9,20 @@ metadata:
 
 Repo: /home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv
 
-- `master.tex` — working LaTeX MasterCV (messy; see errors below). Canonical profile is [[master-profile]].
-- `scripts/` — tailored CVs live here. **For single-* roles COPY `scripts/single-ref.tex`** — the CANONICAL
-  SEED (gold preamble, rules-as-comments + [bracketed hints], worked ABB/Ericsson examples, canonical Publications
-  block). single-ComVis.tex / single-GenMod.tex (single-page blue) are compliant EXAMPLE OUTPUTS that Gawtam may
-  delete — do NOT seed from them. A single-ref2.tex alternate may be added. For acad-* copy acad-bosch.tex /
-  acad-jana.tex (academic black). See [[single-page-density-rules]].
-- `pdfs/` — output PDFs. `build/` — latexmk artifacts. `references/` — 8 project report PDFs ([[project-deep-reference]]).
-- **Build**: from repo root run `./build.sh scripts/<file>.tex` → PDF written next to the .tex; artifacts to build/.
-  README mentions `multi-page/` and `single-page/` dirs but those DON'T exist — files are all in `scripts/`.
+**Layout (reorganized 2026-06-02 — scripts/ moved under src/):**
+- `master.tex` (repo root) — working LaTeX MasterCV (messy; see errors below). REFERENCE/scratch ONLY:
+  never read it during tailoring and never produce an output from it. Canonical profile is [[master-profile]].
+- `src/` — ALL active LaTeX lives here.
+  - `src/single-ref.tex` — the **PRIMARY canonical seed** (gold preamble, the 18 named vspace variables
+    [[vspace-variables]], rules-as-comments + [bracketed hints], worked ABB/Ericsson examples, canonical
+    Publications block). **Seed EVERY single-* resume by copying this one file — nothing else.**
+  - `src/scripts/` — tailored/generated resumes: single-FactoryAutomation.tex, single-FieldRobotics.tex
+    (single-page blue); acad-bosch.tex, acad-jana.tex (academic 2-page black — copy the closest for acad-*).
+  - `src/scripts/archive/` — DEPRECATED old outputs single-ComVis.tex / single-GenMod.tex. Do NOT read or
+    seed from these; they predate current conventions and have errors.
+- `pdfs/` — output PDFs. `build/` — latexmk artifacts. `references/` — project report PDFs ([[project-deep-reference]]).
+- **Build**: from repo root run `./build.sh src/single-ref.tex` (or `./build.sh src/scripts/<file>.tex`); the
+  script resolves any path → PDF goes to `pdfs/<name>.pdf`, artifacts to `build/`. See [[single-page-density-rules]].
 
 **Known errors in master.tex (fix from [[master-profile]], don't copy blindly):**
 - Course codes are almost all wrongly "DD2348". Correct ones in [[project-deep-reference]].

@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780389006.39404 "single-ref.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.pdf" "single-ref" 1780389006.9132 0
+["pdflatex"] 1780391132.1253 "single-ref.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.pdf" "single-ref" 1780391132.64698 0
   "/etc/texmf/web2c/texmf.cnf" 1778492940.37091 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.aux" 1780389006.8629 890 cb1351ba54b9bb0ef666f8ddfb6cd2b2 "pdflatex"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.out" 1780389006.8629 795 f05fd150853230805df2eb7738ef7c67 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.aux" 1780391132.59462 890 cb1351ba54b9bb0ef666f8ddfb6cd2b2 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/single-ref.out" 1780391132.59462 795 f05fd150853230805df2eb7738ef7c67 "pdflatex"
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
