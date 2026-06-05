@@ -1,0 +1,259 @@
+%====================================================================================
+%  single-FlexionSimToReal.tex  —  Flexion Robotics: Robotics Engineer, Modeling & Sim-to-Real
+%  Zürich, Switzerland
+%  Seeded from src/single-ref.tex (canonical seed). Do NOT seed from archive/* or master.tex.
+%====================================================================================
+
+\documentclass[letterpaper, 11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{vwcol}
+\usepackage{comment}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=black,
+	citecolor=black,
+	urlcolor=Blue,
+}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% VSPACE VARIABLES (PRIMARY spacing control) — tune ALL layout spacing here, never edit
+% the raw \vspace values inline. 18 canonical names, categorized by document section, with
+% cross-section macro vars in Global/Shared first. To fit one page, make values MORE
+% negative here (start with \vListEnd) — never touch margins or font. Copies of this seed
+% inherit these names; keep the names identical across all single-* resumes.
+
+% --- Global / Shared (drive macros used across every section) ---
+\newcommand{\vSectionBefore}{-6pt} % space before each \section title
+\newcommand{\vSectionRule}{-5pt}   % space after the blue section titlerule
+\newcommand{\vTableRowSep}{-2pt}   % row strut between title/subtitle rows in resumeSubheading
+\newcommand{\vItemTop}{-2pt}       % tightening atop resumeItem / subheading / project heading
+\newcommand{\vSubheadingEnd}{-12pt}% space after a resumeSubheading block
+\newcommand{\vSubItem}{-4pt}       % space after a resumeSubItem
+\newcommand{\vListStart}{-0.3em}   % space before an item list start (resumeItemListStart / education list)
+\newcommand{\vListEnd}{-10pt}      % space after resumeItemListEnd <- tighten THIS first if a real resume spills to page 2
+\newcommand{\vListGroupEnd}{-1.5em}% space after resumeSubHeadingListEnd
+
+% --- Header ---
+\newcommand{\vHeadingName}{3pt}    % space under the name in the header
+\newcommand{\vHeadingEnd}{-8pt}    % space after the header block
+
+% --- Summary (not used in this resume) ---
+\newcommand{\vSummaryTop}{2pt}
+\newcommand{\vSummaryEnd}{-6pt}
+
+% --- Education ---
+\newcommand{\vEduSep}{0pt}         % space between education entries (0pt = adjacent)
+\newcommand{\vEduItemSep}{-0.3em}  % itemsep between Education achievement bullets
+\newcommand{\vEduSkills}{-0.7em}   % space before the Skills line
+
+% --- Technical Projects ---
+\newcommand{\vProjectEnd}{-20pt}   % space after a resumeProjectHeading block
+
+% --- Publications ---
+\newcommand{\vPubSep}{-5pt}        % itemsep between Publications entries
+
+% Sections formatting
+\titleformat{\section}{ \vspace{\vSectionBefore}\scshape\raggedright\large\bfseries }{}{0em}{}[
+\color{Blue}{}
+\titlerule
+\vspace{\vSectionRule}
+]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{ \item\small{ {#1 \vspace{\vItemTop}} } }
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{\vItemTop}
+\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}       & {\small #2} \\
+     [\vTableRowSep]
+	\textit{{\small#3}} & \textit{\small #4} \\
+\end{tabular*}
+\vspace{\vSubheadingEnd}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+\vspace{\vItemTop}
+\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1}  & {\small #2} \\
+\end{tabular*}
+\vspace{\vProjectEnd}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}
+\vspace{\vSubItem}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{\vListGroupEnd}}
+\newcommand{\resumeItemListStart}{\vspace{\vListStart}\begin{itemize}[leftmargin=0.25in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{\vListEnd}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Gawtam Chithra Ramesh} \\
+    \vspace{\vHeadingName}
+    \small
+    { \href{tel:+46764518589}{{\faMobile*} \textcolor{black}{(+46) 76541-8589}} ~
+    \href{mailto:gawtamcr3@gmail.com}{{\faPaperPlane} \textcolor{black}{gawtamcr3@gmail.com}} ~
+    \href{https://linkedin.com/in/gawtamcr/}{{\faLinkedinIn} \textcolor{black}{Gawtam C R}} ~
+    \href{https://github.com/gawtamcr}{{\faGithub} \textcolor{black}{gawtamcr}} ~
+    \href{https://gawtamcr.github.io/}{{\faGlobe} \textcolor{black}{Portfolio}} ~
+    \href{https://maps.google.com/?q=Stockholm,Sweden}{{\faMapMarker*} \textcolor{black}{Stockholm, Sweden}}
+    }
+    \vspace{\vHeadingEnd}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{\color{Blue}Education}
+    \resumeSubHeadingListStart
+    \resumeSubheading{KTH Royal Institute of Technology}{Aug 2024 -- Jun 2026}{Master of Science in Systems, Controls, and Robotics \textnormal{(GPA 4.62/5.0)}}{Stockholm, Sweden}
+    \vspace{\vEduSep}
+    \resumeSubheading{Indian Institute of Technology Madras}{Aug 2019 -- Jul 2024}{Dual Degree (B.Tech Engineering Design and M.Tech Robotics) \textnormal{(GPA 7.9/10)}}{Chennai, India}
+    \vspace{\vListStart}
+    \small{
+    \begin{itemize}[leftmargin=0.15in]
+        \setlength{\itemsep}{\vEduItemSep}
+        \item Awarded (among 30 of 800+) the IIT Madras \textbf{Young Research Fellowship} based on remarkable research potential.
+        \item Secured \textbf{97.64} Percentile in JEE Advanced and \textbf{99.10} Percentile in JEE Mains among \textbf{1.5M} candidates.
+        \item Secured an All India Rank of \textbf{52} out of 50k in Undergraduate Common Entrance Examination for Design.
+    \end{itemize}
+    }
+    \vspace{\vEduSkills}
+    \textbf{Skills} : Python, C++, ROS/ROS2, MoveIt, MuJoCo, Gazebo, PyTorch, JAX, OpenCV, Docker, URDF/SDF, CUDA
+    \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{\color{Blue}Professional Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading{Master's Thesis: Generative Motion Planning for Sim-to-Real Transfer}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
+    \resumeItemListStart
+        \resumeItem{Built a flow-matching planner guided by temporal-logic robustness gradients at inference without model retraining.}
+        \resumeItem{Validated reach-avoid policies in MuJoCo; actively transferring to 6-DoF manipulation hardware with ABB R\&D.}
+        \resumeItem{Benchmarked against specification-constrained planning baselines on 2D and continuous-control navigation tasks.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Device Research Intern: 3D Scene Graphs}{Jul 2025 -- Dec 2025}{Ericsson Research}{Lund, Sweden}
+    \resumeItemListStart
+        \resumeItem{Integrated instance segmentation and tracking into Hydra, a real-time 3D scene-graph construction framework.}
+        \resumeItem{Built a synchronized RGB-D inpainting pipeline that removes privacy-sensitive objects from scene graphs online.}
+        \resumeItem{Benchmarked state-of-the-art inpainting models to balance reconstruction fidelity against real-time latency.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Graduate Robotics Intern: Modular Collaborative Robots}{Dec 2022 -- Jul 2023}{Systemantics India}{Bangalore, India}
+    \resumeItemListStart
+        \resumeItem{Developed the real-time system controller from scratch for a 6-DoF cobot; deployed on PREEMPT RT Linux.}
+        \resumeItem{Implemented 7-zone S-curve trajectory generation to smooth acceleration profiles and reduce mechanical shock.}
+        \resumeItem{Authored URDFs and SRDFs for the cobot; integrated ROS2 with MoveIt2 motion planning and Gazebo simulation.}
+        \resumeItem{Initiated impedance control for collision detection and kinesthetic teaching using a joint disturbance observer.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------RESEARCH-----------
+\section{\color{Blue}Research Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading{Autonomous Ultrasound Scanning via 3D Surface Reconstruction}{Jan 2024 -- May 2024}{Nirav Patel, INSPIRE Lab, IIT Madras}{Chennai, India}
+    \resumeItemListStart
+        \resumeItem{Performed 3D torso surface reconstruction from 20 predefined RGB poses via multi-view stereo on a 5-DoF robot arm.}
+        \resumeItem{Segmented the abdominal ROI from the point cloud and estimated probe approach angles from surface tangent vectors.}
+        \resumeItem{Wired the reconstruction output into ROS/MoveIt motion planning and Gazebo simulation for end-to-end validation.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Target-Tracking Motion Planning for UAVs}{Sep 2021 -- Apr 2022}{Prof. Satadal Ghosh, IIT Madras}{Chennai, India}
+    \resumeItemListStart
+        \resumeItem{Built 2D target-tracking and obstacle avoidance for UAVs via Proportional Navigation and velocity obstacles.}
+        \resumeItem{Achieved \textasciitilde20\% faster trajectories with lower compute cost than classical aerospace motion planning algorithms.}
+        \resumeItem{Awarded the IIT Madras Young Research Fellowship (top 30 of 800+ applicants) for outstanding research contribution.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{\color{Blue}Technical Projects}
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading{EKF-SLAM and State Estimation $|$ \textnormal{\small EL2320, KTH}}{Mar 2025 -- Jun 2025}
+    \resumeItemListStart
+        \resumeItem{Implemented 2D EKF-SLAM from scratch with known and unknown data association via Mahalanobis distance gating.}
+        \resumeItem{Extended filter state and covariance dynamically per new landmark discovery; resolved a matrix-consistency bug.}
+        \resumeItem{Showed position error within 3\(\sigma\) under known association; divergence on symmetric maps revealed EKF overconfidence.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Multi-Variable Dynamics Modeling and H$_\infty$ Control $|$ \textnormal{\small EL2520, KTH}}{Jan 2025 -- Mar 2025}
+    \resumeItemListStart
+        \resumeItem{Modeled a four-tank process from first principles; identified min- and non-min-phase regimes through RGA analysis.}
+        \resumeItem{Designed a decentralized decoupling controller and a robust H$_\infty$ loop-shaping controller for the hydraulic process.}
+        \resumeItem{Validated the H$_\infty$ controller: 4s rise time, 20\% overshoot, and 2\% steady-state error in the minimum-phase regime.}
+    \resumeItemListEnd
+
+    \resumeProjectHeading{Robot IK, Motion Planning, and Mapping $|$ \textnormal{\small DD2410, KTH}}{Sep 2024 -- Oct 2024}
+    \resumeItemListStart
+        \resumeItem{Solved analytic IK for a 3-DoF arm and Jacobian-based IK for a 7-DoF manipulator using DH parameterization.}
+        \resumeItem{Implemented Hybrid A* and RRT for a Dubins car; generated collision-free paths around circular and line obstacles.}
+        \resumeItem{Developed a Behavior Tree mission planner for autonomous navigation, grasping, and recovery in ROS/Gazebo.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS----------- (RULE 6: canonical block — copy verbatim from single-ref.tex)
+\section{\color{Blue}Lead Author Publications}
+\begin{itemize}[leftmargin=0.15in]
+    \setlength{\itemsep}{\vPubSep}
+    \item Robust Object-layer Construction of 3DSG Using Instance Segmentation (IMPROVE26)(\textbf{Best Paper Award})
+    \item Synchronized RGB-D Inpainting for Privacy-Aware 3D Scene Graph Construction.(\textbf{ICPR26}).(Under Review)
+    \item Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided VLMs.(\textbf{IROS25} Workshop)
+\end{itemize}
+
+\end{document}

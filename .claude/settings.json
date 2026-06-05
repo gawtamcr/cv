@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdfinfo pdfs/single-*.pdf)",
+      "Bash(pdftotext pdfs/*.pdf -)",
+      "Bash(pdftoppm -png -r 100 pdfs/* /tmp/*)",
+      "Bash(pdftoppm -png -r 150 pdfs/single-FlexionSimToReal.pdf /tmp/cv_flexion)",
+      "Bash(pdftoppm -png -r 250 -x 0 -y 400 -W 2000 -H 900 pdfs/single-FlexionSimToReal.pdf /tmp/cv_exp_zoom)",
+      "Bash(pdftoppm -png -r 200 pdfs/single-FlexionSimToReal.pdf /tmp/cv_full)",
+      "Bash(pdftoppm -png -r 250 -x 0 -y 900 -W 2000 -H 1400 pdfs/single-FlexionSimToReal.pdf /tmp/cv_mid)",
+      "Bash(pdftoppm -png -r 250 -x 0 -y 1800 -W 2000 -H 1400 pdfs/single-FlexionSimToReal.pdf /tmp/cv_bot)",
+      "Bash(pdftoppm -png -r 200 pdfs/single-FlexionSimToReal.pdf /tmp/cv_f2)",
+      "Bash(pdftoppm -png -r 280 -x 0 -y 700 -W 2200 -H 1600 pdfs/single-FlexionSimToReal.pdf /tmp/cv_zoom_mid)",
+      "Bash(pdftoppm -png -r 200 -x 0 -y 2000 -W 2600 -H 1400 pdfs/single-FlexionSimToReal.pdf /tmp/cv_bot2)",
+      "Bash(pdftoppm -png -r 200 -x 0 -y 1600 -W 2600 -H 1000 pdfs/single-FlexionSimToReal.pdf /tmp/cv_techproj)"
+    ]
+  }
+}
