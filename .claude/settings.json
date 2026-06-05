@@ -12,7 +12,16 @@
       "Bash(pdftoppm -png -r 200 pdfs/single-FlexionSimToReal.pdf /tmp/cv_f2)",
       "Bash(pdftoppm -png -r 280 -x 0 -y 700 -W 2200 -H 1600 pdfs/single-FlexionSimToReal.pdf /tmp/cv_zoom_mid)",
       "Bash(pdftoppm -png -r 200 -x 0 -y 2000 -W 2600 -H 1400 pdfs/single-FlexionSimToReal.pdf /tmp/cv_bot2)",
-      "Bash(pdftoppm -png -r 200 -x 0 -y 1600 -W 2600 -H 1000 pdfs/single-FlexionSimToReal.pdf /tmp/cv_techproj)"
+      "Bash(pdftoppm -png -r 200 -x 0 -y 1600 -W 2600 -H 1000 pdfs/single-FlexionSimToReal.pdf /tmp/cv_techproj)",
+      "WebFetch(domain:jobs.volkswagen-group.com)",
+      "Bash(./build.sh src/scripts/acad-cariad.tex)",
+      "Bash(pdfinfo pdfs/acad-cariad.pdf)",
+      "Bash(pdftoppm -png -r 110 pdfs/acad-cariad.pdf /tmp/cariad_check)",
+      "Bash(awk '/Pages/{print $2\" pages\"}')",
+      "Bash(pdftoppm -png -r 150 -f 2 -l 2 pdfs/acad-cariad.pdf /tmp/cc2hi)",
+      "Bash(./build.sh src/scripts/coverletter-cariad.tex)",
+      "Bash(pdfinfo pdfs/coverletter-cariad.pdf)",
+      "Bash(pdftoppm -png -r 130 pdfs/coverletter-cariad.pdf /tmp/cl)"
     ]
   }
 }

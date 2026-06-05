@@ -1,0 +1,80 @@
+% Source: http://tex.stackexchange.com/a/5374/23931
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\pagestyle{plain}
+\usepackage{hyperref} 
+\setlength{\parindent}{0.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\makeatletter% since there's an at-sign (@) in the command name
+\renewcommand{\@maketitle}{%
+  \parindent=0pt% don't indent paragraphs in the title block
+  \centering
+  {\LARGE \bfseries\textsc{\@title}}
+  \HRule\par%
+  \textbf{Gawtam Chithra Ramesh \hfill Computer Science}
+  \par
+  \textbf{PhD Applicant \hfill KTH Royal Institute of Technology, Stockholm}
+  \par
+}
+\makeatother% resets the meaning of the at-sign (@)
+
+\title{Motivation Letter}
+
+\begin{document}
+  \maketitle
+\vspace{7pt}
+
+
+I am applying to your WASP-funded position because the question I most want to spend the next four years on is the one your group is built around: how do we rigorously specify what an autonomous system should do, and synthesize behavior we can actually trust?
+
+I came to this question by working backwards. After courses in Robot Learning \& Embodied AI and Deep Learning Advanced at KTH, I was convinced that VLAs and world models will keep scaling, but that the open problem isn't capability, it's trust. When a humanoid is in someone's home, "the model usually does the right thing" is not an answer. Without rigorous specification, we have no way to say what right means, let alone verify it. The moment I started reading about temporal logics, I felt I had found the missing piece and the more I work with them in my master's thesis at ABB Robotics on STL-guided generative planning, the more convinced I am that formal specification is the bridge current data-driven methods are missing, both for safety and for the kind of generalization the field is chasing.
+
+The way I want to work on this question is shaped by two earlier experiences. The first was Systemantics, where I worked under Jagannath Raju, a 70-year-old MIT graduate who could decompose any problem from first principles, no matter how unfamiliar. That year changed how I think: I stopped reaching for the nearest existing method and started asking what the problem actually requires. The second was a year in Florian Pokorny's group at RPL. I wasn't chasing meetings or deadlines, I was just trying to understand the problem and the work was better for it. The same thing happened at Ericsson Research: we had no intention of writing papers, but in five months of just building and learning, two came out anyway. That sequence taught me what I want from a PhD. I want to fall in love with the problem, not the publication.
+
+My technical background sits at the intersection your group operates in. On the planning side, I have built Conflict-Based Search for 20+ holonomic and non-holonomic agents, hybrid A* with kinematic constraints, RRT* for Dubins cars, and a velocity-obstacle-based online planner for UAVs during my Young Research Fellowship at IIT Madras. On the formal-methods side, I built backward-chained behavior trees for long-horizon 6-DOF manipulation at Systemantics, designed a taxonomy-to-specification pipeline that translated high-level prompts into structured robot-parsable outputs at RPL, and now work directly with STL and differentiable robustness gradients in my thesis. On the learning side, I have hands-on experience with flow matching and diffusion-based planners, multi-agent PPO, and recent VLA architectures from coursework and research projects. The instinct that ties this together is the same one your group operates on: structure and specification are not opposed to learning; they are what make learning trustworthy.
+
+If admitted, I would want to push on how data-driven methods like Flow Matching, RL, or World Models can be designed around formal specification rather than having it patched on. I believe this is what gets us from systems that usually work to systems we can rely on, and I cannot think of a better place to work on it or a better cohort to do it alongside than the WASP graduate school than your group.
+
+% \newpage
+%----------HEADING----------
+% \begin{center}
+%     {\Large \scshape Selected Works} \\
+%     \vspace{2pt}
+%     {\small Webpage: \href{https://gawtamcr.github.io/}{Personal Webpage}}
+% \end{center}
+ 
+% \vspace{4pt}
+ 
+% %---------- WORK 1 ----------
+% \section{STL-FM: Robustness-Guided Flow Matching for Long-Horizon Planning under Signal Temporal Logic Specifications}
+%  {Master's Thesis (in progress), ABB Robotics \& KTH RPL, Jan 2026 -- Jun 2026.}\\
+% \textit{Gawtam Chithra Ramesh, Matthew Lock, Jonathan Styrud, Shaohang Han, Luzia Knodler} \\
+% \textbf{Full draft:} \href{https://drive.google.com/file/d/1mC3D1ZTCqmkLdxjwhen5tCm9bYt3-2HD/view?usp=sharing}{Link} \quad
+ 
+% \vspace{4pt}
+ 
+% \textbf{Abstract.} Generative trajectory planners trained from offline demonstrations are flexible but offer no guarantees that the trajectories they produce satisfy the task they were intended for. Existing approaches to STL-conditioned planning either require retraining for each new specification, decompose long-horizon STL formulae into per-operator sub-problems and stitch them together, or condition the model architecture on a graph encoding of the formula at training time. We introduce \textbf{STL-FM}, an inference-time method that steers a pretrained flow-matching trajectory planner toward arbitrary STL specifications using differentiable robustness gradients, without retraining and without per-task expert demonstrations. The same generative model can be steered by any STL formula at test time, enabling flexible transfer across task variants. The framework is being validated on standard reach-avoid and long-horizon benchmarks, and is being benchmarked against state-of-the-art STL planners. The work is being transferred to long-horizon 6-DoF manipulation use cases at ABB Robotics.
+ 
+% \textbf{My contribution.} I led the project end-to-end: formulating the inference-time guidance approach, designing and implementing the full codebase (forking SafeFlowMatcher with differentiable STL robustness via STLCG++), running all experiments and baselines, and writing the manuscript. My ABB and KTH mentors provided help with framing, and weekly technical feedback.
+ 
+% \vspace{6pt}
+ 
+% %---------- WORK 2 ----------
+% \section{Scene Understanding in Deformable Object Manipulation via Taxonomy-Guided Vision-Language Models}
+ 
+% {IROS 2025 Workshop on Robotic Manipulation of Deformable Objects (ROMADO).} \\
+% \textit{Gawtam Chithra Ramesh, David Blanco-Mulero, Yifei Dong, Júlia Borràs Sol, Carme Torras, Florian T. Pokorny} \\
+% \textbf{Workshop paper:} \href{https://sites.google.com/view/tax-guided-vlm?pli=1}{Link}
+ 
+% \vspace{4pt}
+ 
+% \textbf{Abstract.} Vision-language models (VLMs) have shown promise for grounding natural-language instructions in robotic manipulation, but their outputs are unstructured and hard to verify or compose with downstream planners. We present a prompt--taxonomy framework that guides pretrained VLMs (Gemini, Qwen) to interpret deformable-object manipulation scenes and produce structured, robot-parsable specifications mapped to motion primitives, together with textual justifications. We evaluate the pipeline quantitatively across deformable manipulation scenes, identify systematic failure modes of current VLMs in this setting, and use the analysis to iteratively refine the taxonomy and prompts. The work serves as a step toward translating intuitive natural-language instructions into formally structured outputs suitable for verifiable downstream planning.
+ 
+% \textbf{My contribution.} I led the implementation, including the prompt--taxonomy framework, the integration of Gemini and Qwen, the quantitative analysis of VLM failure modes, and the iterative refinement loop. My advisors guided the framing of the work within deformable-object manipulation and the structuring of the taxonomy.
+
+\end{document}

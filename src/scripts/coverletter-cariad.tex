@@ -1,0 +1,43 @@
+% Source: http://tex.stackexchange.com/a/5374/23931
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\pagestyle{plain}
+\usepackage{hyperref} 
+\setlength{\parindent}{0.5cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\makeatletter% since there's an at-sign (@) in the command name
+\renewcommand{\@maketitle}{%
+  \parindent=0pt% don't indent paragraphs in the title block
+  \centering
+  {\LARGE \bfseries\textsc{\@title}}
+  \HRule\par%
+  \textbf{Gawtam Chithra Ramesh \hfill Computer Science}
+  \par
+  \textbf{PhD Applicant \hfill KTH Royal Institute of Technology, Stockholm}
+  \par
+}
+\makeatother% resets the meaning of the at-sign (@)
+
+\title{Motivation Letter}
+
+\begin{document}
+  \maketitle
+\vspace{7pt}
+
+
+I am applying to the AI-Core PhD position at CARIAD because the question I most want to spend the next years on is the one this role is built around: how do we train a single end-to-end model that jointly learns perception, prediction, and planning for driving, and produce behavior we can actually trust at scale?
+
+I came to this question by working backwards. After courses in Robot Learning \& Embodied AI and Deep Learning Advanced at KTH, I was convinced that generative policies and world models will keep scaling, but that the open problem isn't raw capability, it's trust. On a public road, "the model usually does the right thing" is not an answer. Pure imitation learning inherits the compounding error and distribution shift of its demonstrations, which is exactly why closed-loop reinforcement learning against a learned world model is the right direction: it lets the driving stack rehearse and improve on its own consequences rather than only mimic a log. But to optimize behaviour in closed loop, you first have to be able to say what good behaviour is. The moment I started working with temporal logics, I felt I had found the missing piece, and the more I work with them in my master's thesis at ABB Robotics on STL-guided generative planning, the more convinced I am that formal specification is the bridge data-driven driving is missing, both for safety and for the kind of generalization the field is chasing.
+
+The way I want to work on this question is shaped by two earlier experiences. The first was Systemantics, where I worked under Jagannath Raju, a 70-year-old MIT graduate who could decompose any problem from first principles, no matter how unfamiliar. That year changed how I think: I stopped reaching for the nearest existing method and started asking what the problem actually requires. The second was a year in Florian Pokorny's group at RPL. I wasn't chasing meetings or deadlines, I was just trying to understand the problem, and the work was better for it. The same thing happened at Ericsson Research: we had no intention of writing papers, but in five months of just building and learning, two came out anyway. That sequence taught me what I want from a PhD, and why an industry doctorate inside a real driving stack appeals to me. I want to fall in love with the problem, close the loop on real data, and let the publications follow.
+
+My technical background sits at the intersection CARIAD's AI-Core team operates in. On the learning side, I have hands-on experience with flow-matching and diffusion-based planners, multi-agent PPO, and recent vision-language-action architectures, and I have reimplemented generative and self-supervised models (one-step flow matching, masked autoencoders, contrastive learning) from scratch in PyTorch and JAX. On the planning and control side, I have built Conflict-Based Search for 20+ holonomic and non-holonomic agents, hybrid A* with kinematic vehicle constraints, RRT* for Dubins cars, a velocity-obstacle-based online planner for UAVs during my Young Research Fellowship at IIT Madras, and heading and sliding-mode controllers for an autonomous ground vehicle from its dynamics. On the perception side, I have built 3D scene-graph and open-vocabulary semantic-mapping pipelines from RGB-D data at Ericsson Research and KTH. And on the safety side, I now steer a pretrained generative planner toward arbitrary specifications at inference using differentiable STL robustness gradients, with no retraining. The instinct that ties this together is the one I would bring to CARIAD: structure and specification are not opposed to learning, they are what make a learned driving policy trustworthy.
+
+If admitted, I would want to push on how closed-loop RL and world-model-based planners can be designed around specification and safety from the start rather than having them patched on afterwards, and validated on the public benchmarks and real fleet data this role is built on. I believe this is what gets us from a driving stack that usually works to one we can actually deploy, and I cannot think of a better place to work on it than inside the AI-Core team at CARIAD.
+
+\end{document}
