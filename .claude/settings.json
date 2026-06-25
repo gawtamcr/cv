@@ -21,7 +21,13 @@
       "Bash(pdftoppm -png -r 150 -f 2 -l 2 pdfs/acad-cariad.pdf /tmp/cc2hi)",
       "Bash(./build.sh src/scripts/coverletter-cariad.tex)",
       "Bash(pdfinfo pdfs/coverletter-cariad.pdf)",
-      "Bash(pdftoppm -png -r 130 pdfs/coverletter-cariad.pdf /tmp/cl)"
+      "Bash(pdftoppm -png -r 130 pdfs/coverletter-cariad.pdf /tmp/cl)",
+      "Bash(pdftoppm -png -r 130 pdfs/coverletter-cariad.pdf /tmp/cl2)",
+      "Bash(awk '/Pages/{print $2\" page\"}')",
+      "Bash(pdftoppm -png -r 130 pdfs/coverletter-cariad.pdf /tmp/cl3)",
+      "Bash(pdftoppm -png -r 150 -f 1 -l 1 pdfs/acad-cariad.pdf /tmp/cvsum)",
+      "Bash(pdftoppm -png -r 110 pdfs/acad-cariad.pdf /tmp/full)",
+      "Bash(pdftoppm -png -r 110 -f 1 -l 1 pdfs/acad-cariad.pdf /tmp/final)"
     ]
   }
 }

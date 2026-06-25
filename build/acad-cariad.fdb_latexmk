@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780677621.08404 "acad-cariad.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.pdf" "acad-cariad" 1780677621.59257 0
+["pdflatex"] 1780682047.51424 "acad-cariad.tex" "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.pdf" "acad-cariad" 1780682048.00369 0
   "/etc/texmf/web2c/texmf.cnf" 1778492940.37091 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.aux" 1780677621.53739 1258 3ac6f96ebacddd8e526dd3105a1d05be "pdflatex"
-  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.out" 1780677621.53739 1120 4bde914c6ee14fb987cc522971495adf "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.aux" 1780682047.94583 1249 ef72aa29c5bb93c5a5c1330fb4d840a3 "pdflatex"
+  "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.out" 1780682047.94583 1072 d2b686ef61d8741d0fdbf5bb1b86c680 "pdflatex"
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -111,7 +111,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1778492960.3798 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1778492981 8214764 5bdb6629a5c8e6779678a942d9e3d5df ""
-  "acad-cariad.tex" 1780677620.05331 22236 c35bc42e1f1050d62bc16a6116c631f3 ""
+  "acad-cariad.tex" 1780682029.61651 23245 1930ed9e0fbb4d23bd9ded9685e77418 ""
   (generated)
   "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.aux"
   "/home/gawtam_wsl/thesis/ARCHIVE/Overleaf/cv/build/acad-cariad.log"
