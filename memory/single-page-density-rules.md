@@ -50,11 +50,15 @@ The Publications block + tight spacing (`\vListEnd` at `-7.5pt`) live in `src/si
   Every single-* resume (seeded from `single-ref.tex`) defines 18 canonical `\newcommand{\v...}` spacing vars in a
   categorized block at the top of the preamble; edit the variable's value there, never the raw `\vspace`/`\setlength`
   where it is consumed. Keep the 18 names identical across resumes; only values differ.
-- To fit ≥30 lines on one page, the ONLY lever is tightening vertical `\vspace` (now via the `\vListEnd` variable;
-  seed default `-7.5pt`) — never shrink margins or font. **DANGER: past ~-11pt the next section
-  header OVERLAPS the bullet above it, and pdfinfo/grep still report 1 page + 0 overfull (they miss it).
-  Keep `\vspace` in -7.5 to -10pt; if it needs more you have too much content — cut to the 30-line floor
-  (drop a 4th bullet, unwrap any 2-line bullet, shorten Skills to ONE line) instead of cranking `\vspace`.**
+- **OBSOLETE — DO NOT TIGHTEN `\vspace` TO FIT (superseded 2026-09-08).** The spacing variables are now a
+  LOCKED set that must be copied verbatim and never modified; see [[vspace-variables]] for the exact values.
+  **To fit content on one page, CUT CONTENT** (drop a bullet, drop an entry, unwrap a 2-line bullet) — never
+  re-tune spacing. The old advice below is kept only as a record of why:
+  *(historical)* "the ONLY lever is tightening vertical `\vspace` via `\vListEnd`, seed default `-7.5pt`;
+  past ~-11pt the next section header OVERLAPS the bullet above it, and pdfinfo/grep still report 1 page +
+  0 overfull (they miss it)." **This turned out to be actively misleading:** in practice, pushing `\vListEnd`
+  more negative (-8/-9pt) CAUSED both the overlaps and the page-2 spill. The locked set uses a much LOOSER
+  `\vListEnd` of `-2pt` with a tight `\vItemTop` of `-3pt`, and fits 30 lines on one page with zero overlaps.
 - **Uneven gaps ABOVE section headers (learned 2026-05-31).** Symptom: some `\section` headers float with a big
   gap above them (measured 36px before Professional Experience, 45px before Research) while others sit tight
   (~15px). Cause: the section before-skip is inflated by the preceding block's trailing list glue, and the

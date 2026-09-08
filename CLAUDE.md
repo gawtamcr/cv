@@ -109,7 +109,7 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
 5. **ALWAYS include in every single-page resume: a Publications section, the Ericsson internship, and the ABB thesis** — regardless of role. Never drop any of these to save space; cut/shorten elsewhere instead.
 6. **Publications block = LITERAL copy-paste from `single-ref.tex`.** `single-ref.tex` is the canonical source for the Publications block. Copy its `\section{...Lead Author Publications}` through `\end{itemize}` verbatim — do NOT reword, re-abbreviate, restructure titles, change "Best Paper Award", re-expand "3DSG", or wrap it in `\small`. It already fits one line each at the document's normal font size. If publication details genuinely change, update them in `single-ref.tex` FIRST, then re-copy into every other single-* resume.
 7. **Publications stay at the document's normal (11pt) font** — never shrink them with `\small`. (At 11pt the one-line budget is ~100 chars; the canonical text is already tuned to fit, which is why rule 6 exists.)
-8. `single-ref.tex` is the layout/spacing reference for all single-* resumes (its preamble already sets `\resumeItemListEnd` to `\vspace{-7.5pt}`). To make the ≥30-line content fit exactly one page, the ONLY allowed lever is tightening vertical `\vspace` (make that value more negative to pull Publications onto page 1) — never shrink margins or font. **DANGER: `\resumeItemListEnd` is shared by every entry, so over-tightening it (roughly past `-11pt`) makes the NEXT section header overlap the last bullet above it — `pdfinfo` still reports 1 page and `grep` reports 0 overfull, so these checks DO NOT catch the collision. If one page needs a value past ~-10pt, you have too much content: instead CUT it back to the 30-line floor (drop a 4th bullet, unwrap any 2-line bullet, shorten the Skills line to ONE line) and keep `\vspace` in the comfortable -7.5 to -10pt range. ALWAYS confirm by rendering, not by trusting the numeric checks — see rule 13.**
+8. **SUPERSEDED BY RULE 16b/16c FOR single-* RESUMES — the locked vspace set is not to be re-tuned; if content spills, CUT CONTENT.** (Historical guidance retained below for context and for acad-* work.) `single-ref.tex` is the layout/spacing reference for all single-* resumes (its preamble already sets `\resumeItemListEnd` to `\vspace{-7.5pt}`). To make the ≥30-line content fit exactly one page, the ONLY allowed lever is tightening vertical `\vspace` (make that value more negative to pull Publications onto page 1) — never shrink margins or font. **DANGER: `\resumeItemListEnd` is shared by every entry, so over-tightening it (roughly past `-11pt`) makes the NEXT section header overlap the last bullet above it — `pdfinfo` still reports 1 page and `grep` reports 0 overfull, so these checks DO NOT catch the collision. If one page needs a value past ~-10pt, you have too much content: instead CUT it back to the 30-line floor (drop a 4th bullet, unwrap any 2-line bullet, shorten the Skills line to ONE line) and keep `\vspace` in the comfortable -7.5 to -10pt range. ALWAYS confirm by rendering, not by trusting the numeric checks — see rule 13.**
 8b. **Uneven gaps ABOVE section headers — equalize them (learned 2026-05-31).** Some `\section` headers can float with a large gap above them while others sit tight (measured here: 36px above Professional Experience, 45px above Research, vs ~15px elsewhere). Cause: the section before-skip is inflated by the preceding block's trailing list glue, and it is largest after a section that ends WITHOUT a bullet list — Education ends on a plain `\textbf{Skills}` text line, so the following header gets the biggest gap. **FIX:** add a corrective `\vspace{-Npt}` on its own line IMMEDIATELY before the offending `\section{...}`, calibrated by measuring pixel gaps until every header gap matches (values used here: `-9pt` before Professional Experience, `-12pt` before Research). The two `\vspace` values may differ — that is fine; the goal is symmetric *visual* gaps, not identical code. **ANTI-PATTERN: do NOT add a global `\titlespacing*{\section}{...}` override** — it did not fix the before-gaps and it broke the BELOW-header spacing (the blue `\titlerule` cut through the first entry's title). Tune per-header `\vspace` and re-measure. To measure objectively: `pdftoppm -png -r 200 -gray pdfs/<f>.pdf full && convert full-1.png full.pgm`, then with numpy count blank-row runs (a row is ink if `(row<128).sum()>3`; report runs ≥12px); crop a band at a gap's y (`pdftoppm ... -x 0 -y <Y> -W 1700 -H 60`) and Read the PNG to label the header.
 9. Use the IIT Madras degree phrasing "B.Tech Engineering Design **and** M.Tech Robotics" (the word "and", not a `+`).
 10. **Never use em dashes, and never use a dash as a separator/connector** anywhere (titles, bullets, headings). Use a colon, comma, or parentheses instead — e.g. entry title `Master's Thesis: Generative Flow Matching...` (not `Master's Thesis -- ...`), and GPA in parentheses `\textnormal{(GPA 4.62/5.0)}` (not `-- GPA ...`). The en-dash `--` is allowed ONLY for numeric/date ranges (`Jan 2026 -- Jun 2026`). Never `---`.
@@ -131,7 +131,7 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
    ```bash
    pdftoppm -png -r 150 pdfs/<file>.pdf /tmp/cv_check     # then Read /tmp/cv_check-1.png
    ```
-   Confirm by eye: (a) NO section header or bullet overlaps the line above it; (b) every bullet is exactly ONE line (no wraps); (c) spacing is even/readable, not crushed; (d) Publications sit on page 1. If anything overlaps, you over-compressed — fix per rule 8 (cut content, don't crank `\vspace`), never ship a PDF you have not looked at.
+   Confirm by eye: (a) NO section header or bullet overlaps the line above it; (b) every bullet is exactly ONE line (no wraps); (c) spacing is even/readable, not crushed; (d) Publications sit on page 1. If anything overlaps, you over-compressed — fix by CUTTING CONTENT per rule 16c, and restore the locked vspace set of rule 16b rather than re-tuning it; never ship a PDF you have not looked at.
 
 16. **VSPACE VARIABLES are the PRIMARY way to edit spacing — never hand-edit raw `\vspace{...}` / `\setlength{\itemsep}{...}` values inline.** Every single-* resume (seeded from `single-ref.tex`) defines a categorized block of **18 named spacing variables** near the top of the preamble (right after `\setlength{\tabcolsep}{0in}`, before `% Sections formatting`). To adjust ANY spacing, change the variable's value in that block — do NOT edit the number where the `\vspace`/`\setlength` is consumed. Keep the 18 names IDENTICAL across all single-* resumes (only values differ per resume). When tightening to fit one page, the first lever is still `\vListEnd` (rule 8), now via its variable.
    - **The 18 canonical names**, grouped:
@@ -142,6 +142,28 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
      - *Technical Projects:* `\vProjectEnd` (after a `\resumeProjectHeading`).
      - *Publications:* `\vPubSep` (itemsep between publication entries).
    - `single-ref.tex` is the canonical home of this block; its values are the seed defaults. A new resume inherits the block on copy; only edit the values, never rename. (Older example outputs `single-ComVis.tex` / `single-GenMod.tex` predate this and may not have the block — do not seed from them anyway.)
+   - **16b. THE LOCKED VALUE SET — DO NOT TOUCH THESE (instructed by Gawtam 2026-09-08).** The 18 values below are the proven, visually-verified spacing set. **Copy them verbatim into every new single-* resume and DO NOT modify any of them** — not to fit a page, not to fix overlap, not "just a little". They are settled; treat them as constants:
+     ```latex
+     \newcommand{\vSectionBefore}{-3pt}   \newcommand{\vSectionRule}{-5pt}
+     \newcommand{\vTableRowSep}{-2pt}     \newcommand{\vItemTop}{-3pt}
+     \newcommand{\vSubheadingEnd}{-12pt}  \newcommand{\vSubItem}{-4pt}
+     \newcommand{\vListStart}{0em}        \newcommand{\vListEnd}{-2pt}
+     \newcommand{\vListGroupEnd}{-1.5em}
+     \newcommand{\vHeadingName}{3pt}      \newcommand{\vHeadingEnd}{-8pt}
+     \newcommand{\vSummaryTop}{2pt}       \newcommand{\vSummaryEnd}{-6pt}
+     \newcommand{\vEduSep}{5pt}           \newcommand{\vEduItemSep}{-0.3em}
+     \newcommand{\vEduSkills}{-0.7em}     \newcommand{\vProjectEnd}{-20pt}
+     \newcommand{\vPubSep}{-4pt}
+     ```
+     This set renders ~30 content lines (Summary + 4 Professional Experience + 2 Research + 2 Projects + 3 Publications) on exactly ONE page with ZERO overlaps — verified on `src/scripts/single-SeniorRoboticsResearcher.tex` 2026-09-08.
+   - **16c. If a resume spills to page 2, CUT CONTENT. Never re-tune the variables.** This supersedes the "tighten `\vListEnd` first" advice in rules 8 and 16 above, which is now OBSOLETE for single-* resumes — those instructions predate the locked set. Cut a bullet, cut an entry, or shorten a bullet that wrapped. Do not touch spacing.
+   - **16d. LEARNED THE HARD WAY (2026-09-08) — tightening backfires; it does NOT create space.** While fitting `single-SeniorRoboticsResearcher.tex`, Claude repeatedly drove `\vListEnd` toward -8/-9pt and `\vListGroupEnd` to -2.1em to force a fit. Every attempt oscillated between "fits but text collides" and "clean but 2 pages", and Claude wrongly concluded the content was ~9 lines too long and asked Gawtam to delete an entire section. Gawtam reverted to the locked set above (a much LOOSER `\vListEnd` of -2pt with a tight `\vItemTop` of -3pt) and it fit on one page, cleanly, with all content intact. **The lesson: over-tightening `\vListEnd`/`\vListGroupEnd` collapses list glue in a way that forces bad page breaks — loose per-list gaps plus a tight heading pull is what actually fits. Do not "fix" spacing by making values more negative, and do not conclude content must be cut before trying the locked set as-is.**
+17. **ROLE FRAMING PER ENTRY — leadership language is entry-specific (confirmed by Gawtam 2026-09-08).** Gawtam owned and drove every professional/research project end to end, but only ONE involved leading people. This distinction is non-negotiable because it must survive a reference check.
+   - **"Led" / "Managed" — ONLY for Avishkar Hyperloop** (he led a 4-person team; see §5). Nowhere else.
+   - **ABB, Ericsson, and the KTH RPL DOM research — SOLO works with mentors.** He identified the problem, ideated, and developed it himself, and **never directed anyone**. Use ownership verbs: **Owned, Drove, Designed, Built, Architected**. Do NOT write "led a team", "managed engineers", or anything implying reports or headcount.
+   - **Systemantics — drove technical direction alongside peers**, no reports. Use **Drove / Owned / Architected**, not "Led a team".
+   - Ownership framing is not just permitted but *wanted* — Gawtam owned these projects fully. The line being drawn is between **owning work** (true everywhere) and **directing people** (true only at Avishkar).
+18. **Approved abbreviations to buy line width (Gawtam 2026-09-08): `SoTA`** (state-of-the-art) and **`spec` / `specs`** (specification/specifications). Use them when the saved characters let you pack more impactful content onto a bullet — NOT as a default house style, and never at the cost of clarity. Field-standard terms and ATS keywords stay spelled out in full (Signal Temporal Logic, ROS, MoveIt, RANSAC, SIFT, ...). Cf. rule 12 on terminology and rule 1 on packing lines to 108-114 chars.
 
 ### Naming convention for new files
 - `src/scripts/single-<RoleKeyword>.tex` for single-page
@@ -193,12 +215,14 @@ Central formatting ideas for every `single-*` resume. Measured: usable bullet wi
 
 ### Professional Experience (reverse chron)
 
-**Master's Thesis — ABB Robotics, Västerås** (Jan–Jun 2026, ongoing)
-Mentors: Matthew Lock, Jonathan Styrud.
+**Master's Thesis — ABB Robotics, Västerås** (Jan–Jun 2026, COMPLETE as of Sep 2026 — use past tense)
+Mentors: Matthew Lock, Jonathan Styrud. **Solo work** — Gawtam identified the problem, ideated, and developed it himself (mentored, but directed no one). See rule 17.
+- **Owned the research ideation end to end: surveyed the literature and PIVOTED the approach from reinforcement learning to flow matching** based on expected benefit (confirmed 2026-09-08). Strong evidence of owning technical direction, not just executing.
 - System 1/2 framework for industrial manipulation: generative flow-matching trajectory planner (System 1) steered at inference by Signal Temporal Logic (STL) robustness gradients (System 2).
 - Single generative model steerable by arbitrary STL specs without retraining; flexible transfer across task variants.
-- Validated on reach-avoid benchmarks; benchmarking vs DAG-STL, ZSTP on Maze2D and AntMaze.
-- Collaborating with ABB R&D on transfer to long-horizon 6-DoF manipulation.
+- **MEASURED RESULTS (confirmed by Gawtam 2026-09-08, real — use these, never invent others): 31% higher STL specification satisfaction RATE across tasks vs SOTA; 75% higher success rate on UNSEEN specifications (zero-shot transfer).**
+- Validated on reach-avoid benchmarks; benchmarked vs DAG-STL, ZSTP on Maze2D and AntMaze.
+- Transferred with ABB R&D to long-horizon 6-DoF manipulation.
 - Targeting top robotics venue submission.
 
 **Device Research Intern, 3D Scene Graphs — Ericsson Research, Lund** (Jul–Dec 2025)
@@ -229,8 +253,11 @@ Mentor: Manju Tiwari.
 
 **Battery Pack Design for Hyperloop Pods — Avishkar Hyperloop, IIT Madras** (Oct 2020–Jun 2021)
 Mentors: Prof. Satya Chakravarthy, Prof. TM Muruganandam. Role: Power Systems Engineer.
+**ROLE FRAMING: this is the ONE entry where genuine team-leadership language ("Led", "Managed") is accurate — Gawtam led a 4-person team here. See rule 17.**
 - Designed high-discharge battery pack; extended life **10%** by reducing peak temperature 10°C with Al heat sink.
-- Custom Battery Management System (BMS) for voltage/temperature monitoring and safety.
+- **Led the team that built the first custom Battery Management System (BMS) in the Indian Hyperloop scene** — real-time voltage/temperature monitoring with safety cutoffs. (Primacy claim per Gawtam 2026-09-08.)
+- **Managed a 4-person team through the first-ever hybrid/remote setup** (COVID lockdown), holding delivery together after **two members withdrew** mid-project.
+- **Handled overseas procurement and managed the full Bill of Materials (BoM) entirely online** during the lockdown period.
 - Won "Most Scalable Design" award by Zeleros (Spanish Hyperloop company); top 5 for mechanical/propulsion.
 - Selected in top 24 teams for European Hyperloop Week, Valencia, Spain.
 

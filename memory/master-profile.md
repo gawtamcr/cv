@@ -27,11 +27,17 @@ Deep per-project facts (metrics, methods) mined from the report PDFs live in [[p
   Chennai. CGPA 7.9/10.
 
 ## Professional Experience
-- **Master's Thesis, ABB Robotics** (Västerås) — Jan–Jun 2026. Mentors: Matthew Lock, Jonathan Styrud.
-  Generative flow-matching trajectory planner (System 1) steered at inference by Signal Temporal Logic
-  (STL) robustness gradients (System 2); NL → control policy; one model steerable by arbitrary STL specs
+- **Master's Thesis, ABB Robotics** (Västerås) — Jan–Jun 2026, **COMPLETE as of Sep 2026 (past tense)**.
+  Mentors: Matthew Lock, Jonathan Styrud. **SOLO work** — identified the problem, ideated, and developed it
+  himself; mentored but directed no one (see role framing in [[cv-formatting-rules]] rule 17).
+  **Owned the research ideation: surveyed the literature and PIVOTED from reinforcement learning to flow
+  matching** on expected benefit (confirmed 2026-09-08) — evidence of owning technical direction, not just
+  executing. Generative flow-matching trajectory planner (System 1) steered at inference by Signal Temporal
+  Logic (STL) robustness gradients (System 2); NL → control policy; one model steerable by arbitrary STL specs
   without retraining; benchmarked vs DAG-STL, ZSTP on Maze2D/AntMaze; reach-avoid full-spec satisfaction;
-  targeting top robotics venue; transfer to long-horizon 6-DoF manipulation with ABB R&D.
+  targeting top robotics venue; transferred to long-horizon 6-DoF manipulation with ABB R&D.
+  **MEASURED RESULTS (real, confirmed 2026-09-08 — use these, never invent others): 31% higher STL spec
+  satisfaction rate across tasks vs SOTA; 75% higher success rate on UNSEEN specs (zero-shot transfer).**
 - **Device Research Intern, 3D Scene Graphs, Ericsson Research** (Lund) — Jul–Dec 2025.
   Mentors: Püren Güler, Hector Caltenco. Robust 3DSG pipeline integrating instance segmentation +
   tracking into Hydra (SOTA); synchronized RGB-D inpainting to remove privacy-sensitive objects in
@@ -89,8 +95,19 @@ Deep per-project facts (metrics, methods) mined from the report PDFs live in [[p
 - IIT/other: Control of Automotive Systems (heading-angle controller, P/PI brake, Sliding Mode tractor
   hitch); Human Powered Segway (Fusion360 CAD + COMSOL stress); Path Finder PyQt5 (A*, Dijkstra);
   VR + RL shooter (PPO, Unity, superhuman, VR); Python API for Fusion360 (CSV-driven model duplication);
-  Discord bot (C#, ffmpeg). Hyperloop battery pack (high discharge, Al heat sink +10% life / −10°C peak,
-  top-24 European Hyperloop Week Valencia).
+  Discord bot (C#, ffmpeg).
+
+## Avishkar Hyperloop, IIT Madras — Power Systems Engineer (Oct 2020 – Jun 2021)
+Mentors: Prof. Satya Chakravarthy, Prof. TM Muruganandam.
+**ROLE FRAMING: the ONE entry where "Led"/"Managed" is accurate — Gawtam led a 4-person team here.
+Everywhere else use ownership verbs only (see [[cv-formatting-rules]] rule 17).**
+- Designed a high-discharge battery pack; **+10% pack life** by cutting peak temperature **10°C** with Al heat sinks.
+- **Led the team that built the first custom BMS in the Indian Hyperloop scene** — real-time voltage/temperature
+  monitoring with safety cutoffs. (Primacy claim per Gawtam 2026-09-08.)
+- **Managed a 4-person team through the first-ever hybrid/remote setup** (COVID), holding delivery together
+  after **two members withdrew** mid-project.
+- **Handled overseas procurement and managed the full BoM entirely online** through the lockdown period.
+- Won "Most Scalable Design" (Zeleros); top 5 mechanical/propulsion; top-24 European Hyperloop Week, Valencia.
 
 ## Technical Skills
 - Languages: Python, C, C++, C#

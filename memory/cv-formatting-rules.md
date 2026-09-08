@@ -34,5 +34,19 @@ ATS-parsable, recruiter-skimmable, visually tight documents; violating these mea
 - **NEVER mention Kattis** or any assignment auto-grader / evaluation platform (confirmed 2026-06-02) — it is just a grading tool, meaningless to recruiters. Drop the score, or state the outcome plainly ("passed all test cases") without naming the grader. No "22/22 on Kattis", "6/6 Grade C cases", etc.
 - **Skills line = concrete technologies ONLY** (confirmed 2026-06-02): languages/frameworks/libraries/named tools a reader can verify (Python, C++, ROS/ROS2, MoveIt, PyTorch, JAX, OpenCV, Docker, Gazebo, MuJoCo, CUDA). **Do NOT list generic domain/role labels** ("Robotics", "Cobots", "Factory Automation", "Computer Vision", "Machine Learning", "Real-Time Control") — they are job categories, not skills, and too generic. Those domain words are fine in the Summary and in bullet prose / as ATS keywords, just not as Skills entries. Lead Skills with the role's must-have tools.
 - **Summary / overview section (2–3 lines about Gawtam): ASK FIRST every time** (added 2026-06-02). Applies to BOTH single-* and acad-*, but always ask before drafting one — never add unprompted. Tailor it per role (no fixed blurb). On single-* it COUNTS toward the 30-line floor (does not raise it), so adding a summary means cutting equivalent bullet lines to stay one page. Place as the first `\section` directly under the header, above Education.
+- **ROLE FRAMING — rule 17 (confirmed 2026-09-08). Leadership language is entry-specific.** Gawtam owned and
+  drove every professional/research project end to end, but only ONE involved leading people. This must hold
+  because it has to survive a reference check.
+  - **"Led" / "Managed" — ONLY for Avishkar Hyperloop** (4-person team; see [[master-profile]]). Nowhere else.
+  - **ABB, Ericsson, KTH RPL DOM — SOLO works with mentors.** He identified the problem, ideated, and developed
+    it himself and **never directed anyone**. Use **Owned / Drove / Designed / Built / Architected**. Never
+    "led a team", "managed engineers", or anything implying reports or headcount.
+  - **Systemantics — drove technical direction among peers**, no reports. Use **Drove / Owned / Architected**.
+  - Ownership framing is *wanted*; the line is between **owning work** (true everywhere) and **directing
+    people** (true only at Avishkar).
+- **Approved abbreviations — rule 18 (2026-09-08): `SoTA`** (state-of-the-art) and **`spec`/`specs`**
+  (specification/-s). Use them when the saved width buys more impactful content on a bullet — not as a default
+  style, never at the cost of clarity. Field-standard terms and ATS keywords stay spelled out in full (Signal
+  Temporal Logic, ROS, MoveIt, RANSAC, SIFT, ...).
 - **Build**: `./build.sh src/scripts/<file>.tex` (or `src/single-ref.tex`) from repo root → PDF written to
   `pdfs/<name>.pdf`, build artifacts go to `build/`. See [[cv-repo-structure]].

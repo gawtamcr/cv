@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1788540331.06078 "singlewithsummary-ref.tex" "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.pdf" "singlewithsummary-ref" 1788540331.55398 0
-  "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.aux" 1788540331.49826 1046 a84bfe73ff67cf7f34f3eeee1f0ebed9 "pdflatex"
-  "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.out" 1788540331.49882 893 5dc2923f1e39c663402cefe3eb016a3e "pdflatex"
+["pdflatex"] 1788873466.26022 "singlewithsummary-ref.tex" "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.pdf" "singlewithsummary-ref" 1788873466.78912 0
+  "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.aux" 1788873466.73238 1046 a84bfe73ff67cf7f34f3eeee1f0ebed9 "pdflatex"
+  "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.out" 1788873466.73294 893 5dc2923f1e39c663402cefe3eb016a3e "pdflatex"
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc" 1622837620 2906 e48aa7c95dea478a2e011bcb4f7878c9 ""
@@ -101,7 +101,7 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1788536971 5573038 b99aad5e4898a9034e953632f940512b ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1788536917 3636779 549e57450fc4c11a907ee506e6648ed0 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "singlewithsummary-ref.tex" 1788540324.66408 16148 6593107ca822252c969667c15362d5dd ""
+  "singlewithsummary-ref.tex" 1788873454.44451 16479 fb6f2b70b139695c0ebfb2485ee7b52b ""
   (generated)
   "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.aux"
   "/Users/gawtamcr/Desktop/Masters/CV : Cover Letters/cv/build/singlewithsummary-ref.log"

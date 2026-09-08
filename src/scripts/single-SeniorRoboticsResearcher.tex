@@ -153,7 +153,7 @@
 %-----------SUMMARY-----------
 \section{\color{Blue}Summary}
 \vspace{\vSummaryTop}
-\small{An experienced robotics researcher in manipulation, motion planning, and perception, with hands-on ownership of projects from algorithm design through validation on physical hardware in industrial R\&D settings (ABB, Ericsson). I build and deploy real-time systems bridging simulation and reality, and publish results in peer-reviewed venues.}
+\small{A robotics researcher who takes problems from framing and approach selection through to results on physical hardware. I work across manipulation, motion planning, perception, and control in industrial R\&D (ABB, Ericsson), setting the technical direction of my projects and publishing the results in peer-reviewed venues.}
 \vspace{\vSummaryEnd}
 
 %-----------EDUCATION-----------
@@ -181,23 +181,33 @@
 
     \resumeSubheading{Master's Thesis: Generative Motion Planning for Manipulation}{Jan 2026 -- Jun 2026}{ABB Robotics}{V\"{a}ster\aa s, Sweden}
     \resumeItemListStart
+        \resumeItem{Owned research ideation, surveying the literature and pivoting from reinforcement learning to flow matching.}
         \resumeItem{Designed a generative flow-matching motion planner guided at inference by Signal Temporal Logic robustness gradients.}
-        \resumeItem{Steered the pretrained planner toward new task specifications at inference without retraining, cutting iteration time.}
-        \resumeItem{Collaborating with ABB R\&D to transfer the approach from benchmark tasks to long-horizon 6-DoF manipulation.}
+        \resumeItem{Improved spec satisfaction \textbf{31\%} and success on unseen specs \textbf{75\%} over SoTA planners, with no retraining.}
+        \resumeItem{Transferred the approach with ABB R\&D from benchmark tasks to long-horizon 6-DoF manipulation on hardware.}
     \resumeItemListEnd
 
     \resumeSubheading{Device Research Intern: 3D Scene Graphs}{Jul 2025 -- Dec 2025}{Ericsson Research}{Lund, Sweden}
     \resumeItemListStart
         \resumeItem{Integrated instance segmentation and tracking into Hydra, a real-time 3D scene-graph construction framework.}
+        \resumeItem{Cut parameter sensitivity in the object layer, yielding reliable scene interpretation across diverse environments.}
         \resumeItem{Built a synchronized RGB-D inpainting pipeline that removes privacy-sensitive objects from scene graphs online.}
-        \resumeItem{Benchmarked state-of-the-art inpainting models to balance reconstruction fidelity against real-time latency.}
     \resumeItemListEnd
 
     \resumeSubheading{Graduate Robotics Intern: Modular Collaborative Robots}{Dec 2022 -- Jul 2023}{Systemantics India}{Bangalore, India}
     \resumeItemListStart
         \resumeItem{Owned the real-time system controller for a 6-DoF cobot portfolio end to end, deployed on Linux PREEMPT-RT kernel.}
         \resumeItem{Handled inter-process communication over SocketCAN and FDCAN buses using semaphores and signal interrupts.}
+        \resumeItem{Implemented 7-zone S-curve trajectory generation, smoothing acceleration profiles to reduce mechanical shock.}
         \resumeItem{Integrated a ROS2 stack with MoveIt motion planning and Gazebo simulation, authoring URDF and SRDF descriptions.}
+    \resumeItemListEnd
+
+    \resumeSubheading{Power Systems Engineer: Hyperloop Pod Battery Systems}{Oct 2020 -- Jun 2021}{Avishkar Hyperloop, IIT Madras}{Chennai, India}
+    \resumeItemListStart
+        \resumeItem{Led the team that built the first custom Battery Management System in the Indian Hyperloop scene.}
+        \resumeItem{Designed a high-discharge battery pack, extending pack life \textbf{10\%} by cutting peak temperature 10C with heat sinks.}
+        \resumeItem{Managed a 4-person team through the first hybrid setup after two withdrew, running overseas procurement.}
+        \resumeItem{Won the Most Scalable Design award and placed top 24 worldwide for European Hyperloop Week in Valencia.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -205,18 +215,18 @@
 \section{\color{Blue}Research Experience}
 \resumeSubHeadingListStart
 
+    \resumeSubheading{Scene Understanding for Deformable Object Manipulation}{Jan 2025 -- Nov 2025}{Prof. Florian T. Pokorny, RPL, KTH}{Stockholm, Sweden}
+    \resumeItemListStart
+        \resumeItem{Coupled taxonomy-guided vision-language models with a manipulation taxonomy to map scenes onto motion primitives.}
+        \resumeItem{Built a prompt and taxonomy framework turning natural-language task descriptions into robot-parsable specifications.}
+        \resumeItem{Ran a quantitative failure-mode analysis across models, publishing the results at an IROS 2025 workshop.}
+    \resumeItemListEnd
+
     \resumeSubheading{Autonomous Ultrasound Scanning via 3D Surface Reconstruction}{Jan 2024 -- May 2024}{Nirav Patel, INSPIRE Lab, IIT Madras}{Chennai, India}
     \resumeItemListStart
         \resumeItem{Performed 3D torso surface reconstruction from 20 predefined RGB poses via multi-view stereo on a 5-DoF robot arm.}
         \resumeItem{Segmented the abdominal ROI from the point cloud and estimated probe approach angles from surface tangent vectors.}
-        \resumeItem{Closed the perception-to-planning loop with ROS/MoveIt motion planning validated on physical hardware in simulation.}
-    \resumeItemListEnd
-
-    \resumeSubheading{Target-Tracking Motion Planning for UAVs}{Sep 2021 -- Apr 2022}{Prof. Satadal Ghosh, IIT Madras}{Chennai, India}
-    \resumeItemListStart
-        \resumeItem{Built 2D target-tracking and obstacle avoidance for UAVs via Proportional Navigation and velocity obstacles.}
-        \resumeItem{Achieved roughly 20\% faster trajectories with lower compute cost than classical aerospace motion planning algorithms.}
-        \resumeItem{Awarded the IIT Madras Young Research Fellowship (top 30 of 800+ applicants) for outstanding research contribution.}
+        \resumeItem{Closed the perception-to-planning loop with ROS/MoveIt planning, validated in Gazebo physics simulation.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -228,20 +238,10 @@
     \resumeProjectHeading{EKF-SLAM and State Estimation $|$ \textnormal{\small EL2320, KTH}}{Mar 2025 -- Jun 2025}
     \resumeItemListStart
         \resumeItem{Implemented 2D EKF-SLAM from scratch with known and unknown data association via Mahalanobis distance gating.}
-        \resumeItem{Extended filter state and covariance dynamically per new landmark discovery; resolved a matrix-consistency bug.}
-        \resumeItem{Showed position error within 3\(\sigma\) under known association; divergence on symmetric maps revealed EKF overconfidence.}
     \resumeItemListEnd
 
-    \resumeProjectHeading{Multi-Variable Dynamics Modeling and H$_\infty$ Control $|$ \textnormal{\small EL2520, KTH}}{Jan 2025 -- Mar 2025}
+    \resumeProjectHeading{Robot Motion Planning and Mapping $|$ \textnormal{\small DD2410, KTH}}{Sep 2024 -- Oct 2024}
     \resumeItemListStart
-        \resumeItem{Modeled a four-tank process from first principles; identified min- and non-min-phase regimes through RGA analysis.}
-        \resumeItem{Designed a decentralized decoupling controller and a robust H$_\infty$ loop-shaping controller for the hydraulic process.}
-        \resumeItem{Validated the H$_\infty$ controller: 4s rise time, 20\% overshoot, and 2\% steady-state error in the minimum-phase regime.}
-    \resumeItemListEnd
-
-    \resumeProjectHeading{Robot IK, Motion Planning, and Mapping $|$ \textnormal{\small DD2410, KTH}}{Sep 2024 -- Oct 2024}
-    \resumeItemListStart
-        \resumeItem{Solved analytic IK for a 3-DoF arm and Jacobian-based IK for a 7-DoF manipulator using DH parameterization.}
         \resumeItem{Implemented Hybrid A* and RRT for a Dubins car; generated collision-free paths around circular and line obstacles.}
         \resumeItem{Developed a Behavior Tree mission planner for autonomous navigation, grasping, and recovery in ROS/Gazebo.}
     \resumeItemListEnd

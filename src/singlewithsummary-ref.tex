@@ -92,9 +92,12 @@
 % negative here (start with \vListEnd) — never touch margins or font. Copies of this seed
 % inherit these names; keep the names identical across all single-* resumes.
 %
-% Values below are carried over from src/scripts/single-SeniorRoboticsResearcher.tex
-% (tuned + visually verified with a Summary section present) — treat as this seed's
-% defaults; re-tune per resume as needed.
+% *** LOCKED VALUE SET — DO NOT MODIFY ANY VALUE BELOW (instructed by Gawtam 2026-09-08). ***
+% Verified on src/scripts/single-SeniorRoboticsResearcher.tex: fits 30 content lines
+% (Summary + Education + 4 Prof Exp + 2 Research + 2 Projects + 3 Publications) on exactly
+% ONE page with ZERO overlaps. If a resume spills to page 2, CUT CONTENT — never re-tune these.
+% Tightening \vListEnd/\vListGroupEnd BACKFIRES: it collapses list glue and causes both the
+% header/bullet overlaps and the page-2 spill. See CLAUDE.md rules 16b-16d.
 
 % --- Global / Shared (drive macros used across every section) ---
 \newcommand{\vSectionBefore}{-3pt} % space before each \section title
@@ -104,7 +107,7 @@
 \newcommand{\vSubheadingEnd}{-12pt}% space after a resumeSubheading block
 \newcommand{\vSubItem}{-4pt}       % space after a resumeSubItem
 \newcommand{\vListStart}{0em}      % space before an item list start (resumeItemListStart / education list)
-\newcommand{\vListEnd}{-2pt}       % space after resumeItemListEnd <- tighten THIS first if a real resume spills to page 2
+\newcommand{\vListEnd}{-2pt}       % space after resumeItemListEnd <- LOCKED, do NOT tighten (rule 16b/16c: cut content instead)
 \newcommand{\vListGroupEnd}{-1.5em}% space after resumeSubHeadingListEnd
 
 % --- Header ---

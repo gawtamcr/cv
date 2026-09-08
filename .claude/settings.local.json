@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftoppm -png -r 150 pdfs/single-SeniorRoboticsResearcher.pdf /private/tmp/claude-501/-Users-gawtamcr-Desktop-Masters-CV---Cover-Letters-cv/353ca29b-e5f5-48b2-b69e-4458ab8bf969/scratchpad/cv_final)"
+    ]
+  }
+}
