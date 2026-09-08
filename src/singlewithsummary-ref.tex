@@ -1,16 +1,20 @@
 %====================================================================================
-%  single-ref.tex  —  FORMAT HOLDER / SKELETON for single-* (one-page) resumes
+%  singlewithsummary-ref.tex  —  FORMAT HOLDER / SKELETON for single-* (one-page) resumes
+%  THAT INCLUDE AN OPTIONAL SUMMARY SECTION.
 %  ----------------------------------------------------------------------------------
-%  NOT an application resume. COPY THIS FILE to start every new single-* resume, then
-%  fill the bracketed hints with tailored content. This file is the canonical seed and
-%  Publications source — do NOT seed from single-ComVis.tex / single-GenMod.tex (they
-%  are example outputs and may be deleted). See CLAUDE.md sec 3.
+%  NOT an application resume. COPY THIS FILE to start a new single-* resume that will
+%  carry a tailored Summary section (rule 15: ALWAYS ASK before adding a Summary — this
+%  seed exists for when the answer is yes). Fill the bracketed hints with tailored
+%  content. Publications block here is canonical, mirroring single-ref.tex — do NOT
+%  seed from single-ComVis.tex / single-GenMod.tex (old example outputs). See CLAUDE.md
+%  sec 3.
 %
 %  HARD RULES (all measured in this exact layout; usable bullet width = 537.7pt):
 %   1. Exactly ONE page. Every \resumeItem must be ONE line, no wrap.
 %   2. Pack each bullet full: target 108-114 chars plain prose (wraps ~115-118).
 %      Bold costs ~15% width, ALL-CAPS ~42% — spend them deliberately.
-%   3. >= 30 content lines total (HARD floor). Education = 3 achv + Skills line;
+%   3. >= 30 content lines total (HARD floor; the Summary's own lines count toward
+%      this floor, not above it — see rule 15 below). Education = 3 achv + Skills line;
 %      Publications = 3; every INCLUDED entry (any section) = >=3 bullets.
 %      Entry COUNTS per section are FLEXIBLE: you may drop a Technical Project to
 %      add a 4th Professional Experience, etc. — distribute entries by relevance,
@@ -30,6 +34,8 @@
 %      CLIP, Hough, ResNet, ViT) and a name only if central AND explained inline.
 %  11. To fit one page, tighten vertical \vspace only (never margins/font).
 %  12. Verify: pages==1, 0 overfull, >=30 "^•" markers, each publication one line.
+%  13. Ask Gawtam per role whether to include the Summary at all (rule 15). When
+%      included, rewrite it every time to mirror the target role — no fixed blurb.
 %====================================================================================
 
 \documentclass[letterpaper, 11pt]{article}
@@ -85,36 +91,40 @@
 % cross-section macro vars in Global/Shared first. To fit one page, make values MORE
 % negative here (start with \vListEnd) — never touch margins or font. Copies of this seed
 % inherit these names; keep the names identical across all single-* resumes.
+%
+% Values below are carried over from src/scripts/single-SeniorRoboticsResearcher.tex
+% (tuned + visually verified with a Summary section present) — treat as this seed's
+% defaults; re-tune per resume as needed.
 
 % --- Global / Shared (drive macros used across every section) ---
-\newcommand{\vSectionBefore}{-4pt} % space before each \section title
+\newcommand{\vSectionBefore}{-3pt} % space before each \section title
 \newcommand{\vSectionRule}{-5pt}   % space after the blue section titlerule
 \newcommand{\vTableRowSep}{-2pt}   % row strut between title/subtitle rows in resumeSubheading
-\newcommand{\vItemTop}{-2pt}       % tightening atop resumeItem / subheading / project heading
-\newcommand{\vSubheadingEnd}{-10pt}% space after a resumeSubheading block
+\newcommand{\vItemTop}{-3pt}       % tightening atop resumeItem / subheading / project heading
+\newcommand{\vSubheadingEnd}{-12pt}% space after a resumeSubheading block
 \newcommand{\vSubItem}{-4pt}       % space after a resumeSubItem
-\newcommand{\vListStart}{-0.3em}   % space before an item list start (resumeItemListStart / education list)
-\newcommand{\vListEnd}{-7.5pt}     % space after resumeItemListEnd <- tighten THIS first if a real resume spills to page 2
-\newcommand{\vListGroupEnd}{-1em}  % space after resumeSubHeadingListEnd
+\newcommand{\vListStart}{0em}      % space before an item list start (resumeItemListStart / education list)
+\newcommand{\vListEnd}{-2pt}       % space after resumeItemListEnd <- tighten THIS first if a real resume spills to page 2
+\newcommand{\vListGroupEnd}{-1.5em}% space after resumeSubHeadingListEnd
 
 % --- Header ---
 \newcommand{\vHeadingName}{3pt}    % space under the name in the header
 \newcommand{\vHeadingEnd}{-8pt}    % space after the header block
 
-% --- Summary (only used if an optional Summary section is added — rule 15; neutral defaults) ---
+% --- Summary (used by default in this seed — rule 15; still ASK before including per role) ---
 \newcommand{\vSummaryTop}{2pt}     % space atop the summary text
 \newcommand{\vSummaryEnd}{-6pt}    % space after the summary text
 
 % --- Education ---
-\newcommand{\vEduSep}{0pt}         % space between education entries (0pt = adjacent, the seed default)
+\newcommand{\vEduSep}{5pt}         % space between education entries
 \newcommand{\vEduItemSep}{-0.3em}  % itemsep between Education achievement bullets
 \newcommand{\vEduSkills}{-0.7em}   % space before the education Skills line
 
 % --- Technical Projects ---
-\newcommand{\vProjectEnd}{-18pt}   % space after a resumeProjectHeading block
+\newcommand{\vProjectEnd}{-20pt}   % space after a resumeProjectHeading block
 
 % --- Publications ---
-\newcommand{\vPubSep}{-5pt}        % itemsep between Publications entries
+\newcommand{\vPubSep}{-4pt}        % itemsep between Publications entries
 
 % Sections formatting
 \titleformat{\section}{ \vspace{\vSectionBefore}\scshape\raggedright\large\bfseries }{}{0em}{}[
@@ -180,6 +190,15 @@
     }
     \vspace{\vHeadingEnd}
 \end{center}
+
+%-----------SUMMARY----------- (rule 15: ASK before including, every time. When included: 2-3 tailored lines,
+% rewritten per role's focus/keywords — no fixed canonical blurb. Counts toward the 30-line content floor.)
+\section{\color{Blue}Summary}
+\vspace{\vSummaryTop}
+\small{[2-3 sentences, first or third person per Gawtam's preference, tailored to the target role. Mirror the
+job's focus and keywords; state domain + what you build/own + a differentiator (e.g. hardware validation,
+publication record). No fixed blurb — rewrite fresh each time.]}
+\vspace{\vSummaryEnd}
 
 %-----------EDUCATION----------- (FIXED boilerplate; GPA in parentheses, NOT after a dash. Latest end date first.)
 \section{\color{Blue}Education}
@@ -280,7 +299,7 @@
 \resumeSubHeadingListEnd
 
 %-----------PUBLICATIONS----------- (RULE 6: this block is CANONICAL — copy it verbatim into new resumes; normal font, NOT \small)
-\section{\color{Blue}First Author Publications}
+\section{\color{Blue}Lead Author Publications}
 \begin{itemize}[leftmargin=0.15in]
     \setlength{\itemsep}{\vPubSep}
     \item Robust Object-layer Construction of 3DSG Using Instance Segmentation (IMPROVE26)(\textbf{Best Paper Award})
